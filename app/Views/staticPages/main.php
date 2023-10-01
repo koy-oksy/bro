@@ -6,33 +6,30 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{img}/carusel1.jpg" class="d-block w-100" alt="...">
+            <img src="{img}/mountain.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
-                <h5>Привіт, бро!</h5>
+                <h2>Привіт, бро!</h2>
                 <p>Наші мандрівки – це ліки для душі, які зараз так необхідні кожному з нас.</p>
                 <p>Тому не відкладай на потім, гайда на природотерапію разом!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{img}/carusel2.jpg" class="d-block w-100" alt="...">
+            <img src="{img}/witness.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
-                <h5>З нами ти дізнаєшся:</h5>
+                <h5>Влітку 2018 року ми здійснили наш перший похід, на Свидовецький масив.</h5>
                 <ul>
-                    <li>Яке найвище озеро в Карпатах</li>
-                    <li>Чому назви гір таки дивні і звідки вони походять</li>
-                    <li>Як зустрічати світанок високо в горах</li>
-                    <li>Та багато іншого...</li>
+                    <li>Окрім Українських Карпат ми вже організували подорожі у Високі Татри Словаччини і Польщі, 5 разів були в поході Лікійською стежкою (Туреччина) та подорожували Каппадокією, здійснили сходження на Арарат, дослідили гори Сванетії в Грузії та ловили північне сяйво на Лофотенах в Норвегії.</li>
                 </ul>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{img}/carusel3.jpg" class="d-block w-100" alt="...">
+            <img src="{img}/bro.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
-                <h5>В нас є програми:</h5>
+                <h5>Наша місія – робити людей щасливими, закохуючи в гори та природу нашої планети!</h5>
                 <ul>
-                    <li>Сходження з максимальним комфортом</li>
-                    <li>Спортивні трейли</li>
-                    <li>Одноденні походи вихідного дня</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </div>
         </div>
@@ -83,7 +80,7 @@
             <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_1.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/people.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <h1 class="px-3 mb-3 category bg-primary counter">8</h1>
@@ -94,7 +91,7 @@
             <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_2.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/number_of_people.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <h1 class="px-3 mb-3 category bg-primary counter">1309</h1>
@@ -105,21 +102,21 @@
             <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_3.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/campaign.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-primary counter">130</h1>
-                        <h2 class="mb-1">Шоколадок роздали на обід</h2>
+                        <h1 class="px-3 mb-3 category bg-primary counter">157</h1>
+                        <h2 class="mb-1">Організованих походів та мандрівок</h2>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_4.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/daylight.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-primary counter">650</h1>
+                        <h1 class="px-3 mb-3 category bg-primary counter">62</h1>
                         <h2 class="mb-1">Зустріли світанків в горах</h2>
                     </div>
                 </div>
@@ -133,9 +130,9 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-10">
                 <div class="heading-39101 mb-5">
-                    <span class="backdrop text-center">Blog</span>
-                    <span class="subtitle-39191">Updates</span>
-                    <h3>Our Blog</h3>
+                    <span class="backdrop text-center"></span>
+                    <span class="subtitle-39191"></span>
+                    <h3>Чому варто піти в гори з нами?</h3>
                 </div>
             </div>
         </div>
