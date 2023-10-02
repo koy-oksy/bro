@@ -8,13 +8,13 @@ use Psr\Log\LoggerInterface;
 
 class Staticpage extends BaseController
 {
-
+    
     protected $helpers = ['config'];
-
+    
     protected $site_name;
     protected $parent_data;
     protected $menu_data;
-
+    
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
@@ -42,7 +42,6 @@ class Staticpage extends BaseController
                 'url' => '/page/foreign-hikes',
                 'name' => 'Мандрівкии закордон',
             ],
-
             [
                 'active' => '',
                 'url' => '/page/useful',
@@ -55,7 +54,7 @@ class Staticpage extends BaseController
             ],
         ];
     }
-
+    
     public function index($page): string
     {
         $db = \Config\Database::connect();
@@ -63,22 +62,23 @@ class Staticpage extends BaseController
         $builder->where('alias', $page);
         $output = $builder->get();
         $row = $output->getRow();
-
+        
         if (empty($row)) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
-
+        
         $parser = \Config\Services::parser();
-
+        
         $page_data = $this->parent_data;
         $layout_data = $this->parent_data;
-
+        
         $layout_data['title'] = $this->site_name . ' - ' . $row->title;
         $layout_data['description'] = $row->description;
         $layout_data['tags'] = $row->tags;
         $layout_data['menu_entries'] = $this->menu_data;
         $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
-
+        
         return $parser->setData($layout_data)->render('layout');
     }
+    
 }

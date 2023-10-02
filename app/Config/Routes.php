@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'StaticPage::index/main');
 $routes->get('page/(:segment)', 'StaticPage::index/$1');
+$routes->get('admin/(:segment)', 'AdminPage::index/$1');
