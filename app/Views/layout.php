@@ -35,7 +35,7 @@
                     <div class="row align-items-center position-relative">
                         <div class="col-3 ">
                             <div class="site-logo">
-                                <a href="https://themewagon.github.io/trips/index.html" class="font-weight-bold">
+                                <a href="/" class="font-weight-bold">
                                     <img src="{img}/bro.png" alt="Bro" class="img-fluid">
                                 </a>
                             </div>
