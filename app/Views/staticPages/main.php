@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{img}/bro.jpg" class="d-block w-100" alt="...">
+            <img src="{img}/bro.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Наша місія – робити людей щасливими, закохуючи в гори та природу нашої планети!</h5>
                 <ul>
@@ -59,7 +59,7 @@
                 <p>Адже наші походи та подорожі не лише дарують позитивні емоцій та відпочинок, а й проходять у такій затишній, рідній атмосфері, що хтось знаходить собі друзів або, навіть, кохання.</p>
             </div>
             <div class="col-md-6 aos-init" data-aos="fade-right">
-                <img src="{img}/brotu.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/brotour.webp" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
@@ -167,7 +167,7 @@
     </div>
 </div>
 
-<div class="site-section bg-image overlay" style="background-image: url('{img}/tur.jpg')">
+<div class="site-section bg-image overlay" style="background-image: url('{img}/ukraine.webp')">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7 text-center">
