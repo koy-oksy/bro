@@ -8,7 +8,7 @@
         <div class="carousel-item active">
             <img src="{img}/mountain.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
-                <h2>Привіт, бро!</h2>
+                <h5>Привіт, бро!</h5>
                 <p>Наші мандрівки – це ліки для душі, які зараз так необхідні кожному з нас.</p>
                 <p>Тому не відкладай на потім, гайда на природотерапію разом!</p>
             </div>
@@ -24,14 +24,6 @@
         </div>
         <div class="carousel-item">
             <img src="{img}/bro.webp" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
-                <h5>Наша місія – робити людей щасливими, закохуючи в гори та природу нашої планети!</h5>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
         </div>
     </div>
     <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
@@ -71,8 +63,8 @@
             <div class="col-md-7">
                 <div class="heading-39101 mb-5">
                     <span class="backdrop text-center d-none">Досягнення</span>
-                    <span class="subtitle-39191">Досягнення</span>
-                    <h3>Робимо життя краще</h3>
+
+                    <h5>Наша місія – робити людей щасливими, закохуючи в гори та природу нашої планети!</h5>
                 </div>
             </div>
         </div>
@@ -83,7 +75,7 @@
                         <img src="{img}/people.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-primary counter">8</h1>
+                        <h1 class="px-3 mb-3 category bg-success counter">8</h1>
                         <h2 class="mb-1">Середня кількість учасників</h2>
                     </div>
                 </div>
@@ -94,7 +86,7 @@
                         <img src="{img}/number_of_people.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-primary counter">1309</h1>
+                        <h1 class="px-3 mb-3 category bg-success counter">1309</h1>
                         <h2 class="mb-1">Загалом учасників у всіх походах</h2>
                     </div>
                 </div>
@@ -105,7 +97,7 @@
                         <img src="{img}/campaign.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-primary counter">157</h1>
+                        <h1 class="px-3 mb-3 category bg-success counter">157</h1>
                         <h2 class="mb-1">Організованих походів та мандрівок</h2>
                     </div>
                 </div>
@@ -116,7 +108,7 @@
                         <img src="{img}/daylight.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-primary counter">62</h1>
+                        <h1 class="px-3 mb-3 category bg-success counter">62</h1>
                         <h2 class="mb-1">Зустріли світанків в горах</h2>
                     </div>
                 </div>
@@ -132,34 +124,35 @@
                 <div class="heading-39101 mb-5">
                     <span class="backdrop text-center"></span>
                     <span class="subtitle-39191"></span>
-                    <h3>Чому варто піти в гори з нами?</h3>
+                    <h1>Чому варто піти в гори з нами?</h1>
                 </div>
             </div>
         </div>
         <div class="row">
+
             <div class="col-lg-6 col-md-6 mb-6">
                 <div class="post-entry-1 h-100">
-                    <a href="https://themewagon.github.io/trips/single.html">
-                        <img src="{img}/img_1.jpg" alt="Image" class="img-fluid">
-                    </a>
+                    <img src="{img}/сarpathians.webp" alt="Image" class="img-fluid">
                     <div class="post-entry-1-contents">
+                        <h2><a href="">тут посилання на похід</a></h2>
 
-                        <h2><a href="https://themewagon.github.io/trips/single.html">Lorem ipsum dolor sit amet</a></h2>
-                        <span class="meta d-inline-block mb-3">July 17, 2023 <span class="mx-2">by</span> <a href="https://themewagon.github.io/trips/index.html#">Admin</a></span>
-                        <p>Наша місія – робити людей щасливими, закохуючи в гори та природу нашої планети! Але найбільше ми любимо рідну Україну, тому намагаємось дослідити кожен її куточок.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-6">
                 <div class="post-entry-1 h-100">
-                    <a href="https://themewagon.github.io/trips/single.html">
-                        <img src="{img}/img_3.jpg" alt="Image" class="img-fluid">
-                    </a>
                     <div class="post-entry-1-contents">
-
-                        <h2><a href="https://themewagon.github.io/trips/single.html">Lorem ipsum dolor sit amet</a></h2>
-                        <span class="meta d-inline-block mb-3">July 17, 2023 <span class="mx-2">by</span> <a href="https://themewagon.github.io/trips/index.html#">Admin</a></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+                        <h6>Тільки цікаві та продумані маршрути, без нудних локацій та надважких переходів.</h6>
+                        <h6>Досвідчені гіди, які знають як безпечно та круто провести похід.</h6>
+                        <h6>Смачна та гаряча їжа: для кожного походу ми розробляємо індивідуальне меню, враховуючи побажання кожного учасника.
+                            Раді веганам та вегетаріанцям</h6>
+                        <h6> В похід можна з домашніми улюбленцями.</h6>
+                        <h6>Робимо круті фото на фотоапарат, які надсилаємо після завершення мандрівки.<h6>
+                                <h6> Маємо власний прокат спорядження</h6>
+                                <h6> Готуємо з новачків досвідчених гірських мандрівників</h6>
+                                <h6> Допомагаємо підібрати спорядження та взуття (даємо взуття безкоштовно, якщо маємо у наявності ваш розмір).</h6>
+                                <h6> Частину прибутку перераховуємо на потреби ЗСУ, тому похід з нами – це ваш вклад у перемогу! </h6>
+                                <h6> У вартості наших походів включені усі основні витрати: проїзд з Луцька/Львова/ІФ, проживання, харчування, вхідні квитки, супровід гідом і т п.</h6>
                     </div>
                 </div>
             </div>
