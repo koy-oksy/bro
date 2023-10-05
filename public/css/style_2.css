@@ -482,7 +482,7 @@ h5,
   bottom: 0;
   z-index: 0;
   width: 100%;
-  background: rgba(239, 186, 108, 0.4);
+  background: rgb(79 147 73 / 40%);
 }
 .bg-image > .container {
   position: relative;

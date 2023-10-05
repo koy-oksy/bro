@@ -42,7 +42,7 @@ class Adminpage extends BaseController
             [
                 'active' => '',
                 'url' => '/page/foreign-hikes',
-                'name' => 'Мандрівкии закордон',
+                'name' => 'Мандрівки закордон',
             ],
             [
                 'active' => '',

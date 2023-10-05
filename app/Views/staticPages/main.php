@@ -9,7 +9,7 @@
             <img src="{img}/mountain.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Привіт, бро!</h5>
-                <p>Наші мандрівки – це ліки для душі, які зараз так необхідні кожному з нас.</p>
+                <span>Наші мандрівки – це ліки для душі, які зараз так необхідні кожному з нас.</span>
                 <p>Тому не відкладай на потім, гайда на природотерапію разом!</p>
             </div>
         </div>
@@ -17,9 +17,6 @@
             <img src="{img}/witness.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Влітку 2018 року ми здійснили наш перший похід, на Свидовецький масив.</h5>
-                <ul>
-                    <li>Окрім Українських Карпат ми вже організували подорожі у Високі Татри Словаччини і Польщі, 5 разів були в поході Лікійською стежкою (Туреччина) та подорожували Каппадокією, здійснили сходження на Арарат, дослідили гори Сванетії в Грузії та ловили північне сяйво на Лофотенах в Норвегії.</li>
-                </ul>
             </div>
         </div>
         <div class="carousel-item">
@@ -132,7 +129,7 @@
 
             <div class="col-lg-6 col-md-6 mb-6">
                 <div class="post-entry-1 h-100">
-                    <img src="{img}/сarpathians.webp" alt="Image" class="img-fluid">
+                    <img src="{img}/trip.webp" alt="Image" class="img-fluid">
                     <div class="post-entry-1-contents">
                         <h2><a href="">тут посилання на похід</a></h2>
 
