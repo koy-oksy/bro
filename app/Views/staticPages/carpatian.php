@@ -27,10 +27,10 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_1.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/montenegrin.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
                         <h2 class="mb-1"><a href="">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</a></h2>
                     </div>
@@ -40,7 +40,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_2.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/strymba.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
@@ -53,10 +53,10 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_3.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/darvaika.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
                         <h2 class="mb-1"><a href="">Через гори до Синевиру і похід на Дарвайку</a></h2>
                     </div>
@@ -66,10 +66,10 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_4.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                         <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
                         <h2 class="mb-1"><a href="">Петрос, Шешул та Копиця з проживанням у гірському будиночку</a></h2>
                     </div>
@@ -81,11 +81,11 @@
                     <div class="listing-image">
                         <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
                     </div>
-                    <div class="listing-item-content"> 
-                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
+                    <div class="listing-item-content">
+                        <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
                         <h2 class="mb-1"><a href="">Некласична Говерла і панорамний Кукул</a></h2>
-                        
+
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                         <img src="{img}/counter_6.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
                         <h2 class="mb-1"><a href="">Consectetur Amet</a></h2>
                     </div>

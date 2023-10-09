@@ -49,7 +49,7 @@ class Staticpage extends BaseController
             ],
             [
                 'active' => '',
-                'url' => '/page/contact',
+                'url' => '/page/contact-form',
                 'name' => 'Контакти',
             ],
         ];
@@ -76,8 +76,36 @@ class Staticpage extends BaseController
         $layout_data['description'] = $row->description;
         $layout_data['tags'] = $row->tags;
         $layout_data['menu_entries'] = $this->menu_data;
+
+        if ($this->request->getVar('name')) {
+            $page_data['validation'] = $this->store();
+        }
+
         $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
 
         return $parser->setData($layout_data)->render('layout');
+    }
+
+    private function store()
+    {
+
+        $rules = [
+            'name' => 'required|min_length[3]',
+            'email' => 'required|valid_email',
+            'phone' => 'required|numeric|max_length[10]'
+        ];
+
+        if ($this->validate($rules)) {
+            $formModel = new FormModel();
+            $data = [
+                'name' => $this->request->getVar('name'),
+                'email'  => $this->request->getVar('email'),
+                'phone'  => $this->request->getVar('phone'),
+            ];
+            $formModel->save($data);
+            return redirect()->to('/page/contact-form');
+        } else {
+            return $this->validator;
+        }
     }
 }
