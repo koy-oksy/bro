@@ -6,7 +6,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{img}/mountain.webp" class="d-block w-100" alt="...">
+            <img src="{img}/witness.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Привіт, бро!</h5>
                 <span>Наші мандрівки – це ліки для душі, які зараз так необхідні кожному з нас.</span>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{img}/witness.webp" class="d-block w-100" alt="...">
+            <img src="{img}/mountain.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Влітку 2018 року ми здійснили наш перший похід, на Свидовецький масив.</h5>
             </div>

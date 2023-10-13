@@ -314,7 +314,7 @@ h5,
 .h3,
 .h4,
 .h5 {
-  color: #000;
+  color: #608c5e;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -2514,14 +2514,14 @@ h5,
 }
 
 .carousel.hotfix h5 {
-  color: #333;
+  color: #30592e;
 }
 
 .carousel.hotfix .carousel-caption {
   bottom: auto;
   top: 20px;
-  color: #333;
-  background-color: rgba(255, 255, 128, 0.1);
+  color: #f2e2c4;
+  background-color: rgb(0 0 0 / 10%);
   border-radius: 30px;
 }
 

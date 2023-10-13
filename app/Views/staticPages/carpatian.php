@@ -14,10 +14,27 @@
 
 <div class="site-section">
     <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="">
+                    <h3>Розклад походів на 2023 рік</h3>
+                    <p>Привіт, бро! Дякуємо, що цікавишся нашими мандрівками)</p>
+                    <p>Нагадуємо, що окрім запропонованих маршрутів ти можеш замовити індивідуальний або корпоративний похід. Збирай від 5-ти друзів і більше та погнали на відпочинок) Від тебе тільки бажання - решту організуємо ми. Для груп діє приємна система знижок, можемо розробити
+                        маршрут за твоїми побажаннями.</p>
+                    <p>Раптом тобі щось треба прикупити для походу чи мандрівки - сміливо можеш писати нашим друзям партнерам - <a href="https://t.me/brotour/31" target="_blank">тут всі деталі про партнерів та промокоди</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="site-section">
+    <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-md-7">
                 <div class="heading-39101 mb-5">
-                    <span class="backdrop text-center">Карпати</span>
                     <h3>Найближчі походи</h3>
                 </div>
             </div>
@@ -28,11 +45,13 @@
                 <div class="listing-item">
                     <div class="listing-image">
                         <img src="{img}/montenegrin.webp" alt="Image" class="img-fluid">
+
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
-                        <h2 class="mb-1"><a href="">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</a></h2>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/brebeneskul">Детальніше</a>
+                        <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
+                        <h5>5900 грн (включено трансфер з Луцька/Львова/ІФ у гори і зворотньо), з проживанням у гірській хатині зі зручностями та видом на Чорногору, гід Володя</h5>
                     </div>
                 </div>
             </div>
@@ -44,8 +63,8 @@
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
-                        <h2 class="mb-1"><a href="">Осінь на Закарпатті: Стримба, таємне озеро та Колочава</a></h2>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/strumba">Детальніше</a>
+                        <h2 class="mb-1">Осінь на Закарпатті: Стримба, таємне озеро та Колочава</h2>
                     </div>
                 </div>
             </div>
@@ -57,8 +76,8 @@
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
-                        <h2 class="mb-1"><a href="">Через гори до Синевиру і похід на Дарвайку</a></h2>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/synevir">Детальніше</a>
+                        <h2 class="mb-1">Через гори до Синевиру і похід на Дарвайку</h2>
                     </div>
                 </div>
             </div>
@@ -66,12 +85,12 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/" alt="Image" class="img-fluid">
+                        <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
-                        <h2 class="mb-1"><a href="">Петрос, Шешул та Копиця з проживанням у гірському будиночку</a></h2>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/petros">Детальніше</a>
+                        <h2 class="mb-1">Петрос, Шешул та Копиця з проживанням у гірському будиночку</h2>
                     </div>
                 </div>
             </div>
@@ -83,26 +102,23 @@
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
-                        <h2 class="mb-1"><a href="">Некласична Говерла і панорамний Кукул</a></h2>
-
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/hoverla">Детальніше</a>
+                        <h2 class="mb-1">Некласична Говерла і панорамний Кукул</h2>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_6.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
-                        <h2 class="mb-1"><a href="">Consectetur Amet</a></h2>
+                        <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/petros">Детальніше</a>
+                        <h2 class="mb-1">Петрос, Шешул та Копиця з проживанням у гірському будиночку</h2>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

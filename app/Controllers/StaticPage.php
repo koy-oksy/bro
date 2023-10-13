@@ -25,6 +25,7 @@ class Staticpage extends BaseController
             'css' => base_url('css'),
             'js' => base_url('js'),
             'img' => base_url('img'),
+            'site' => site_url(),
         ];
         $this->menu_data = [
             [
