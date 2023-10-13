@@ -78,8 +78,19 @@ class Staticpage extends BaseController
         $layout_data['tags'] = $row->tags;
         $layout_data['menu_entries'] = $this->menu_data;
 
-        if ($this->request->getVar('name')) {
-            $page_data['validation'] = $this->store();
+        $validation = \Config\Services::validation();
+        
+//        $page_data['validation']
+        
+        // we check if user did POST request by submitting form
+        if ($this->request->is('post')) {
+            // we remove non alphanumeric characters from $page variable
+            $form_handler = preg_replace( '/[\W]/', '', $page);
+            // we call method to handle form submit
+            $validation =  $this->$form_handler();
+            
+//            $page_data['validation'] =
+            
         }
 
         $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
@@ -87,7 +98,7 @@ class Staticpage extends BaseController
         return $parser->setData($layout_data)->render('layout');
     }
 
-    private function store()
+    private function contactform()
     {
 
         $rules = [

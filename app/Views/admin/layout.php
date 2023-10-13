@@ -20,6 +20,10 @@
 
         <!-- Custom Theme Style -->
         <link href="{css}/custom.min.css" rel="stylesheet">
+        
+        <style id="style2" type="text/css"></style>
+        <link id="theme1" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css" rel="stylesheet" />
+        
     </head>
 
     <body class="nav-md footer_fixed">
@@ -61,6 +65,13 @@
                                             <li><a href="{admin}/about">Про нас</a></li>
                                             <li><a href="{admin}/useful">Корисне</a></li>
                                             <li><a href="{admin}/contacts">Контакти</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-plug"></i> Віджети <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="{admin}/widget/slider">Слайдер</a></li>
+                                            <li><a href="{admin}/widget/counters">Лічильники</a></li>
+                                            <li><a href="{admin}/widget/motto">Девіз</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -224,6 +235,8 @@
         <!-- jQuery custom content scroller -->
         <script src="{vendors}/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" type="text/javascript"></script>
+        
         <!-- Custom Theme Scripts -->
         <script src="{js}/custom.min.js"></script>
     </body>
