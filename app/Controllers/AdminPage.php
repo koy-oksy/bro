@@ -69,9 +69,7 @@ class Adminpage extends BaseController
     public function index($page = false): string
     {
         $parser = \Config\Services::parser();
-        
         $layout_data = $this->parent_data;
-        
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         try {
@@ -106,6 +104,33 @@ class Adminpage extends BaseController
             ];
         }
         return $parser->setData($page_data)->render('admin/main');
+    }
+    
+    public function widget($widget_name) {
+        $parser = \Config\Services::parser();
+        $layout_data = $this->parent_data;
+        $layout_data['title'] = $this->site_name . ' - Admin';
+        $layout_data['menu_entries'] = $this->menu_data;
+        try {
+            $layout_data['content'] = $this->$widget_name();
+        } catch (\Throwable $e) {
+            $layout_data['content'] = $this->error($e);
+        }
+        return $parser->setData($layout_data)->render('admin/layout');
+    }
+    
+    private function slider() {
+        $parser = \Config\Services::parser();
+        $template_name = 'slider';
+        $content = '123';
+        $page_data = [
+            'form_open' => form_open('admin/' . $template_name),
+            'form_close' => form_close(),
+            'template_name' => $template_name,
+            'template_content' => $content,
+        ];
+        
+        return $parser->setData($page_data)->render('admin/widget/' . $template_name);
     }
     
     private function about() {

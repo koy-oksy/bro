@@ -19,7 +19,7 @@ class Staticpage extends BaseController
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
+        
         $this->site_name = get_config('site_name');
         $this->parent_data = [
             'css' => base_url('css'),
@@ -27,6 +27,8 @@ class Staticpage extends BaseController
             'img' => base_url('img'),
             'site' => site_url(),
         ];
+        $this->parent_data['slider'] = $this->connectWidget('slider');
+        $this->parent_data['counters'] = $this->connectWidget('counters');
         $this->menu_data = [
             [
                 'active' => 'active',
@@ -54,6 +56,18 @@ class Staticpage extends BaseController
                 'name' => 'Контакти',
             ],
         ];
+    }
+    
+    private function connectWidget($widget_name = false) {
+        if (!$widget_name) {
+            return '';
+        }
+        $widget_model_name = sprintf('App\Models\%sModel', ucfirst($widget_name));
+        $widget_model = new $widget_model_name();
+        $data = array_merge($this->parent_data, ['widget_entries' => $widget_model->getData()]);
+        $parser = \Config\Services::parser();
+        $widget_tpl = sprintf("staticPages/widget/%s", strtolower($widget_name));
+        return $parser->setData($data)->render($widget_tpl);
     }
 
     public function index($page): string

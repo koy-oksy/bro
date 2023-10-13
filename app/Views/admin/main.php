@@ -1,10 +1,10 @@
 <div class="clearfix"></div>
 <div class="page-title">
     <div class="row">
-        <div class="col-6">
+        <div class="col-sm-12 col-md-6">
             <h3>Шаблон головної сторінки</h3>
         </div>
-        <div class="col-6" style="padding: 10px">
+        <div class="col-sm-12 col-md-6" style="padding: 10px">
             Шрифт:
             <select id="selectFont">
                 <option>Roboto Mono</option>
@@ -34,7 +34,7 @@
                 <option>Xanh Mono</option>
                 <option>Monofett</option>
             </select>
-            Розмір шрифту (пікс):
+            Розмір шрифту:
             <input id="inputFontSize" type="number" step=".1" value="12" style="width: 50px;" />
         </div>
     </div>

@@ -1,37 +1,4 @@
-<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{img}/witness.webp" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
-                <h5>Привіт, бро!</h5>
-                <span>Наші мандрівки – це ліки для душі, які зараз так необхідні кожному з нас.</span>
-                <p>Тому не відкладай на потім, гайда на природотерапію разом!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="{img}/mountain.webp" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
-                <h5>Влітку 2018 року ми здійснили наш перший похід, на Свидовецький масив.</h5>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="{img}/bro.webp" class="d-block w-100" alt="...">
-        </div>
-    </div>
-    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </div>
-    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </div>
-</div>
+{!slider!}
 
 <div class="site-section py-5">
     <div class="container">
@@ -54,65 +21,7 @@
     </div>
 </div>
 
-<div class="site-section">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-md-7">
-                <div class="heading-39101 mb-5">
-                    <span class="backdrop text-center d-none">Досягнення</span>
-
-                    <h5>Наша місія – робити людей щасливими, закохуючи в гори та природу нашої планети!</h5>
-                </div>
-            </div>
-        </div>
-        <div class="row counter-fix">
-            <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="{img}/people.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-success counter">8</h1>
-                        <h2 class="mb-1">Середня кількість учасників</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="{img}/number_of_people.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-success counter">1309</h1>
-                        <h2 class="mb-1">Загалом учасників у всіх походах</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="{img}/campaign.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-success counter">157</h1>
-                        <h2 class="mb-1">Організованих походів та мандрівок</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="{img}/daylight.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h1 class="px-3 mb-3 category bg-success counter">62</h1>
-                        <h2 class="mb-1">Зустріли світанків в горах</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{!counters!}
 
 <div class="site-section">
     <div class="container">

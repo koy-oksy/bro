@@ -9,3 +9,6 @@ $routes->get('/', 'StaticPage::index/main');
 $routes->get('page/(:segment)', 'StaticPage::index/$1');
 $routes->get('admin/(:segment)', 'AdminPage::index/$1');
 $routes->post('admin/(:segment)', 'AdminPage::index/$1');
+
+$routes->get('admin/widget/(:segment)', 'AdminPage::widget/$1');
+$routes->post('admin/widget/(:segment)', 'AdminPage::widget/$1');
