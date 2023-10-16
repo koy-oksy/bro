@@ -37,39 +37,7 @@ class Adminpage extends BaseController
         if(session()->has('message_controller')) {
             $this->parent_data['message'] =  session()->getFlashdata('message_controller');
         }
-        
-        $this->menu_data = [
-            [
-                'active' => 'active',
-                'url' => '/',
-                'name' => 'Головна',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/carpatian-hikes',
-                'name' => 'Походи в Карпати',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/foreign-hikes',
-                'name' => 'Мандрівки закордон',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/about',
-                'name' => 'Про нас',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/useful',
-                'name' => 'Корисне',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/contact',
-                'name' => 'Контакти',
-            ],
-        ];
+            
     }
     
     public function index($page = false, $widget = false): string
@@ -92,6 +60,22 @@ class Adminpage extends BaseController
         return $parser->setData($layout_data)->render('admin/layout');
     }
     
+    public function home() {
+        $parser = \Config\Services::parser();
+        $layout_data = $this->parent_data;
+        $layout_data['title'] = $this->site_name . ' - Admin';
+        $layout_data['menu_entries'] = $this->menu_data;
+        $page_data = [];
+        try {
+            $layout_data['content'] = $parser->setData($page_data)->render('admin/home');
+        } catch (\Throwable $e) {
+            $layout_data['content'] = $e->getMessage();
+        }
+                
+        return $parser->setData($layout_data)->render('admin/layout');
+    }
+
+
     private function simplePage($template_name) {
         $parser = \Config\Services::parser();
         $request = \Config\Services::request();
