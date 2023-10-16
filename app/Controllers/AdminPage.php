@@ -31,7 +31,13 @@ class Adminpage extends BaseController
             'img' => base_url('admin/img'),
             'admin' => site_url('admin'),
             'vendors' => base_url('admin/vendors'),
+            'message' => '',
         ];
+        
+        if(session()->has('message_controller')) {
+            $this->parent_data['message'] =  session()->getFlashdata('message_controller');
+        }
+        
         $this->menu_data = [
             [
                 'active' => 'active',
@@ -66,31 +72,37 @@ class Adminpage extends BaseController
         ];
     }
     
-    public function index($page = false): string
+    public function index($page = false, $widget = false): string
     {
         $parser = \Config\Services::parser();
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
-        try {
-            $layout_data['content'] = $this->$page();
-        } catch (\Throwable $e) {
-            $layout_data['content'] = $this->error($e);
-        }
         
+        try {
+            if ($widget) {
+                $layout_data['content'] = $this->$widget();
+            } else {
+                $layout_data['content'] = $this->$page();
+            }
+        } catch (\Throwable $e) {
+            $layout_data['content'] = $e->getMessage();
+        }
+                
         return $parser->setData($layout_data)->render('admin/layout');
     }
     
-    private function error($e) {
-        return $e->getMessage();
-    }
-    
-    private function main() {
+    private function simplePage($template_name) {
         $parser = \Config\Services::parser();
-        $template_name = 'main';
+        $request = \Config\Services::request();
         $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $template_name);
         $template_file = new \CodeIgniter\Files\File($template_path);
         if ($template_file->isWritable()) {
+            if ($request->getMethod() === 'post') {
+                $template_code = $request->getVar('template_code');
+                file_put_contents($template_file->getRealPath(), $template_code);
+                session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+            }
             $content = file_get_contents($template_file->getRealPath());
             $page_data = [
                 'form_open' => form_open('admin/' . $template_name),
@@ -103,46 +115,15 @@ class Adminpage extends BaseController
                 'template_content' => sprintf('Template File "%s" is not writebale', $template_path),
             ];
         }
-        return $parser->setData($page_data)->render('admin/main');
+        return $parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
     }
     
-    public function widget($widget_name) {
-        $parser = \Config\Services::parser();
-        $layout_data = $this->parent_data;
-        $layout_data['title'] = $this->site_name . ' - Admin';
-        $layout_data['menu_entries'] = $this->menu_data;
-        try {
-            $layout_data['content'] = $this->$widget_name();
-        } catch (\Throwable $e) {
-            $layout_data['content'] = $this->error($e);
-        }
-        return $parser->setData($layout_data)->render('admin/layout');
-    }
-    
-    private function slider() {
-        $parser = \Config\Services::parser();
-        $template_name = 'slider';
-        $content = '123';
-        $page_data = [
-            'form_open' => form_open('admin/' . $template_name),
-            'form_close' => form_close(),
-            'template_name' => $template_name,
-            'template_content' => $content,
-        ];
-        
-        return $parser->setData($page_data)->render('admin/widget/' . $template_name);
-    }
-    
-    private function about() {
-        $parser = \Config\Services::parser();
-        $page_data = [];
-        return $parser->setData($page_data)->render('admin/about');
+    private function main() {
+        return $this->simplePage('main');
     }
     
     private function useful() {
-        $parser = \Config\Services::parser();
-        $page_data = [];
-        return $parser->setData($page_data)->render('admin/useful');
+        return $this->simplePage('useful');
     }
     
     private function contacts() {

@@ -20,10 +20,10 @@
 
         <!-- Custom Theme Style -->
         <link href="{css}/custom.min.css" rel="stylesheet">
-        
+
         <style id="style2" type="text/css"></style>
         <link id="theme1" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css" rel="stylesheet" />
-        
+
     </head>
 
     <body class="nav-md footer_fixed">
@@ -61,17 +61,21 @@
                                     </li>
                                     <li><a><i class="fa fa-edit"></i> Сторінки <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="{admin}/main">Головна</a></li>
-                                            <li><a href="{admin}/about">Про нас</a></li>
+                                            <li class="active"><a>Головна<span class="fa fa-chevron-down"></span></a>
+                                                <ul class="nav child_menu" style="display: block;">
+                                                    <li class="sub_menu">
+                                                        <a href="{admin}/main">Html</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{admin}/main/slider">Slider</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{admin}/main/counters">Counters</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                             <li><a href="{admin}/useful">Корисне</a></li>
                                             <li><a href="{admin}/contacts">Контакти</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-plug"></i> Віджети <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="{admin}/widget/slider">Слайдер</a></li>
-                                            <li><a href="{admin}/widget/counters">Лічильники</a></li>
-                                            <li><a href="{admin}/widget/motto">Девіз</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -97,7 +101,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- /sidebar menu -->
 
                         <!-- /menu footer buttons -->
@@ -126,7 +130,7 @@
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
                         <nav class="nav navbar-nav">
-                            <ul class=" navbar-right">
+                            <ul class="navbar-right">
                                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                         <img src="{img}/img.jpg" alt="">Admin
@@ -216,7 +220,11 @@
                 <!-- footer content -->
                 <footer>
                     <div class="pull-right">
-                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                        {if $message}
+                        <div class="alert alert-secondary" role="alert">
+                            {!message!}
+                        </div>
+                        {endif}
                     </div>
                     <div class="clearfix"></div>
                 </footer>
@@ -236,7 +244,7 @@
         <script src="{vendors}/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" type="text/javascript"></script>
-        
+
         <!-- Custom Theme Scripts -->
         <script src="{js}/custom.min.js"></script>
     </body>
