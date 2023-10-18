@@ -51,7 +51,8 @@
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="{site}page/brebeneskul">Детальніше</a>
                         <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
-                        <h5>5900 грн (включено трансфер з Луцька/Львова/ІФ у гори і зворотньо), з проживанням у гірській хатині зі зручностями та видом на Чорногору, гід Володя</h5>
+
+                        <button type="button" class="btn btn-info">Залишилось 1 місце</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +60,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/strymba.webp" alt="Image" class="img-fluid">
+                        <img src="{img}/strumba.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
@@ -75,7 +76,7 @@
                         <img src="{img}/darvaika.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href="">21-22 жовтня</a>
                         <a class="px-3 mb-3 category bg-primary" href="{site}page/synevir">Детальніше</a>
                         <h2 class="mb-1">Через гори до Синевиру і похід на Дарвайку</h2>
                     </div>
@@ -85,7 +86,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/petroshead.jpeg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
@@ -98,7 +99,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/hoverla.jpeg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
@@ -107,15 +108,16 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/pipivan.jpeg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/petros">Детальніше</a>
-                        <h2 class="mb-1">Петрос, Шешул та Копиця з проживанням у гірському будиночку</h2>
+                        <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/">Детальніше</a>
+                        <h2 class="mb-1">Кукул, Довбушеві Комори та гора Синиці</h2>
                     </div>
                 </div>
             </div>
