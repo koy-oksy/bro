@@ -83,18 +83,6 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="{img}/petroshead.jpeg" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">20-22 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/petros">Детальніше</a>
-                        <h2 class="mb-1">Петрос, Шешул та Копиця з проживанням у гірському будиночку</h2>
-                    </div>
-                </div>
-            </div>
 
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
@@ -116,8 +104,21 @@
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/">Детальніше</a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/kukul">Детальніше</a>
                         <h2 class="mb-1">Кукул, Довбушеві Комори та гора Синиці</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="{img}/petroshead.jpeg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="listing-item-content">
+                        <a class="px-3 mb-3 category bg-success" href="">дата</a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/petros">Детальніше</a>
+                        <h2 class="mb-1">Петрос, Шешул та Копиця з проживанням у гірському будиночку</h2>
                     </div>
                 </div>
             </div>
