@@ -27,11 +27,11 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_1.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/IMG_4554.png" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">3-5 листопада</a>
-                        <a class="px-3 mb-3 category bg-primary" href="">Детальніше</a>
+                        <a class="px-3 mb-3 category bg-success" href="">24-26 листопада</a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/slovakia">Детальніше</a>
                         <h2 class="mb-1"><a href="">Високі Татри Словаччини</a></h2>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_2.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/counter_4.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">дата</a>
@@ -53,7 +53,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_3.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/counter_4.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">дата</a>
@@ -79,7 +79,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_5.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/counter_4.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">дата</a>
@@ -92,7 +92,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/counter_6.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/counter_4.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">дата</a>

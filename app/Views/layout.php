@@ -117,10 +117,13 @@
                         </div>
                     </div>
                 </div>
+
+
+
                 <div class="row pt-5 mt-5 text-center">
                     <div class="col-md-12">
                         <div class="border-top pt-5">
-                            <p>© 2023 Brotour - Всі права захищені
+                            <p>© 2023 Brotour - Всі права захищено згідно законодавства України.
                             </p>
                             <p> <a href="https://oksy.org.ua/" target="blank">Site development</a></p>
                         </div>

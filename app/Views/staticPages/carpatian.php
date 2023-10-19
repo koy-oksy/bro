@@ -52,7 +52,7 @@
                         <a class="px-3 mb-3 category bg-primary" href="{site}page/brebeneskul">Детальніше</a>
                         <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
 
-                        <button type="button" class="btn btn-info">Залишилось 1 місце</button>
+                        <!—<button type="button" class="btn btn-info">Залишилось 1 місце</button> —>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/hoverla.jpeg" alt="Image" class="img-fluid">
+                        <img src="{img}/hoverlamain.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
@@ -100,7 +100,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/pipivan.jpeg" alt="Image" class="img-fluid">
+                        <img src="{img}/kukulmain.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
@@ -113,7 +113,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/petroshead.jpeg" alt="Image" class="img-fluid">
+                        <img src="{img}/petrosmain.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">дата</a>
