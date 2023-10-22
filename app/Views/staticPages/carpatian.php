@@ -77,6 +77,7 @@
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">21-22 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href=""> 4-5 листопада </a>
                         <a class="px-3 mb-3 category bg-primary" href="{site}page/synevir">Детальніше</a>
                         <h2 class="mb-1">Через гори до Синевиру і похід на Дарвайку</h2>
                     </div>
