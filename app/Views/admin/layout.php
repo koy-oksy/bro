@@ -249,9 +249,10 @@
         <script type="text/javascript">
             jQuery(document).ready(function () {
                 new PNotify({
-                    title: 'Regular Notice',
+                    title: 'Повідомлення',
                     text: "{!message!}",
-                    styling: 'bootstrap3'
+                    styling: 'bootstrap3',
+                    type: 'info'
                 });
             });
         </script>

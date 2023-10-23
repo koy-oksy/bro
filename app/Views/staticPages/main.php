@@ -35,7 +35,6 @@
             </div>
         </div>
         <div class="row">
-
             <div class="col-lg-6 col-md-6 mb-6">
                 <div class="post-entry-1 h-100">
                     <img src="{img}/trip.webp" alt="Image" class="img-fluid">

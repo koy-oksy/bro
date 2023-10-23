@@ -9,7 +9,7 @@
 
 <div class="clearfix"></div>
 
-<div class="row">
+<div class="">
     <div class="x_panel">
         <div class="x_content">
             Тут будуть швидки дії з сайтом

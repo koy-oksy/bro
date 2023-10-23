@@ -1,6 +1,6 @@
 <div class="clearfix"></div>
 <div class="page-title">
-    <div class="row">
+    <div class="">
         <div class="col-sm-12 col-md-6">
             <h3>Шаблон головної сторінки</h3>
         </div>
