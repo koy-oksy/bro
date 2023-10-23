@@ -13,3 +13,5 @@ $routes->post('admin/(:segment)', 'AdminPage::index/$1');
 
 $routes->get('admin/(:segment)/(:segment)', 'AdminPage::index/$1/$2');
 $routes->post('admin/(:segment)/(:segment)', 'AdminPage::index/$1/$2');
+
+$routes->get('admin/image/(:segment)', 'AdminPage::index/$1/$2');

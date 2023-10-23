@@ -14,7 +14,9 @@ class Adminpage extends BaseController
     protected $site_name;
     protected $parent_data;
     protected $menu_data;
-    
+    private $parser;
+
+
     const PATH_TO_VIEWS = '../app/Views/staticPages/';
     
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
@@ -24,11 +26,14 @@ class Adminpage extends BaseController
 
         helper(['filesystem', 'form']);
         
+        
+        $this->parser = \Config\Services::parser();
         $this->site_name = get_config('site_name');
         $this->parent_data = [
             'css' => base_url('admin/css'),
             'js' => base_url('admin/js'),
             'img' => base_url('admin/img'),
+            'fimg' => base_url('img'),
             'admin' => site_url('admin'),
             'vendors' => base_url('admin/vendors'),
             'message' => '',
@@ -37,12 +42,11 @@ class Adminpage extends BaseController
         if(session()->has('message_controller')) {
             $this->parent_data['message'] =  session()->getFlashdata('message_controller');
         }
-            
+        
     }
     
     public function index($page = false, $widget = false): string
     {
-        $parser = \Config\Services::parser();
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
@@ -57,27 +61,25 @@ class Adminpage extends BaseController
             $layout_data['content'] = $e->getMessage();
         }
                 
-        return $parser->setData($layout_data)->render('admin/layout');
+        return $this->parser->setData($layout_data)->render('admin/layout');
     }
     
     public function home() {
-        $parser = \Config\Services::parser();
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         $page_data = [];
         try {
-            $layout_data['content'] = $parser->setData($page_data)->render('admin/home');
+            $layout_data['content'] = $this->parser->setData($page_data)->render('admin/home');
         } catch (\Throwable $e) {
             $layout_data['content'] = $e->getMessage();
         }
                 
-        return $parser->setData($layout_data)->render('admin/layout');
+        return $this->parser->setData($layout_data)->render('admin/layout');
     }
 
 
     private function simplePage($template_name) {
-        $parser = \Config\Services::parser();
         $request = \Config\Services::request();
         $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $template_name);
         $template_file = new \CodeIgniter\Files\File($template_path);
@@ -99,27 +101,47 @@ class Adminpage extends BaseController
                 'template_content' => sprintf('Template File "%s" is not writebale', $template_path),
             ];
         }
-        return $parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
+        return $this->parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
     }
     
     private function main() {
         return $this->simplePage('main');
     }
     
+    private function slider() {
+        $request = \Config\Services::request();
+        if ($request->getMethod() === 'post') {
+            $caption = $request->getVar('caption');
+            $text = $request->getVar('text');
+            $img = $request->getFile('image');
+            $id = $request->getFile('id');
+            if ($img->hasMoved()) {
+                $filepath = WRITEPATH . 'uploads/' . $img->store();
+                $data = ['uploaded_fileinfo' => new \CodeIgniter\Files\File($filepath)];
+                var_dump($data); die;
+            }
+            session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        }
+        $widget_model = new \App\Models\SliderModel();
+        $page_data = array_merge($this->parent_data, [
+            'widget_entries' => $widget_model->getData(),
+        ]);
+        return view('admin/widget/slider', $page_data);
+    }
+
+
     private function useful() {
         return $this->simplePage('useful');
     }
     
     private function contacts() {
-        $parser = \Config\Services::parser();
         $page_data = [];
-        return $parser->setData($page_data)->render('admin/contacts');
+        return $this->parser->setData($page_data)->render('admin/contacts');
     }
     
     private function settings() {
-        $parser = \Config\Services::parser();
         $page_data = [];
-        return $parser->setData($page_data)->render('admin/settings');
+        return $this->parser->setData($page_data)->render('admin/settings');
     }
     
 }

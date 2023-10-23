@@ -7,8 +7,9 @@
     <div class="carousel-inner">
     {widget_entries}
         <div class="carousel-item {special_class}">
-            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <img src="{uploads}/{image_name}" class="d-block w-100" alt="{image}">
             <div class="carousel-caption d-md-block">
+                <h5>{caption}</h5>
                 {!text!}
             </div>
         </div>
