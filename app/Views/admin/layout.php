@@ -21,6 +21,8 @@
         <!-- Custom Theme Style -->
         <link href="{css}/custom.min.css" rel="stylesheet">
 
+        <link href="{vendors}/pnotify/dist/pnotify.css" rel="stylesheet">
+
         <style id="style2" type="text/css"></style>
         <link id="theme1" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css" rel="stylesheet" />
 
@@ -219,13 +221,6 @@
 
                 <!-- footer content -->
                 <footer>
-                    <div class="pull-right">
-                        {if $message}
-                        <div class="alert alert-secondary" role="alert">
-                            {!message!}
-                        </div>
-                        {endif}
-                    </div>
                     <div class="clearfix"></div>
                 </footer>
                 <!-- /footer content -->
@@ -243,9 +238,23 @@
         <!-- jQuery custom content scroller -->
         <script src="{vendors}/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
+        <script src="{vendors}/pnotify/dist/pnotify.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" type="text/javascript"></script>
 
         <!-- Custom Theme Scripts -->
         <script src="{js}/custom.min.js"></script>
+        
+        {if $message}
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                new PNotify({
+                    title: 'Regular Notice',
+                    text: "{!message!}",
+                    styling: 'bootstrap3'
+                });
+            });
+        </script>
+        {endif}
     </body>
 </html>

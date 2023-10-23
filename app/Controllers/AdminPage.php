@@ -47,12 +47,25 @@ class Adminpage extends BaseController
         
     }
     
+    public function save($page = false, $widget = false)
+    {
+        $request = \Config\Services::request();
+        if ($request->getMethod() !== 'post') {
+            return redirect()->to('/admin/home');
+        }
+        if ($widget) {
+            $method = $widget . 'Save';
+        } else {
+            $method = $page . 'Save';
+        }
+        return $this->$method();
+    }
+    
     public function index($page = false, $widget = false): string
     {
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
-        
         try {
             if ($widget) {
                 $layout_data['content'] = $this->$widget();
@@ -79,7 +92,6 @@ class Adminpage extends BaseController
                 
         return $this->parser->setData($layout_data)->render('admin/layout');
     }
-
 
     private function simplePage($template_name) {
         $request = \Config\Services::request();
@@ -110,26 +122,28 @@ class Adminpage extends BaseController
         return $this->simplePage('main');
     }
     
-    private function slider() {
+    private function sliderSave() {
         $request = \Config\Services::request();
-        if ($request->getMethod() === 'post') {
-            $id = $request->getVar('id');
-            $caption = $request->getVar('caption');
-            $text = $request->getVar('text');
-            $sliderModel = new \App\Models\SliderModel();
-            $data = [
-                'caption' => $caption,
-                'text' => $text,
-            ];
-            if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
-                $img = $request->getFile('image');
-                if (! $img->hasMoved()) {
-                    $data['image_name'] = $img->store();
-                }
+        $id = $request->getVar('id');
+        $caption = $request->getVar('caption');
+        $text = $request->getVar('text');
+        $sliderModel = new \App\Models\SliderModel();
+        $data = [
+            'caption' => $caption,
+            'text' => $text,
+        ];
+        if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+            $img = $request->getFile('image');
+            if (! $img->hasMoved()) {
+                $data['image_name'] = $img->store();
             }
-            $sliderModel->update($id, $data);
-            session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
         }
+        $sliderModel->update($id, $data);
+        session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        return redirect()->to('/admin/slider');
+    }
+    
+    private function slider() {
         $widget_model = new \App\Models\SliderModel();
         $page_data = array_merge($this->parent_data, [
             'widget_entries' => $widget_model->getData(),

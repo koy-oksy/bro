@@ -9,7 +9,7 @@
 <div class="clearfix"></div>
 <div class="row">
     <?php foreach ($widget_entries as $entry) : ?>
-        <?= form_open_multipart('admin/slider') ?>
+        <?= form_open_multipart('admin/main/slider') ?>
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
                 <div class="x_title">
