@@ -25,7 +25,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6" data-aos="fade-right">
-        <img src="{img}/balcony.png" alt="Image" class="img-fluid">
+        <img src="{img}/balcony.webp" alt="Image" class="img-fluid">
         <p>Кімнати 6-місні, ліжка з постіллю, балкон з видом на Чорногору</p>
       </div>
       <div class="col-md-6">
@@ -43,7 +43,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8" data-aos="">
-        <img src="{img}/brebeneskul1.jpg" alt="Image" class="img-fluid">
+        <img src="{img}/brebeneskul1.webp" alt="Image" class="img-fluid">
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8" data-aos="">
-        <img src="{img}/brebeneskul2.jpg" alt="Image" class="img-fluid">
+        <img src="{img}/brebeneskul2.webp" alt="Image" class="img-fluid">
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8" data-aos="">
-        <img src="{img}/brebeneskul3.jpg" alt="Image" class="img-fluid">
+        <img src="{img}/brebeneskul3.webp" alt="Image" class="img-fluid">
       </div>
 
     </div>
