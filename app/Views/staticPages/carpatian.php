@@ -44,15 +44,12 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/montenegrin.webp" alt="Image" class="img-fluid">
-
+                        <img src="{img}/strumba.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/brebeneskul">Детальніше</a>
-                        <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
-
-                        <!—<button type="button" class="btn btn-info">Залишилось 1 місце</button> —>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/strumba">Детальніше</a>
+                        <h2 class="mb-1">Осінь на Закарпатті: Стримба, таємне озеро та Колочава</h2>
                     </div>
                 </div>
             </div>
@@ -60,12 +57,12 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/strumba.webp" alt="Image" class="img-fluid">
+                        <img src="{img}/kukulmain.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">13-15 жовтня</a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/strumba">Детальніше</a>
-                        <h2 class="mb-1">Осінь на Закарпатті: Стримба, таємне озеро та Колочава</h2>
+                        <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/kukul">Детальніше</a>
+                        <h2 class="mb-1">Кукул, Довбушеві Комори та гора Синиці</h2>
                     </div>
                 </div>
             </div>
@@ -83,8 +80,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
@@ -92,8 +87,39 @@
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
+                        <a class="px-3 mb-3 category bg-success" href="">10-12 листопада</a>
                         <a class="px-3 mb-3 category bg-primary" href="{site}page/hoverla">Детальніше</a>
                         <h2 class="mb-1">Некласична Говерла і панорамний Кукул</h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="{img}/montenegrin.webp" alt="Image" class="img-fluid">
+
+                    </div>
+                    <div class="listing-item-content">
+                        <a class="px-3 mb-3 category bg-success" href="">17-19 листопада </a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/krynta">Детальніше</a>
+                        <h2 class="mb-1">По краю зими: похід на Кринту-Скупову</h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="{img}/montenegrin.webp" alt="Image" class="img-fluid">
+
+                    </div>
+                    <div class="listing-item-content">
+                        <a class="px-3 mb-3 category bg-success" href="">18-19 листопада </a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/rotylo">Детальніше</a>
+                        <h2 class="mb-1"> Хайкінг у Карпатах: скеля Костел і похід на Ротило</h2>
                     </div>
                 </div>
             </div>
@@ -101,15 +127,20 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/kukulmain.jpg" alt="Image" class="img-fluid">
+                        <img src="{img}/montenegrin.webp" alt="Image" class="img-fluid">
+
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/kukul">Детальніше</a>
-                        <h2 class="mb-1">Кукул, Довбушеві Комори та гора Синиці</h2>
+                        <a class="px-3 mb-3 category bg-success" href="">24-26 листопада</a>
+                        <a class="px-3 mb-3 category bg-primary" href="{site}page/brebeneskul">Детальніше</a>
+                        <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
                     </div>
                 </div>
             </div>
+
+
+
+
 
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">

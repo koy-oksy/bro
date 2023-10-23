@@ -30,7 +30,8 @@
                         <img src="{img}/IMG_4554.png" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">24-26 листопада</a>
+                        <a class="px-3 mb-3 category bg-success" href="">2-5 листопада </a>
+                        <a class="px-3 mb-3 category bg-success" href="">23-26 листопада </a>
                         <a class="px-3 mb-3 category bg-primary" href="{site}page/slovakia">Детальніше</a>
                         <h2 class="mb-1"><a href="">Високі Татри Словаччини</a></h2>
                     </div>
