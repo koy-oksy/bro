@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-md-6 mb-3 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/{image_name}" alt="Image" class="img-fluid">
+                        <img src="{uploads}/{image_name}" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <h1 class="px-3 mb-3 category bg-success counter">{max_number}</h1>

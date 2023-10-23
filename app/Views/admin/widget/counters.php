@@ -29,8 +29,8 @@
                         <input type="file" class="form-control" id="image<?= $entry['id'] ?>" name="image">
                     </div>
                     <div class="form-group">
-                        <label data-original-title="Тут можна використовувати html теги" data-toggle="tooltip" data-placement="right" for="caption<?= $entry['id'] ?>">Заголовок <icon class="fa fa-question-circle"></icon></label>
-                        <input type="text" class="form-control" id="caption<?= $entry['id'] ?>" value="<?= $entry['caption'] ?>" name="caption">
+                        <label data-original-title="Значення до якого буде збільшуватись число" data-toggle="tooltip" data-placement="right" for="max_number<?= $entry['id'] ?>">Число <icon class="fa fa-question-circle"></icon></label>
+                        <input type="text" class="form-control" id="max_number<?= $entry['id'] ?>" value="<?= $entry['max_number'] ?>" name="max_number">
                     </div>
                     <div class="form-group">
                         <label data-original-title="Тут можна використовувати html теги" data-toggle="tooltip" data-placement="right" for="text<?= $entry['id'] ?>">Текст <icon class="fa fa-question-circle"></icon></label>

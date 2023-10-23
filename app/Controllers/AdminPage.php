@@ -79,20 +79,6 @@ class Adminpage extends BaseController
         return $this->parser->setData($layout_data)->render('admin/layout');
     }
     
-    public function home() {
-        $layout_data = $this->parent_data;
-        $layout_data['title'] = $this->site_name . ' - Admin';
-        $layout_data['menu_entries'] = $this->menu_data;
-        $page_data = [];
-        try {
-            $layout_data['content'] = $this->parser->setData($page_data)->render('admin/home');
-        } catch (\Throwable $e) {
-            $layout_data['content'] = $e->getMessage();
-        }
-                
-        return $this->parser->setData($layout_data)->render('admin/layout');
-    }
-
     private function simplePage($template_name) {
         $request = \Config\Services::request();
         $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $template_name);
@@ -117,10 +103,43 @@ class Adminpage extends BaseController
         }
         return $this->parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
     }
+        
+    // !!! PAGES SECTION !!!
+    
+    public function home() {
+        $layout_data = $this->parent_data;
+        $layout_data['title'] = $this->site_name . ' - Admin';
+        $layout_data['menu_entries'] = $this->menu_data;
+        $page_data = [];
+        try {
+            $layout_data['content'] = $this->parser->setData($page_data)->render('admin/home');
+        } catch (\Throwable $e) {
+            $layout_data['content'] = $e->getMessage();
+        }
+        return $this->parser->setData($layout_data)->render('admin/layout');
+    }
     
     private function main() {
         return $this->simplePage('main');
     }
+    
+    private function useful() {
+        return $this->simplePage('useful');
+    }
+    
+    private function contacts() {
+        $page_data = [];
+        return $this->parser->setData($page_data)->render('admin/contacts');
+    }
+    
+    private function settings() {
+        $page_data = [];
+        return $this->parser->setData($page_data)->render('admin/settings');
+    }
+    
+    // !!! END PAGES SECTION !!!
+    
+    // !!! WIDGETS SECTION !!!
     
     private function sliderSave() {
         $request = \Config\Services::request();
@@ -147,23 +166,40 @@ class Adminpage extends BaseController
         $widget_model = new \App\Models\SliderModel();
         $page_data = array_merge($this->parent_data, [
             'widget_entries' => $widget_model->getData(),
+            'widget_name' => 'slider',
         ]);
         return view('admin/widget/slider', $page_data);
     }
-
-
-    private function useful() {
-        return $this->simplePage('useful');
+    
+    private function countersSave() {
+        $request = \Config\Services::request();
+        $id = $request->getVar('id');
+        $max_number = $request->getVar('max_number');
+        $text = $request->getVar('text');
+        $countersModel = new \App\Models\CountersModel();
+        $data = [
+            'max_number' => $max_number,
+            'text' => $text,
+        ];
+        if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+            $img = $request->getFile('image');
+            if (! $img->hasMoved()) {
+                $data['image_name'] = $img->store();
+            }
+        }
+        $countersModel->update($id, $data);
+        session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        return redirect()->to('/admin/counters');
     }
     
-    private function contacts() {
-        $page_data = [];
-        return $this->parser->setData($page_data)->render('admin/contacts');
+    private function counters() {
+        $widget_model = new \App\Models\CountersModel();
+        $page_data = array_merge($this->parent_data, [
+            'widget_entries' => $widget_model->getData(),
+            'widget_name' => 'counters',
+        ]);
+        return view('admin/widget/counters', $page_data);
     }
     
-    private function settings() {
-        $page_data = [];
-        return $this->parser->setData($page_data)->render('admin/settings');
-    }
-    
+    // !!! END WIDGETS SECTION !!!
 }
