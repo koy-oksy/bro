@@ -21,7 +21,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <img src="<?= $fimg ?>/<?= $entry['image_name'] ?>" class="img-fluid"/>
+                    <img src="<?= $uploads ?>/<?= $entry['image_name'] ?>" class="img-fluid"/>
                     <input type="hidden" name="id" value="<?= $entry['id'] ?>" />
                     <div class="ln_solid"></div>
                     <div class="form-group">

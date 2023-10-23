@@ -17,20 +17,14 @@ class Image extends BaseController
         parent::initController($request, $response, $logger);
     }
     
-    public function index($image_type, $image_name): string
+    public function index($image_date, $image_name): string
     {
-        switch ($image_type) {
-            case 'uploads':
-                $path = WRITEPATH . 'uploads/';
-                break;
-            default:
-                $path = base_url('img');
-        }
-        $image = file_get_contents($path . $image_name);
+        $path = sprintf("%suploads/%s/%s", WRITEPATH, $image_date, $image_name);
+        $image = fopen($path, 'rb');
         header("Content-Type: image/webp");
-        header("Content-Length: " . filesize($path . $image_name));
-        echo $image;
-        return true;
+        header("Content-Length: " . filesize($path));
+        fpassthru($image);
+        exit;
     }
     
 }

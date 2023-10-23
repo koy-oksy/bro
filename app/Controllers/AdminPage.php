@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Files\File;
 use Psr\Log\LoggerInterface;
 
 class Adminpage extends BaseController
@@ -34,6 +35,7 @@ class Adminpage extends BaseController
             'js' => base_url('admin/js'),
             'img' => base_url('admin/img'),
             'fimg' => base_url('img'),
+            'uploads' => base_url('image'),
             'admin' => site_url('admin'),
             'vendors' => base_url('admin/vendors'),
             'message' => '',
@@ -82,7 +84,7 @@ class Adminpage extends BaseController
     private function simplePage($template_name) {
         $request = \Config\Services::request();
         $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $template_name);
-        $template_file = new \CodeIgniter\Files\File($template_path);
+        $template_file = new File($template_path);
         if ($template_file->isWritable()) {
             if ($request->getMethod() === 'post') {
                 $template_code = $request->getVar('template_code');
@@ -111,15 +113,21 @@ class Adminpage extends BaseController
     private function slider() {
         $request = \Config\Services::request();
         if ($request->getMethod() === 'post') {
+            $id = $request->getVar('id');
             $caption = $request->getVar('caption');
             $text = $request->getVar('text');
-            $img = $request->getFile('image');
-            $id = $request->getFile('id');
-            if ($img->hasMoved()) {
-                $filepath = WRITEPATH . 'uploads/' . $img->store();
-                $data = ['uploaded_fileinfo' => new \CodeIgniter\Files\File($filepath)];
-                var_dump($data); die;
+            $sliderModel = new \App\Models\SliderModel();
+            $data = [
+                'caption' => $caption,
+                'text' => $text,
+            ];
+            if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+                $img = $request->getFile('image');
+                if (! $img->hasMoved()) {
+                    $data['image_name'] = $img->store();
+                }
             }
+            $sliderModel->update($id, $data);
             session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
         }
         $widget_model = new \App\Models\SliderModel();

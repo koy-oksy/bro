@@ -26,7 +26,7 @@ class Staticpage extends BaseController
             'js' => base_url('js'),
             'img' => base_url('img'),
             'site' => site_url(),
-            'uploads' => base_url(WRITEPATH . 'uploads/'),
+            'uploads' => base_url("image"),
         ];
         $this->parent_data['slider'] = $this->connectWidget('slider');
         $this->parent_data['counters'] = $this->connectWidget('counters');
