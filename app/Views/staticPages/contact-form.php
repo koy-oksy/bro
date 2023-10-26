@@ -1,5 +1,5 @@
 <div class="ftco-blocks-cover-1">
-    <div class="site-section-cover overlay" style="background-image: url('{img}/contact.webp')">
+    <div class="site-section-cover overlay" style="background-image: url('<?= $img ?>/contact.webp')">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-md-5" data-aos="fade-up">
@@ -25,7 +25,12 @@
 
         <div class="row">
             <div class="col-lg-8 mb-5">
-                <form action="{site}/page/contact-form" method="post">
+                <?php if (session()->has('frontend_message_controller')) : ?>
+                <div class="alert alert-success">
+                <?= session()->getFlashdata('frontend_message_controller'); ?>
+                </div>
+                <?php endif; ?>
+                <form action="<?= site_url('submit/contactFormSubmit') ?>" method="post">
                     <div class="form-group row">
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="username" placeholder="Як вас звуть?" required>

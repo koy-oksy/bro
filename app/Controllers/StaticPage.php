@@ -93,46 +93,54 @@ class Staticpage extends BaseController
         $layout_data['tags'] = $row->tags;
         $layout_data['menu_entries'] = $this->menu_data;
 
-        $validation = \Config\Services::validation();
-        
-//        $page_data['validation']
-        
-        // we check if user did POST request by submitting form
-        if ($this->request->is('post')) {
-            // we remove non alphanumeric characters from $page variable
-            $form_handler = preg_replace( '/[\W]/', '', $page);
-            // we call method to handle form submit
-            $validation =  $this->$form_handler();
-            
-//            $page_data['validation'] =
-            
+        if ($row->tpl_type === 'parser') {
+            $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
+        } else {
+            $layout_data['content'] = view('staticPages/' . $row->tpl_name, $page_data);
         }
-
-        $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
 
         return $parser->setData($layout_data)->render('layout');
     }
-
-    private function contactform()
+    
+    public function submit($page) {
+        if ($page) {
+            $this->$page();
+        }
+        return redirect()->to($this->request->getUserAgent()->getReferrer());
+    }
+    
+    public function contactFormSubmit()
     {
-
         $rules = [
-            'name' => 'required|min_length[3]',
-            'email' => 'required|valid_email',
-            'phone' => 'required|numeric|max_length[10]'
+            'username' => [
+                'label'  => "Ім'я",
+                'rules'  => 'required|min_length[3]',
+                'errors' => [
+                    'min_length' => "Ваше {field} занадто коротке. Будь ласка вкажіть довше?",
+                    'required' => "Ми не приймаємо звернень від анонімусів )",
+                ],
+            ],
+            'phone' => [
+                'label'  => "Телефон",
+                'rules'  => 'required|max_length[10]',
+                'errors' => [
+                    'min_length' => "Ваш {field} занадто короткий. Будь ласка вкажіть довший?",
+                    'required' => "Ми не приймаємо звернень від анонімусів )",
+                ],
+            ],
         ];
-
+        
         if ($this->validate($rules)) {
-            $formModel = new FormModel();
-            $data = [
-                'name' => $this->request->getVar('name'),
-                'email'  => $this->request->getVar('email'),
-                'phone'  => $this->request->getVar('phone'),
-            ];
-            $formModel->save($data);
-            return redirect()->to('/page/contact-form');
+            // if we are here, we passed the validation
+            $username = $this->request->getVar('username');
+            $text = $this->request->getVar('text');
+            $phone = $this->request->getVar('phone');
+            
+            // !!!! Кіса тут вставляй код для відправки повідомлення в телеграм !!!! Вище 3 змінні з данними юзера
+            
+            session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми вам передзвонимо найближчим часом!");
         } else {
-            return $this->validator;
+            session()->setFlashData("frontend_message_controller", $this->validator->listErrors());
         }
     }
 }
