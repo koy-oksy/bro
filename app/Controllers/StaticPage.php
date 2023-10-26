@@ -109,23 +109,29 @@ class Staticpage extends BaseController
         return redirect()->to($this->request->getUserAgent()->getReferrer());
     }
     
-    public function contactFormSubmit()
+    private function contactFormSubmit()
     {
+        $min_length_message = "Ваше {field} занадто короткий. Будь ласка вкажіть довший?";
         $rules = [
             'username' => [
                 'label'  => "Ім'я",
                 'rules'  => 'required|min_length[3]',
                 'errors' => [
-                    'min_length' => "Ваше {field} занадто коротке. Будь ласка вкажіть довше?",
-                    'required' => "Ми не приймаємо звернень від анонімусів )",
+                    'min_length' => $min_length_message,
                 ],
             ],
             'phone' => [
                 'label'  => "Телефон",
                 'rules'  => 'required|max_length[10]',
                 'errors' => [
-                    'min_length' => "Ваш {field} занадто короткий. Будь ласка вкажіть довший?",
-                    'required' => "Ми не приймаємо звернень від анонімусів )",
+                    'min_length' => $min_length_message,
+                ],
+            ],
+            'text' => [
+                'label'  => "Текст Повідомлення",
+                'rules'  => 'required|min_length[10]',
+                'errors' => [
+                    'min_length' => $min_length_message,
                 ],
             ],
         ];
@@ -138,8 +144,9 @@ class Staticpage extends BaseController
             
             // !!!! Кіса тут вставляй код для відправки повідомлення в телеграм !!!! Вище 3 змінні з данними юзера
             
-            session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми вам передзвонимо найближчим часом!");
+            session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми Вам передзвонимо найближчим часом!");
         } else {
+            // if we are here validation was failed and we transfer error messages to UI
             session()->setFlashData("frontend_message_controller", $this->validator->listErrors());
         }
     }
