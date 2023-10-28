@@ -1,2 +1,6 @@
+/writable/logs/*
+/writable/cache/*
+/writable/debugbar/*
+/writable/session/*
 /app/Config/Database.php
 /app/Config/App.php
