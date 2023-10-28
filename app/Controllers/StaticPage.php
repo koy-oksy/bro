@@ -6,6 +6,11 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+define('TELEGRAM_TOKEN', '6962810540:AAFYZZ0dWuOi5uqqmPGQXBKoEhGQEiXLL-8');
+
+// сюда нужно вписать ваш внутренний айдишник, свой айдишник в телеграмм
+define('TELEGRAM_CHATID', '559455901');
+
 class Staticpage extends BaseController
 {
 
@@ -84,6 +89,7 @@ class Staticpage extends BaseController
         return redirect()->to($this->request->getUserAgent()->getReferrer());
     }
 
+
     private function contactFormSubmit()
     {
         $min_length_message = "Ваше {field} занадто короткий. Будь ласка вкажіть довший?";
@@ -119,7 +125,10 @@ class Staticpage extends BaseController
 
             // !!!! Кіса тут вставляй код для відправки повідомлення в телеграм !!!! Вище 3 змінні з данними юзера
 
+            $message =  ' Нове повідомлення '  . $username  . $text  . $phone;
 
+
+            $this->message_to_telegram($message);
 
 
             session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми Вам передзвонимо найближчим часом!");
@@ -127,5 +136,23 @@ class Staticpage extends BaseController
             // if we are here validation was failed and we transfer error messages to UI
             session()->setFlashData("frontend_message_controller", $this->validator->listErrors());
         }
+    }
+    function message_to_telegram($text)
+    {
+        $ch = curl_init();
+        curl_setopt_array(
+            $ch,
+            array(
+                CURLOPT_URL => 'https://api.telegram.org/bot' . TELEGRAM_TOKEN . '/sendMessage',
+                CURLOPT_POST => TRUE,
+                CURLOPT_RETURNTRANSFER => TRUE,
+                CURLOPT_TIMEOUT => 10,
+                CURLOPT_POSTFIELDS => array(
+                    'chat_id' => TELEGRAM_CHATID,
+                    'text' => $text,
+                ),
+            )
+        );
+        curl_exec($ch);
     }
 }
