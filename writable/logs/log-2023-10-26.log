@@ -1,0 +1,139 @@
+INFO - 2023-10-26 09:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 09:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 09:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 09:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 09:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 09:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 09:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-26 10:29:58 --> Class "App\Controllers\ContactFormModel" not found
+in APPPATH\Controllers\StaticPage.php on line 120.
+ 1 APPPATH\Controllers\StaticPage.php(107): App\Controllers\Staticpage->contactFormSubmit()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->submit('contactFormSubmit')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 10:30:44 --> Class "App\Controllers\App\Models\ContactFormModel" not found
+in APPPATH\Controllers\StaticPage.php on line 120.
+ 1 APPPATH\Controllers\StaticPage.php(107): App\Controllers\Staticpage->contactFormSubmit()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->submit('contactFormSubmit')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 10:30:53 --> Allowed fields must be specified for model: "App\Models\ContactFormModel"
+in SYSTEMPATH\Model.php on line 736.
+ 1 SYSTEMPATH\Model.php(736): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\ContactFormModel')
+ 2 SYSTEMPATH\BaseModel.php(763): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 4 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 5 APPPATH\Controllers\StaticPage.php(126): CodeIgniter\BaseModel->save([...])
+ 6 APPPATH\Controllers\StaticPage.php(107): App\Controllers\Staticpage->contactFormSubmit()
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->submit('contactFormSubmit')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 10:33:17 --> Allowed fields must be specified for model: "App\Models\ContactFormModel"
+in SYSTEMPATH\Model.php on line 736.
+ 1 SYSTEMPATH\Model.php(736): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\ContactFormModel')
+ 2 SYSTEMPATH\BaseModel.php(763): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 4 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 5 APPPATH\Controllers\StaticPage.php(126): CodeIgniter\BaseModel->save([...])
+ 6 APPPATH\Controllers\StaticPage.php(107): App\Controllers\Staticpage->contactFormSubmit()
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->submit('contactFormSubmit')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 10:33:34 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(635): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\StaticPage.php(126): CodeIgniter\BaseModel->save([...])
+ 7 APPPATH\Controllers\StaticPage.php(107): App\Controllers\Staticpage->contactFormSubmit()
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->submit('contactFormSubmit')
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 10:33:51 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(635): CodeIgniter\Database\BaseConnection->table('')
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\StaticPage.php(126): CodeIgniter\BaseModel->save([...])
+ 7 APPPATH\Controllers\StaticPage.php(107): App\Controllers\Staticpage->contactFormSubmit()
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->submit('contactFormSubmit')
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-26 10:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 10:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:06:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:06:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-26 11:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-26 13:09:20 --> Invalid file: "D:\xampp2\htdocs\dev\app\Config/../Views\staticPages/carpatian.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\Parser.php(119): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('D:\\xampp2\\htdocs\\dev\\app\\Config/../Views\\staticPages/carpatian.php')
+ 2 APPPATH\Controllers\StaticPage.php(97): CodeIgniter\View\Parser->render('staticPages/carpatian.php')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->index('carpatian-hikes')
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 13:22:46 --> Invalid file: "D:\xampp2\htdocs\dev\app\Config/../Views\staticPages/carpatian.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\Parser.php(119): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('D:\\xampp2\\htdocs\\dev\\app\\Config/../Views\\staticPages/carpatian.php')
+ 2 APPPATH\Controllers\StaticPage.php(97): CodeIgniter\View\Parser->render('staticPages/carpatian.php')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Staticpage->index('carpatian-hikes')
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staticpage))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 13:26:34 --> Too few arguments to function App\Controllers\Hike::index(), 1 passed in D:\xampp2\htdocs\dev\system\CodeIgniter.php on line 919 and exactly 2 expected
+in APPPATH\Controllers\Hike.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Hike->index('carpatian')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hike))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 13:31:21 --> get_menu(): Return value must be of type string, array returned
+in APPPATH\Helpers\menu_helper.php on line 8.
+ 1 APPPATH\Controllers\StaticPage.php(33): get_menu()
+ 2 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 13:59:22 --> Call to undefined function App\Controllers\get_menu()
+in APPPATH\Controllers\Hike.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Hike->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 13:59:36 --> App\Controllers\Hike::index(): Return value must be of type string, null returned
+in APPPATH\Controllers\Hike.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Hike->index('foreign')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hike))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-26 13:59:52 --> Undefined variable $row
+in APPPATH\Controllers\Hike.php on line 53.
+ 1 APPPATH\Controllers\Hike.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'D:\\xampp2\\htdocs\\dev\\app\\Controllers\\Hike.php', 53)
+ 2 APPPATH\Controllers\Hike.php(37): App\Controllers\Hike->carpatian(null)
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Hike->index('carpatian')
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hike))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

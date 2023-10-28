@@ -1,0 +1,9 @@
+__ci_last_regenerate|i:1698318390;_ci_previous_url|s:34:"http://localhost/page/contact-form";frontend_message_controller|s:308:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Ваше Ім&#039;я занадто коротке. Будь ласка вкажіть довше?</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:1:{s:27:"frontend_message_controller";s:3:"old";}

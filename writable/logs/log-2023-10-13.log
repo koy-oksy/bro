@@ -1,0 +1,1290 @@
+CRITICAL - 2023-10-13 08:46:13 --> Undefined property: App\Controllers\Adminpage::$slider
+in APPPATH\Controllers\AdminPage.php on line 112.
+ 1 APPPATH\Controllers\AdminPage.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Adminpage::$slider', 'D:\\xampp2\\htdocs\\dev\\app\\Controllers\\AdminPage.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Adminpage->widget('slider')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adminpage))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 11:57:12 --> Class "App\Controllers\SliderModel" not found
+in APPPATH\Controllers\StaticPage.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:35:35 --> Class "SliderModel" not found
+in APPPATH\Controllers\StaticPage.php on line 67.
+ 1 APPPATH\Controllers\StaticPage.php(32): App\Controllers\Staticpage->connectWidget('slider')
+ 2 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 3 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:57:06 --> You have a syntax error in your Parser tags: "<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>"
+in SYSTEMPATH\View\Parser.php on line 462.
+ 1 SYSTEMPATH\View\Parser.php(462): CodeIgniter\View\Exceptions\ViewException::forTagSyntaxError('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:57:17 --> You have a syntax error in your Parser tags: "<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if (text): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>"
+in SYSTEMPATH\View\Parser.php on line 462.
+ 1 SYSTEMPATH\View\Parser.php(462): CodeIgniter\View\Exceptions\ViewException::forTagSyntaxError('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if (text): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if (text): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if text}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:57:26 --> You have a syntax error in your Parser tags: "<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text !== ''): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>"
+in SYSTEMPATH\View\Parser.php on line 462.
+ 1 SYSTEMPATH\View\Parser.php(462): CodeIgniter\View\Exceptions\ViewException::forTagSyntaxError('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text !== \'\'): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text !== \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text !== \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:57:30 --> You have a syntax error in your Parser tags: "<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text != ''): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>"
+in SYSTEMPATH\View\Parser.php on line 462.
+ 1 SYSTEMPATH\View\Parser.php(462): CodeIgniter\View\Exceptions\ViewException::forTagSyntaxError('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text != \'\'): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text != \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text != \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:57:56 --> You have a syntax error in your Parser tags: "<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if (($text != '')): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>"
+in SYSTEMPATH\View\Parser.php on line 462.
+ 1 SYSTEMPATH\View\Parser.php(462): CodeIgniter\View\Exceptions\ViewException::forTagSyntaxError('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if (($text != \'\')): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if (($text != \'\')): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if ($text != \'\')}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:58:29 --> You have a syntax error in your Parser tags: "<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text != ''): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>"
+in SYSTEMPATH\View\Parser.php on line 462.
+ 1 SYSTEMPATH\View\Parser.php(462): CodeIgniter\View\Exceptions\ViewException::forTagSyntaxError('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            if ($text != \'\'): 
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text != \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text != \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {/if}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:59:02 --> Undefined variable $text
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $text', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            <?php endif; ?>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {endif}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:59:11 --> Undefined variable $text
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $text', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if (($text)): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            <?php endif; ?>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if ($text)}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {endif}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:59:21 --> Undefined variable $text
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $text', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text !== \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            <?php endif; ?>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text !== \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {endif}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:59:26 --> Undefined constant "text"
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458): eval()
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if (text !== \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            <?php endif; ?>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if text !== \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {endif}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 12:59:34 --> Undefined variable $text
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $text', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text != \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            <?php endif; ?>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text != \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {endif}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 13:00:33 --> Undefined variable $text
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $text', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text == \'\'): ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            <?php endif; ?>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text == \'\'}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+            {endif}
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 13:02:09 --> Undefined variable $role
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($role==\'admin\'): ?>
+                <h1>Welcome, Admin!</h1>
+            <?php endif; ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $role==\'admin\'}
+                <h1>Welcome, Admin!</h1>
+            {endif}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 13:02:14 --> Undefined variable $text
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458) : eval()'d code(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $text', 'D:\\xampp2\\htdocs\\dev\\system\\View\\Parser.php(458) : eval()\'d code', 11)
+ 2 SYSTEMPATH\View\Parser.php(458): eval()
+ 3 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text==\'admin\'): ?>
+                <h1>Welcome, Admin!</h1>
+            <?php endif; ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 4 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text==\'admin\'}
+                <h1>Welcome, Admin!</h1>
+            {endif}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 5 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 6 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 7 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-13 13:04:22 --> Undefined constant "text"
+in SYSTEMPATH\View\Parser.php(458) : eval()'d code on line 11.
+ 1 SYSTEMPATH\View\Parser.php(458): eval()
+ 2 SYSTEMPATH\View\Parser.php(229): CodeIgniter\View\Parser->parseConditionals('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            <?php if ($text=text): ?>
+                <h1>Welcome, Admin!</h1>
+            <?php endif; ?>
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>')
+ 3 SYSTEMPATH\View\Parser.php(128): CodeIgniter\View\Parser->parse('<div id="carouselExampleControls" class="carousel slide hotfix" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {widget_entries}
+        <li data-target="#carousel{id}" data-slide-to="{id}" class="{special_class}"></li>
+        {/widget_entries}
+    </ol>
+    <div class="carousel-inner">
+    {widget_entries}
+        <div class="carousel-item {special_class}">
+            <img src="{img}/{image_name}" class="d-block w-100" alt="{image}">
+            {if $text=text}
+                <h1>Welcome, Admin!</h1>
+            {endif}
+            <div class="carousel-caption d-md-block">
+                {!text!}
+            </div>
+        </div>
+    {/widget_entries}
+    </div>
+    <div class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Попереднє</span>
+    </div>
+    <div class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Наступне</span>
+    </div>
+</div>', [...], null)
+ 4 APPPATH\Controllers\StaticPage.php(69): CodeIgniter\View\Parser->render('staticPages/widget/slider.php')
+ 5 APPPATH\Controllers\StaticPage.php(30): App\Controllers\Staticpage->connectWidget('slider')
+ 6 SYSTEMPATH\CodeIgniter.php(892): App\Controllers\Staticpage->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
