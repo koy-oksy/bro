@@ -19,7 +19,7 @@ class Staticpage extends BaseController
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-        
+
         $this->site_name = get_config('site_name');
         $this->parent_data = [
             'css' => base_url('css'),
@@ -32,8 +32,9 @@ class Staticpage extends BaseController
         $this->parent_data['counters'] = $this->connectWidget('counters');
         $this->parent_data['menu_entries'] = get_menu();
     }
-    
-    private function connectWidget($widget_name = false) {
+
+    private function connectWidget($widget_name = false)
+    {
         if (!$widget_name) {
             return '';
         }
@@ -74,14 +75,15 @@ class Staticpage extends BaseController
 
         return $parser->setData($layout_data)->render('layout');
     }
-    
-    public function submit($page) {
+
+    public function submit($page)
+    {
         if ($page) {
             $this->$page();
         }
         return redirect()->to($this->request->getUserAgent()->getReferrer());
     }
-    
+
     private function contactFormSubmit()
     {
         $min_length_message = "Ваше {field} занадто короткий. Будь ласка вкажіть довший?";
@@ -108,15 +110,16 @@ class Staticpage extends BaseController
                 ],
             ],
         ];
-        
+
         if ($this->validate($rules)) {
             // if we are here, we passed the validation
             $username = $this->request->getVar('username');
             $text = $this->request->getVar('text');
             $phone = $this->request->getVar('phone');
-            
+
             // !!!! Кіса тут вставляй код для відправки повідомлення в телеграм !!!! Вище 3 змінні з данними юзера
-            
+
+
             session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми Вам передзвонимо найближчим часом!");
         } else {
             // if we are here validation was failed and we transfer error messages to UI
