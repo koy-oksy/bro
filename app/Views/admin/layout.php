@@ -87,8 +87,8 @@
                                 <ul class="nav side-menu">
                                     <li><a><i class="fa fa-table"></i> Походи <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="{admin}/carpatian-hikes">Походи в Карпати</a></li>
-                                            <li><a href="{admin}/foreign-hikes">Мандрівки закордон</a></li>
+                                            <li><a href="{admin}/carpatianhikes">Походи в Карпати</a></li>
+                                            <li><a href="{admin}/foreignhikes">Мандрівки закордон</a></li>
                                         </ul>
                                     </li>
                                 </ul>

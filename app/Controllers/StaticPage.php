@@ -9,7 +9,7 @@ use Psr\Log\LoggerInterface;
 class Staticpage extends BaseController
 {
 
-    protected $helpers = ['config'];
+    protected $helpers = ['config', 'menu_helper'];
 
     protected $site_name;
     protected $parent_data;
@@ -30,33 +30,7 @@ class Staticpage extends BaseController
         ];
         $this->parent_data['slider'] = $this->connectWidget('slider');
         $this->parent_data['counters'] = $this->connectWidget('counters');
-        $this->menu_data = [
-            [
-                'active' => 'active',
-                'url' => '/',
-                'name' => 'Головна',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/carpatian-hikes',
-                'name' => 'Походи в Карпати',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/foreign-hikes',
-                'name' => 'Мандрівки закордон',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/useful',
-                'name' => 'Корисне',
-            ],
-            [
-                'active' => '',
-                'url' => '/page/contact-form',
-                'name' => 'Контакти',
-            ],
-        ];
+        $this->parent_data['menu_entries'] = get_menu();
     }
     
     private function connectWidget($widget_name = false) {
@@ -74,7 +48,7 @@ class Staticpage extends BaseController
     public function index($page): string
     {
         $db = \Config\Database::connect();
-        $builder = $db->table('static_page');
+        $builder = $db->table('static-page');
         $builder->where('alias', $page);
         $output = $builder->get();
         $row = $output->getRow();
@@ -91,7 +65,6 @@ class Staticpage extends BaseController
         $layout_data['title'] = $this->site_name . ' - ' . $row->title;
         $layout_data['description'] = $row->description;
         $layout_data['tags'] = $row->tags;
-        $layout_data['menu_entries'] = $this->menu_data;
 
         if ($row->tpl_type === 'parser') {
             $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
