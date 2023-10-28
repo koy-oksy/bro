@@ -41,23 +41,26 @@ class Hike extends BaseController
     }
     
     private function carpatian($hike) {
-        $db = \Config\Database::connect();
-        $builder = $db->table('hikes');
-        
-        
         $parser = \Config\Services::parser();
-
         $page_data = $this->parent_data;
         $layout_data = $this->parent_data;
-
-        $layout_data['title'] = $this->site_name . ' - ' . $row->title;
-        $layout_data['description'] = $row->description;
-        $layout_data['tags'] = $row->tags;
-        $layout_data['menu_entries'] = $this->menu_data;
-
         
-        $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
-        
+        if ($hike) {
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $builder->where('alias', $hike);
+            $output = $builder->get();
+            $row = $output->getRow();
+            $layout_data['title'] = $this->site_name . ' - ' . $row->caption;
+            $layout_data['description'] = $row->description;
+            $layout_data['tags'] = $row->tags;
+            $layout_data['content'] = $parser->setData($page_data)->render('hikes/' . $row->tpl_name);
+        } else {
+            $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
+            $layout_data['description'] = get_config('carpatians-description');
+            $layout_data['tags'] = get_config('carpatians-tags');
+            $layout_data['content'] = view('carpatian', $page_data);
+        }
 
         return $parser->setData($layout_data)->render('layout');
         
