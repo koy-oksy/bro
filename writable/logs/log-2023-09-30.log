@@ -1,7 +1,0 @@
-CRITICAL - 2023-09-30 16:10:48 --> Undefined variable $row
-in APPPATH\Controllers\AdminPage.php on line 70.
- 1 APPPATH\Controllers\AdminPage.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'D:\\xampp2\\htdocs\\dev\\app\\Controllers\\AdminPage.php', 70)
- 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Adminpage->index()
- 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Adminpage))
- 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
