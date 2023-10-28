@@ -120,6 +120,8 @@ class Staticpage extends BaseController
             // !!!! Кіса тут вставляй код для відправки повідомлення в телеграм !!!! Вище 3 змінні з данними юзера
 
 
+
+
             session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми Вам передзвонимо найближчим часом!");
         } else {
             // if we are here validation was failed and we transfer error messages to UI
