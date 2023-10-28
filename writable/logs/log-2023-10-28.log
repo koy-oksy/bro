@@ -7,6 +7,11 @@ in APPPATH\Controllers\Hike.php on line 53.
  5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 INFO - 2023-10-28 10:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-10-28 12:07:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-10-28 12:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-10-28 13:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-28 11:50:57 --> Undefined variable $row
+in APPPATH\Controllers\Hike.php on line 53.
+ 1 APPPATH\Controllers\Hike.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'D:\\xampp\\htdocs\\bro\\app\\Controllers\\Hike.php', 53)
+ 2 APPPATH\Controllers\Hike.php(37): App\Controllers\Hike->carpatian(null)
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Hike->index('carpatian')
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hike))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
