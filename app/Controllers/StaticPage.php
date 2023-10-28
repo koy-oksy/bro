@@ -123,7 +123,7 @@ class Staticpage extends BaseController
             $text = $this->request->getVar('text');
             $phone = $this->request->getVar('phone');
 
-            // !!!! Кіса тут вставляй код для відправки повідомлення в телеграм !!!! Вище 3 змінні з данними юзера
+
 
             $message =  ' Нове повідомлення '  . $username  . $text  . $phone;
 
