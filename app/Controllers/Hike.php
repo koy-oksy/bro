@@ -56,6 +56,10 @@ class Hike extends BaseController
             $layout_data['tags'] = $row->tags;
             $layout_data['content'] = $parser->setData($page_data)->render('hikes/' . $row->tpl_name);
         } else {
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $output = $builder->get();
+            $page_data['hikes'] = $output->getResult();
             $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
             $layout_data['description'] = get_config('carpatians-description');
             $layout_data['tags'] = get_config('carpatians-tags');
