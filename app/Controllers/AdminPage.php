@@ -67,9 +67,11 @@ class Adminpage extends BaseController
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         try {
-            if ($widget) {
+            if ($page === 'carpatianhikes') {
+                $layout_data['content'] = $this->$page($widget);
+            } elseif ($widget) {
                 $layout_data['content'] = $this->$widget();
-            } else {
+            } else  {
                 $layout_data['content'] = $this->$page();
             }
         } catch (\Throwable $e) {
@@ -103,7 +105,24 @@ class Adminpage extends BaseController
         }
         return $this->parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
     }
-        
+    
+    // !!! HIKES SECTION !!!
+    
+    public function carpatianhikes($hike = false) {
+        if ($hike) {
+            
+        } else {
+            $page_data = $this->parent_data;
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $output = $builder->get();
+            $page_data['hikes'] = $output->getResult();
+            return view('admin/hikes', $page_data);
+        }
+    }
+    
+    // !!! END HIKES SECTION !!!
+    
     // !!! PAGES SECTION !!!
     
     public function home() {
