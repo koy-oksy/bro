@@ -40,26 +40,28 @@
             </div>
         </div>
         <div class="row">
+            <!--
             <?php foreach ($hikes as $hike) : ?>
-            
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/kukulmain.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
-                        <a class="px-3 mb-3 category bg-primary" href="<?= site_url('carpatian-hikes/kukul') ?>">Детальніше</a>
-                        <h2 class="mb-1"><?= $hike->caption ?></h2>
+
+                <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                    <div class="listing-item">
+                        <div class="listing-image">
+                            <img src="<?= $img ?>/kukulmain.webp" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="listing-item-content">
+                            <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
+                            <a class="px-3 mb-3 category bg-primary" href="<?= site_url('carpatian-hikes/kukul') ?>">Детальніше</a>
+                            <h2 class="mb-1"><?= $hike->caption ?></h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+
             <?php endforeach ?>
+            -->
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/kukulmain.jpg" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/kukulmain.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
@@ -85,7 +87,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/hoverlamain.jpg" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/hoverlamain.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня</a>
@@ -100,7 +102,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/krunta.jpg" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/krunta.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">17-19 листопада </a>
@@ -114,7 +116,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/kostelrock.jpg" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/kostelrock.webp" alt="Image" class="img-fluid">
 
                     </div>
                     <div class="listing-item-content">
@@ -142,7 +144,7 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/petrosmain.jpg" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/petrosmain.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">дата</a>

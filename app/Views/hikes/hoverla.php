@@ -6,12 +6,13 @@
                     <h2>Некласична Говерла і панорамний Кукул</h2>
                     <p>Дата: 27-29 жовтня</p>
                     <p>Дата: 10-12 листопада</p>
+                    <p>Тривалість 3 дні</p>
                     <p>Кількість учасників - до 12 осіб + гід </p>
                     <p>Вартість: 5600 грн </p>
-                    <button type="button" class="btn btn-light"><a href="https://t.me/sanyasakovets" target="blank">Забронювати місце можна тут </a></button>
+                    <button type="button" class="btn btn-light"><a href="https://t.me/sanyasakovets" target="blank">Забронювати місце можна тут) </a></button>
                 </div>
-                <h4> План по днях</h4>
-                <p>День 1. Доїзд і прогулянка з панорамним видом на Чорногору.</p>
+                <h3> План по днях</h3>
+                <h5>День 1. Доїзд і прогулянка з панорамним видом на Чорногору.</h5>
                 <p>Пройдемо - 10 км. Набір / скидання висоти - 530 м / 530 м.</p>
                 <p>З Луцька виїжджаємо о 5 год ранку замовленим транспортом в напрямку Карпат. У Львові зустрічаємо учасників команди до 7:30, у Франківську - до 10:30. На старт маршруту прибудемо орієнтовно о 13:00. Сьогодні нас чекає пійдом на полонину Закукул, дегустація сиру у пастухів. Після цього прогуляємось на вершинку хребта Кукул з однойменною назвою. Загалом за день пройдемо 10 км і трохи розімнемо ноги перед Говерлою. Після треку заселяємось у затишні будиночки та відпочиваємо, насолоджуючись природою навколо. </p>
             </div>
@@ -26,17 +27,26 @@
 <div class="site-section py-5">
     <div class="container">
         <div class="row align-items-center">
-
-            <div class="col-md-6" data-aos="fade-right">
+            <div class="col-md-8" data-aos="fade-right">
                 <img src="{img}/houseframe.webp" alt="Image" class="img-fluid">
                 <p>Живемо в таких затишних двомісних будиночках з обігрівачами</p>
             </div>
-            <div class="col-md-6" data-aos="fade-right">
+        </div>
+    </div>
+</div>
+
+
+<div class="site-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8" data-aos="fade-right">
                 <img src="{img}/frame.webp" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
 </div>
+
+
 
 <div class="site-section py-5">
     <div class="container">
@@ -58,15 +68,25 @@
 <div class="site-section py-5">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6" data-aos="fade-right">
+            <div class="col-md-10" data-aos="fade-right">
                 <img src="{img}/waterfall.webp" alt="Image" class="img-fluid">
             </div>
-            <div class="col-md-6" data-aos="fade-right">
+        </div>
+    </div>
+</div>
+
+
+<div class="site-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-10" data-aos="fade-right">
                 <img src="{img}/hoverla3.webp" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
 </div>
+
+
 
 <div class="site-section py-5">
     <div class="container">
@@ -138,7 +158,7 @@
         <div class="row">
             <div class="col-md-10">
                 <h5 class="text-bolt">Похідне харчування</h5>
-                <p>
+                <p class="font-italic">
                     Зазвичай у похідний раціон туриста входять крупи, м'ясо, сало, сир, ковбаса, сухофрукти, солодощі, свіжі овочі, супи, чай. В сезон в горах їжа росте під ногами в буквальному сенсі: чорниця, суниця, малина, гриби. Цими запасами підкріпляємось, коли є можливість. Чай з карпатських трав (чорничник, чебрець, м’ята, суничник, малина, іван-чай) відновлює організм. За умови проходження маршруту через полонини будемо смакувати свіжим гуцульським сиром. Точне меню узгоджуємо з групою за декілька днів до старту в приватному чаті.
                 </p>
             </div>
