@@ -44,17 +44,25 @@
 <div class="site-section py-5">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6" data-aos="fade-right">
+            <div class="col-md-8" data-aos="fade-right">
                 <img src="{img}/autumn.webp" alt="Image" class="img-fluid">
                 <p>Осінь на Верховині</p>
             </div>
-            <div class="col-md-6" data-aos="fade-right">
+        </div>
+    </div>
+</div>
+
+<div class="site-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8" data-aos="fade-right">
                 <img src="{img}/dovbushevychambers.webp" alt="Image" class="img-fluid">
                 <p>Довбушеві Комори</p>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="site-section py-5">
     <div class="container">
@@ -113,7 +121,7 @@
         <div class="row">
             <div class="col-md-10">
                 <h5 class="text-bolt">Похідне харчування</h5>
-                <p>
+                <p class="font-italic">
                     Зазвичай у похідний раціон туриста входять крупи, м'ясо, сало, сир, ковбаса, сухофрукти, солодощі, свіжі овочі, супи, чай. В сезон в горах їжа росте під ногами в буквальному сенсі: чорниця, суниця, малина, гриби. Цими запасами підкріпляємось, коли є можливість. Чай з карпатських трав (чорничник, чебрець, м’ята, суничник, малина, іван-чай) відновлює організм. За умови проходження маршруту через полонини будемо смакувати свіжим гуцульським сиром. Точне меню узгоджуємо з групою за декілька днів до старту в приватному чаті.
                 </p>
             </div>
