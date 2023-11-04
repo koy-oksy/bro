@@ -45,7 +45,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6" data-aos="fade-right">
-                <img src="{img}/autumnсarpathians.webp" alt="Image" class="img-fluid">
+                <img src="{img}/autumn.webp" alt="Image" class="img-fluid">
                 <p>Осінь на Верховині</p>
             </div>
             <div class="col-md-6" data-aos="fade-right">
