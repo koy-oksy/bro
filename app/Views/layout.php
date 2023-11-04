@@ -38,7 +38,7 @@
                     <div class="col-3 ">
                         <div class="site-logo">
                             <a href="/" class="font-weight-bold">
-                                <img src="{img}/bro.png" alt="Bro" class="img-fluid">
+                                <img src="{img}/brofooter.webp" alt="Bro" class="img-fluid">
                             </a>
                         </div>
                     </div>

@@ -6,9 +6,10 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+//id бота 
 define('TELEGRAM_TOKEN', '6962810540:AAFYZZ0dWuOi5uqqmPGQXBKoEhGQEiXLL-8');
 
-// сюда нужно вписать ваш внутренний айдишник, свой айдишник в телеграмм
+// твій id
 define('TELEGRAM_CHATID', '559455901');
 
 class Staticpage extends BaseController

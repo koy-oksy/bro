@@ -17,7 +17,6 @@
         <div class="row justify-content-center text-center mb-5">
             <div class="col-md-10">
                 <div class="heading-39101 mb-5">
-                    <span class="backdrop text-center">Контакти</span>
                     <h3>Контакти</h3>
                 </div>
             </div>
@@ -26,9 +25,9 @@
         <div class="row">
             <div class="col-lg-8 mb-5">
                 <?php if (session()->has('frontend_message_controller')) : ?>
-                <div class="alert alert-success">
-                <?= session()->getFlashdata('frontend_message_controller'); ?>
-                </div>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('frontend_message_controller'); ?>
+                    </div>
                 <?php endif; ?>
                 <form action="<?= site_url('submit/contactFormSubmit') ?>" method="post">
                     <div class="form-group row">
@@ -36,7 +35,7 @@
                             <input type="text" class="form-control" name="username" placeholder="Як вас звуть?" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="phone" placeholder="+38-0ХХ-ХХХ-ХХ-ХХ" required>
+                            <input type="text" class="form-control" name="phone" placeholder="0ХХ-ХХХ-ХХ-ХХ" required>
                         </div>
                     </div>
 
