@@ -17,7 +17,7 @@
                     </div>
                     <div class="listing-item-content">
                         <h1 class="px-3 mb-3 category bg-success counter">{max_number}</h1>
-                        <h2 class="mb-1">{text}</h2>
+                        <h2 class="text-white">{text}</h2>
                     </div>
                 </div>
             </div>
