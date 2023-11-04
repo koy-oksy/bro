@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="{img}/55cd4048016a10f979e15.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/55cd4048016a10f979e15.webp" alt="Image" class="img-fluid">
                 <p>Передноворічні кольори Колочави та її околиць</p>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 <p>Відновлюємо сили після виснажливого, але такого захопливого сходження і готуємось до зустрічі Нового Року! Дружньо зустрічаємо 2024 з шампанським та мільйонами зірок над головою серед зимових Карпат💥 </p>
             </div>
             <div class="col-md-6" data-aos="fade-right">
-                <img src="{img}/b7070287765f2b8f8b6bd.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/b7070287765f2b8f8b6bd.webp" alt="Image" class="img-fluid">
                 <p>Новорічна Колочава у долині та стежка до Стримби (як бачите - минулого року було без снігу)</p>
             </div>
         </div>
@@ -72,7 +72,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/44a012016c8919cbb88cc.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/44a012016c8919cbb88cc.webp" alt="Image" class="img-fluid">
                 <p>Та ж красивезна стежина перед заходом у не менш гарний буковий ліс</p>
             </div>
         </div>
@@ -83,7 +83,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/85084f316fd13ebc38107.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/85084f316fd13ebc38107.webp" alt="Image" class="img-fluid">
                 <p>А куди ж без командних фоточок на вершині?</p>
             </div>
         </div>
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="{img}/68818163604d40e4b2b0c.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/68818163604d40e4b2b0c.webp" alt="Image" class="img-fluid">
                 <p>Ранкова полонина у перших променях сонця</p>
             </div>
         </div>
@@ -113,7 +113,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/9546c582539d88bd125db.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/9546c582539d88bd125db.webp" alt="Image" class="img-fluid">
                 <p>Командне фото на озері </p>
             </div>
         </div>
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="{img}/7958f002f70280f21815b.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/7958f002f70280f21815b.webp" alt="Image" class="img-fluid">
                 <p>Локація, що красива у кожну пору року</p>
             </div>
         </div>
@@ -142,7 +142,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/4eabe93a36fc9328aaa30.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/4eabe93a36fc9328aaa30.webp" alt="Image" class="img-fluid">
                 <p>Водне дзеркало водосховиша, на дальньому плані гора Дарвайка (1502 м)</p>
             </div>
         </div>
@@ -153,7 +153,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/c2f26a9d9c2913be90704.png" alt="Image" class="img-fluid">
+                <img src="{img}/c2f26a9d9c2913be90704.webp" alt="Image" class="img-fluid">
                 <p>Зимовий Синевир</p>
             </div>
         </div>

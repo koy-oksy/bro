@@ -19,7 +19,7 @@
                 <p>Зустрічаємось в селищі Ясіня до 11 год ранку. Сюди можна доїхати без проблем потягом з Києва, Львова, Франківська, Одеси, Тернополя та інших міст. Беремо локальний трансфер та їдемо на старт маршруту декілька кілометрів. Починаємо підйом, який місцями хоч і досить крутий, та з чудовими краєвидами. На місці, біля колиби заготовляємо дрова, влаштовуємо побут та відпочиваємо. На вечерю - традиційно сирний суп і теплі розмови під тріск дров)</p>
             </div>
             <div class="col-md-6" data-aos="fade-right">
-                <img src="{img}/crable.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/crable.webp" alt="Image" class="img-fluid">
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8" data-aos="fade-right">
-                <img src="{img}/forest.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/forest.webp" alt="Image" class="img-fluid">
                 <p>Якщо пофартить - в лісі буде магія</p>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8" data-aos="fade-right">
-                <img src="{img}/nightsky.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/nightsky.webp" alt="Image" class="img-fluid">
                 <p>Нічне небо в зимових горах - найкрасивіше!</p>
             </div>
         </div>
@@ -60,7 +60,7 @@
                 <p>Залишаємо речі та з легким рюкзаком йдемо на сусідню вершину. Швидкість та маршрут залежить від рівня снігу, тому це вирішимо по ситуації. Обідаємо на маршруті з гарячим чаєм. Термос взимку - одне з основних джерел тепла. Повертаємось в колибу та граємо в ігри. Якщо пофартить - зоряне небо подарує неймовірне видовище!</p>
             </div>
             <div class="col-md-6" data-aos="fade-right">
-                <img src="{img}/01d5b8a9aab0efc7ed3ed.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/01d5b8a9aab0efc7ed3ed.webp" alt="Image" class="img-fluid">
                 <p>Колибки на полонині</p>
             </div>
         </div>
@@ -72,7 +72,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/df0017ae4d088e054718f.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/df0017ae4d088e054718f.webp" alt="Image" class="img-fluid">
                 <p>Другий день - одне задоволення, бо з легким рюкзачком і без великих наборів висоти</p>
             </div>
         </div>
@@ -83,7 +83,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/cafbb4ea5127bd5746a21.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/cafbb4ea5127bd5746a21.webp" alt="Image" class="img-fluid">
                 <p>Вершинка невисока, але дужееее панорамна!</p>
             </div>
         </div>
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="{img}/93ae298736f3f0ba55727.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/93ae298736f3f0ba55727.webp" alt="Image" class="img-fluid">
                 <p>Ранкова полонина у перших променях сонця</p>
             </div>
         </div>
@@ -112,7 +112,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-10" data-aos="fade-right">
-                <img src="{img}/0156fde994fde82e408b0.jpg" alt="Image" class="img-fluid">
+                <img src="{img}/0156fde994fde82e408b0.webp" alt="Image" class="img-fluid">
                 <p>Заходимо у море?)</p>
             </div>
         </div>
