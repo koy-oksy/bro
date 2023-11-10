@@ -104,13 +104,41 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/montenegrin.webp" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/IMG_8013.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
                         <a class="px-3 mb-3 category bg-success" href="">24-26 листопада</a>
                         <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/brebeneskul') ?>">Детальніше</a>
                         <p class="text-success">Ціна 5900 грн</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="<?= $img ?>/IMG_8315.webp" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="listing-item-content">
+                        <h2 class="mb-1">Зимовий похід з ночівлею в колибі</h2>
+                        <a class="px-3 mb-3 category bg-success" href="">1-3 грудня</a>
+                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/colibbing') ?>">Детальніше</a>
+                        <p class="text-success">Ціна 3500 грн</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="<?= $img ?>/IMG_9202.webp" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="listing-item-content">
+                        <h2 class="mb-1">Новий Рік у Колочаві + Стримба</h2>
+                        <a class="px-3 mb-3 category bg-success" href="">30 грудня - 2 січня</a>
+                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/newyearkolochava') ?>">Детальніше</a>
+                        <p class="text-success">Ціна 10500 -11000 грн</p>
                     </div>
                 </div>
             </div>

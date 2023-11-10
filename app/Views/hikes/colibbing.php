@@ -5,7 +5,6 @@
                 <div class="heading-39101 mb-5">
                     <h2>Зимовий похід з ночівлею в колибі</h2>
                     <p>Дати 2023: 1-3 грудня</p>
-                    <p>Тривалість 3 дні</p>
                     <p>Кількість учасників - до 8 осіб + гід </p>
                     <p>Вартість: 3500 грн </p>
                     <button type="button" class="btn btn-light"><a href="https://t.me/sanyasakovets" target="blank">Забронювати місце можна тут) </a></button>

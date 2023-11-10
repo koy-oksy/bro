@@ -5,7 +5,6 @@
                 <div class="heading-39101 mb-5">
                     <h2>По краю зими: похід на Кринту-Скупову</h2>
                     <p>Дата - 17-19 листопада</p>
-                    <p> Тривалість: 3 дні </p>
                     <p>Складність - 6 з 10.</p>
                     <p>Вартість: 4700 грн </p>
                     <button type="button" class="btn btn-light"><a href="https://t.me/sanyasakovets" target="blank">Забронювати місце можна тут) </a></button>

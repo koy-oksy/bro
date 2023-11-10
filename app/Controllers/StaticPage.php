@@ -10,7 +10,9 @@ use Psr\Log\LoggerInterface;
 define('TELEGRAM_TOKEN', '6962810540:AAFYZZ0dWuOi5uqqmPGQXBKoEhGQEiXLL-8');
 
 // твій id
-define('TELEGRAM_CHATID', '559455901');
+define('TELEGRAM_CHATID', '404016080');
+//404016080
+
 
 class Staticpage extends BaseController
 {

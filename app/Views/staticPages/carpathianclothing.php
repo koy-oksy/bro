@@ -265,7 +265,7 @@
                     <ul>
                         <li>кішки - для проходження зледенілих схилів;</li>
                     </ul>
-                    <img src="{img}/touristcats.png" alt="Image" class="img-fluid">
+                    <img src="{img}/touristcats.webp" alt="Image" class="img-fluid">
                 </div>
             </div>
             <div class="col-md-2" data-aos="fade-right">
@@ -281,7 +281,7 @@
                 <div class="heading-39101 mb-5">
                     <ul>
                         <li>снігоступи для проходження пухкого снігу; </li>
-                        <img src="{img}/snowshoes.png" alt="Image" class="img-fluid">
+                        <img src="{img}/snowshoes.webp" alt="Image" class="img-fluid">
                         <p class="font-italic">Довго не збирайся і поспи перед мандрівкою, адже про все найнеобхідніше потурбуємось ми)</p>
                     </ul>
                 </div>

@@ -38,9 +38,6 @@
             <div class="col-lg-6 col-md-6 mb-6">
                 <div class="post-entry-1 h-100">
                     <img src="{img}/trip.webp" alt="Image" class="img-fluid">
-                    <div class="post-entry-1-contents">
-                        <h2><a href="">Найближчі походи</a></h2>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-6">
