@@ -142,6 +142,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="<?= $img ?>/6166.webp" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="listing-item-content">
+                        <h2 class="mb-1">Новий Рік у Верховині + Говерла</h2>
+                        <a class="px-3 mb-3 category bg-success" href="">30 грудня 2022 - 2 січня</a>
+                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/newyearverkhovyna') ?>">Детальніше</a>
+                        <p class="text-success">Ціна 10800 -11500 грн</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
