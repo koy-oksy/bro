@@ -4,10 +4,8 @@
             <div class="col-md-8">
                 <div class="heading-39101 mb-5">
                     <h2>Високі Татри Словаччини</h2>
-                    <p>Дата: 2-5 листопада </p>
                     <p>Дата: 23-26 листопада </p>
                     <p>Гід - Таня</p>
-                    <p>Тривалість - 3 дні </p>
                     <p>Вартість - 370 євро</p>
                     <p>Кількість учасників - 7 + гід Таня</p>
                     <button type="button" class="btn btn-light"><a href="https://t.me/sanyasakovets" target="blank">Забронювати місце можна тут </a></button>

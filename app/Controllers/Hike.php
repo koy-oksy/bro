@@ -19,7 +19,7 @@ class Hike extends BaseController
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-        
+
         $this->site_name = get_config('site_name');
         $this->parent_data = [
             'css' => base_url('css'),
@@ -30,7 +30,7 @@ class Hike extends BaseController
         ];
         $this->parent_data['menu_entries'] = get_menu();
     }
-    
+
     public function index($type, $hike = null): string
     {
         if ($type === 'carpatian') {
@@ -39,12 +39,13 @@ class Hike extends BaseController
             return $this->foreign($hike);
         }
     }
-    
-    private function carpatian($hike) {
+
+    private function carpatian($hike)
+    {
         $parser = \Config\Services::parser();
         $page_data = $this->parent_data;
         $layout_data = $this->parent_data;
-        
+
         if ($hike) {
             $db = \Config\Database::connect();
             $builder = $db->table('hike');
@@ -67,12 +68,35 @@ class Hike extends BaseController
         }
 
         return $parser->setData($layout_data)->render('layout');
-        
     }
-    
-    private function foreign($hike) {
-        
-        return "";
+
+    private function foreign($hike)
+    {
+        $parser = \Config\Services::parser();
+        $page_data = $this->parent_data;
+        $layout_data = $this->parent_data;
+
+        if ($hike) {
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $builder->where('alias', $hike);
+            $output = $builder->get();
+            $row = $output->getRow();
+            $layout_data['title'] = $this->site_name . ' - ' . $row->caption;
+            $layout_data['description'] = $row->description;
+            $layout_data['tags'] = $row->tags;
+            $layout_data['content'] = $parser->setData($page_data)->render('hikes/' . $row->tpl_name);
+        } else {
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $output = $builder->get();
+            $page_data['hikes'] = $output->getResult();
+            $layout_data['title'] = $this->site_name . ' - ' . get_config('foreigns-title');
+            $layout_data['description'] = get_config('foreigns-description');
+            $layout_data['tags'] = get_config('foreigns-tags');
+            $layout_data['content'] = view('foreign', $page_data);
+        }
+
+        return $parser->setData($layout_data)->render('layout');
     }
-    
 }

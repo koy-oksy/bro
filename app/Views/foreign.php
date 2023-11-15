@@ -1,5 +1,5 @@
 <div class="ftco-blocks-cover-1">
-    <div class="site-section-cover overlay" style="background-image: url('{img}/trips_abroad.webp')">
+    <div class="site-section-cover overlay" style="background-image: url('<?= $img ?>/trips_abroad.webp')">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-md-5" data-aos="fade-up">
@@ -27,12 +27,11 @@
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="{img}/IMG_4554.png" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/IMG_4554.webp" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
-                        <a class="px-3 mb-3 category bg-success" href="">2-5 листопада </a>
                         <a class="px-3 mb-3 category bg-success" href="">23-26 листопада </a>
-                        <a class="px-3 mb-3 category bg-primary" href="{site}page/slovakia">Детальніше</a>
+                        <a class="px-3 mb-3 category bg-primary" href="<?= site_url('foreign-hikes/slovakia') ?>">Детальніше</a>
                         <h2 class="mb-1"><a href="">Високі Татри Словаччини</a></h2>
                     </div>
                 </div>
