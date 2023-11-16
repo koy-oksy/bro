@@ -23,11 +23,10 @@
             </div>
         </div>
         <div class="row">
-
             <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                 <div class="listing-item">
                     <div class="listing-image">
-                        <img src="<?= $img ?>/IMG_4554.webp" alt="Image" class="img-fluid">
+                        <img src="<?= $img ?>/IMG_4554.png" alt="Image" class="img-fluid">
                     </div>
                     <div class="listing-item-content">
                         <a class="px-3 mb-3 category bg-success" href="">23-26 листопада </a>
@@ -36,6 +35,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
+                <div class="listing-item">
+                    <div class="listing-image">
+                        <img src="<?= $img ?>/IMG_5188.png" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="listing-item-content">
+                        <a class="px-3 mb-3 category bg-success" href="">3-12 лютого</a>
+                        <a class="px-3 mb-3 category bg-primary" href="<?= site_url('foreign-hikes/norway') ?>">Детальніше</a>
+                        <h2 class="mb-1"><a href="">Норвегія. Північне сяйво на Лофотенах та острів Сенья</a></h2>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
