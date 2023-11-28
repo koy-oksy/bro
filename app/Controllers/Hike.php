@@ -9,7 +9,7 @@ use Psr\Log\LoggerInterface;
 class Hike extends BaseController
 {
 
-    protected $helpers = ['config', 'menu'];
+    protected $helpers = ['config', 'menu', 'page'];
 
     protected $site_name;
     protected $parent_data;
@@ -33,13 +33,42 @@ class Hike extends BaseController
 
     public function index($type, $hike = null): string
     {
-        if ($type === 'carpatian') {
-            return $this->carpatian($hike);
+        $parser = \Config\Services::parser();
+        $page_data = $this->parent_data;
+        $layout_data = $this->parent_data;
+        if ($hike) {
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $builder->where('alias', $hike);
+            $output = $builder->get();
+            $row = $output->getRow();
+            $layout_data['title'] = $this->site_name . ' - ' . $row->caption;
+            $layout_data['description'] = $row->description;
+            $layout_data['tags'] = $row->tags;
+            $layout_data['content'] = $parser->setData($page_data)->renderString($row->content);
         } else {
-            return $this->foreign($hike);
-        }
-    }
+            $path = sprintf("%s..%sapp%sviews%shikes%s%s", FCPATH, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $type);
+            $files = array_diff(scandir($path), ['.', '..']);
+            $hikes = [];
+            foreach ($files as $i => $file) {
+                $contents = file_get_contents($path . DIRECTORY_SEPARATOR . $file);
+                if (empty($contents)) {
+                    continue;
+                }
+                $meta = get_meta($contents);
+                $hikes[] = $meta;
+            }
+            die;
+            $page_data['hikes'] = $hikes;
 
+            $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
+            $layout_data['description'] = get_config('carpatians-description');
+            $layout_data['tags'] = get_config('carpatians-tags');
+            $layout_data['content'] = view('carpatian', $page_data);
+        }
+        return $parser->setData($layout_data)->render('layout');
+    }
+    
     private function carpatian($hike)
     {
         $parser = \Config\Services::parser();

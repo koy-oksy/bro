@@ -17,7 +17,6 @@ class Adminpage extends BaseController
     protected $menu_data;
     private $parser;
 
-
     const PATH_TO_VIEWS = '../app/Views/staticPages/';
     
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
@@ -26,7 +25,6 @@ class Adminpage extends BaseController
         parent::initController($request, $response, $logger);
 
         helper(['filesystem', 'form']);
-        
         
         $this->parser = \Config\Services::parser();
         $this->site_name = get_config('site_name');
@@ -67,9 +65,7 @@ class Adminpage extends BaseController
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         try {
-            if ($page === 'carpatianhikes') {
-                $layout_data['content'] = $this->$page($widget);
-            } elseif ($widget) {
+            if ($widget) {
                 $layout_data['content'] = $this->$widget();
             } else  {
                 $layout_data['content'] = $this->$page();
@@ -105,23 +101,6 @@ class Adminpage extends BaseController
         }
         return $this->parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
     }
-    
-    // !!! HIKES SECTION !!!
-    
-    public function carpatianhikes($hike = false) {
-        if ($hike) {
-            
-        } else {
-            $page_data = $this->parent_data;
-            $db = \Config\Database::connect();
-            $builder = $db->table('hike');
-            $output = $builder->get();
-            $page_data['hikes'] = $output->getResult();
-            return view('admin/hikes', $page_data);
-        }
-    }
-    
-    // !!! END HIKES SECTION !!!
     
     // !!! PAGES SECTION !!!
     

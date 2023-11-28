@@ -38,27 +38,19 @@
                             <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>Заголовок</th>
-                                        <th>Аліас</th>
-                                        <th>К-ть учасників</th>
+                                        <th>Заголовок / Аліас</th>
                                         <th>Ціна</th>
-                                        <th>К-ть днів</th>
-                                        <th>Назва шаблону</th>
-                                        <th>Картинка</th>
+                                        <th>Дати</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($hikes as $hike) : ?>
                                     <tr>
-                                        <td><?= $hike->caption ?></td>
-                                        <td><?= $hike->alias ?></td>
-                                        <td><?= $hike->max_participants ?></td>
+                                        <td><?= $hike->caption ?><br><?= $hike->alias ?></td>
                                         <td><?= $hike->price ?></td>
-                                        <td><?= $hike->number_of_days ?></td>
-                                        <td><?= $hike->tpl_name ?></td>
-                                        <td><?= $hike->image_name ? "Є" : "Немає" ?></td>
-                                        <td><a href="<?= site_url('admin/carpatianhikes/' . $hike->alias) ?>">Редагування</a></td>
+                                        <td>24.11 <i class="fa fa-long-arrow-right"></i> 26.11 <i class="fa fa-plus"></i> 24.11 <i class="fa fa-long-arrow-right"></i> 26.11</td>
+                                        <td><a href="<?= site_url(sprintf('admin/hike/%s/%s', $hike->hike_type, $hike->alias)) ?>">Редагування</a></td>
                                     </tr>
                                     <?php endforeach ?>
                                 </tbody>
