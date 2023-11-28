@@ -43,41 +43,37 @@ class Adminhike extends BaseController
         
     }
     
-    public function save($type = false, $hike = false)
+    public function save($type = 'carpatian', $hike = false)
     {
         if ($hike) {
             
         } else {
             
         }
-//        return $this->$method();
     }
     
-    public function index($type = false, $hike = false): string
+    public function index($type = 'carpatian', $hike = false)
     {
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
-        try {
-            $layout_data['content'] = $this->$type($hike);
-        } catch (\Throwable $e) {
-            $layout_data['content'] = $e->getMessage();
-        }
-        return $this->parser->setData($layout_data)->render('admin/layout');
-    }
-    
-    public function carpatian($hike = false) {
+        
         $page_data = $this->parent_data;
         if ($hike) {
-            
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $output = $builder->where(['hike_type' => $type, 'alias' => $hike])->get();
+            $page_data['hike'] = $output->getRow();
+            $layout_data['content'] = view('admin/hike', $page_data);
         } else {
             $db = \Config\Database::connect();
             $builder = $db->table('hike');
-            $output = $builder->get();
+            $output = $builder->where(['hike_type' => $type])->get();
             $page_data['hikes'] = $output->getResult();
-            return view('admin/hikes', $page_data);
+            $layout_data['content'] = view('admin/hikes', $page_data);
         }
         
+        return $this->parser->setData($layout_data)->render('admin/layout');
     }
     
 }

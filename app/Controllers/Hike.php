@@ -58,7 +58,6 @@ class Hike extends BaseController
                 $meta = get_meta($contents);
                 $hikes[] = $meta;
             }
-            die;
             $page_data['hikes'] = $hikes;
 
             $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
@@ -69,63 +68,4 @@ class Hike extends BaseController
         return $parser->setData($layout_data)->render('layout');
     }
     
-    private function carpatian($hike)
-    {
-        $parser = \Config\Services::parser();
-        $page_data = $this->parent_data;
-        $layout_data = $this->parent_data;
-
-        if ($hike) {
-            $db = \Config\Database::connect();
-            $builder = $db->table('hike');
-            $builder->where('alias', $hike);
-            $output = $builder->get();
-            $row = $output->getRow();
-            $layout_data['title'] = $this->site_name . ' - ' . $row->caption;
-            $layout_data['description'] = $row->description;
-            $layout_data['tags'] = $row->tags;
-            $layout_data['content'] = $parser->setData($page_data)->render('hikes/' . $row->tpl_name);
-        } else {
-            $db = \Config\Database::connect();
-            $builder = $db->table('hike');
-            $output = $builder->get();
-            $page_data['hikes'] = $output->getResult();
-            $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
-            $layout_data['description'] = get_config('carpatians-description');
-            $layout_data['tags'] = get_config('carpatians-tags');
-            $layout_data['content'] = view('carpatian', $page_data);
-        }
-
-        return $parser->setData($layout_data)->render('layout');
-    }
-
-    private function foreign($hike)
-    {
-        $parser = \Config\Services::parser();
-        $page_data = $this->parent_data;
-        $layout_data = $this->parent_data;
-
-        if ($hike) {
-            $db = \Config\Database::connect();
-            $builder = $db->table('hike');
-            $builder->where('alias', $hike);
-            $output = $builder->get();
-            $row = $output->getRow();
-            $layout_data['title'] = $this->site_name . ' - ' . $row->caption;
-            $layout_data['description'] = $row->description;
-            $layout_data['tags'] = $row->tags;
-            $layout_data['content'] = $parser->setData($page_data)->render('hikes/' . $row->tpl_name);
-        } else {
-            $db = \Config\Database::connect();
-            $builder = $db->table('hike');
-            $output = $builder->get();
-            $page_data['hikes'] = $output->getResult();
-            $layout_data['title'] = $this->site_name . ' - ' . get_config('foreigns-title');
-            $layout_data['description'] = get_config('foreigns-description');
-            $layout_data['tags'] = get_config('foreigns-tags');
-            $layout_data['content'] = view('foreign', $page_data);
-        }
-
-        return $parser->setData($layout_data)->render('layout');
-    }
 }

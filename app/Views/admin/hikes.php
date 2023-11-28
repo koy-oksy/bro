@@ -1,13 +1,3 @@
-<div class="page-title">
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            <h3>Вітаю!</h3>
-        </div>
-    </div>
-</div>
-
-<div class="clearfix"></div>
-
 <div class="row">
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
@@ -49,7 +39,7 @@
                                     <tr>
                                         <td><?= $hike->caption ?><br><?= $hike->alias ?></td>
                                         <td><?= $hike->price ?></td>
-                                        <td>24.11 <i class="fa fa-long-arrow-right"></i> 26.11 <i class="fa fa-plus"></i> 24.11 <i class="fa fa-long-arrow-right"></i> 26.11</td>
+                                        <td>1-2 грудня / 16-17 грудня / 20-21 січня / 10-11 лютого</td>
                                         <td><a href="<?= site_url(sprintf('admin/hike/%s/%s', $hike->hike_type, $hike->alias)) ?>">Редагування</a></td>
                                     </tr>
                                     <?php endforeach ?>
