@@ -79,7 +79,7 @@
                                 Обкладинка
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <img class="img-fluid" src="<?= site_url('image/' . $hike->image_name ) ?>" />
+                                <img class="img-fluid" src="<?= site_url('image/' . ($hike->image_name ? $hike->image_name : 'hike/no_image.jpg') ) ?>" />
                                 <input id="image_name" class="form-control" type="file" name="image_name">
                             </div>
                         </div>
