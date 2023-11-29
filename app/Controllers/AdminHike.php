@@ -43,17 +43,24 @@ class Adminhike extends BaseController
         
     }
     
-    public function save($type = 'carpatian', $hike = false)
+    public function save($type = 'carpatian')
     {
+        $request = \Config\Services::request();
+        $hike = $request->getGet('hike');
+        $redirect = "/admin/hike/$type";
         if ($hike) {
-            
+            $redirect .= "?hike=$hike";
         } else {
             
         }
+        session()->setFlashdata('message_controller', 'Зміни збережені!');
+        return redirect()->redirect($redirect);
     }
     
-    public function index($type = 'carpatian', $hike = false)
+    public function index($type = 'carpatian')
     {
+        $request = \Config\Services::request();
+        $hike = $request->getGet('hike');
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;

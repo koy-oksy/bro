@@ -17,7 +17,9 @@
         <link href="{vendors}/nprogress/nprogress.css" rel="stylesheet">
         <!-- jQuery custom content scroller -->
         <link href="{vendors}/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
-
+	<!-- Switchery -->
+        <link href="{vendors}/switchery/dist/switchery.min.css" rel="stylesheet">
+        
         <!-- Custom Theme Style -->
         <link href="{css}/custom.min.css" rel="stylesheet">
 
@@ -237,7 +239,9 @@
         <script src="{vendors}/nprogress/nprogress.js"></script>
         <!-- jQuery custom content scroller -->
         <script src="{vendors}/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-
+        <!-- Switchery -->
+        <script src="{vendors}/switchery/dist/switchery.min.js"></script>
+        
         <script src="{vendors}/pnotify/dist/pnotify.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" type="text/javascript"></script>
@@ -263,10 +267,9 @@
         <script type="text/javascript">
             jQuery(document).ready(function () {
                 new PNotify({
-                    title: 'Повідомлення',
+                    title: '',
                     text: "{!message!}",
                     styling: 'bootstrap3',
-                    type: 'info'
                 });
             });
         </script>

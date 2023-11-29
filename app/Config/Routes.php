@@ -20,8 +20,6 @@ $routes->get('image/(:segment)/(:segment)', 'Image::index/$1/$2');
 /* Admin routes */
 $routes->get('admin/hike/(:segment)', 'AdminHike::index/$1');
 $routes->post('admin/hike/(:segment)', 'AdminHike::save/$1');
-$routes->get('admin/hike/(:segment)/(:segment)', 'AdminHike::index/$1/$2');
-$routes->post('admin/hike/(:segment)/(:segment)', 'AdminHike::save/$1/$2');
 
 $routes->get('admin/(:segment)', 'AdminPage::index/$1');
 $routes->post('admin/(:segment)', 'AdminPage::index/$1');

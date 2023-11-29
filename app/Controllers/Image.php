@@ -19,7 +19,7 @@ class Image extends BaseController
     
     public function index($image_date, $image_name): string
     {
-        $path = sprintf("%suploads/%s/%s", WRITEPATH, $image_date, $image_name);
+        $path = sprintf("%suploads" . DIRECTORY_SEPARATOR . "%s" . DIRECTORY_SEPARATOR . "%s", WRITEPATH, $image_date, $image_name);
         $image = fopen($path, 'rb');
         header("Content-Type: image/webp");
         header("Content-Length: " . filesize($path));

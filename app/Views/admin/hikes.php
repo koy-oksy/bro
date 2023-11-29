@@ -31,6 +31,7 @@
                                         <th>Заголовок / Аліас</th>
                                         <th>Ціна</th>
                                         <th>Дати</th>
+                                        <th>Активно</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -40,7 +41,8 @@
                                         <td><?= $hike->caption ?><br><?= $hike->alias ?></td>
                                         <td><?= $hike->price ?></td>
                                         <td>1-2 грудня / 16-17 грудня / 20-21 січня / 10-11 лютого</td>
-                                        <td><a href="<?= site_url(sprintf('admin/hike/%s/%s', $hike->hike_type, $hike->alias)) ?>">Редагування</a></td>
+                                        <td><i class="fa <?= $hike->active ? 'fa-eye' : 'fa-power-off' ?>"></i></td>
+                                        <td><a href="<?= site_url(sprintf('admin/hike/%s?hike=%s', $hike->hike_type, $hike->alias)) ?>">Редагування</a></td>
                                     </tr>
                                     <?php endforeach ?>
                                 </tbody>
