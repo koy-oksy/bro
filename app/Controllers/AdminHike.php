@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 class Adminhike extends BaseController
 {
     
-    protected $helpers = ['config'];
+    protected $helpers = ['config', 'parser'];
     
     protected $site_name;
     protected $parent_data;
@@ -49,6 +49,30 @@ class Adminhike extends BaseController
         $hike = $request->getGet('hike');
         $redirect = "/admin/hike/$type";
         if ($hike) {
+            $id = $request->getPost('id');
+            $data = [
+                'active' => $request->getPost('active') === 'on' ? 1 : 0,
+                'caption' => $request->getPost('caption'),
+                'alias' => $request->getPost('alias'),
+                'description' => $request->getPost('description'),
+                'tags' => $request->getPost('tags'),
+                'price' => $request->getPost('price'),
+            ];
+            if ($request->getPost('parsed_url')) {
+                $data['parsed_url'] = $request->getPost('parsed_url');
+                $parsed_data = parse_bro_url($request->getPost('parsed_url'));
+                var_dump($parsed_data); die;
+            }
+            if (isset($_FILES['image_name']) && $_FILES['image_name']['size'] > 0) {
+                $img = $request->getFile('image_name');
+                if (! $img->hasMoved()) {
+                    $data['image_name'] = $img->store();
+                }
+            }
+            $hikeModel = new \App\Models\HikeModel();
+            $hikeModel->update($id, $data);
+            
+            
             $redirect .= "?hike=$hike";
         } else {
             
@@ -63,7 +87,6 @@ class Adminhike extends BaseController
         $hike = $request->getGet('hike');
         $layout_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
-        $layout_data['menu_entries'] = $this->menu_data;
         
         $page_data = $this->parent_data;
         if ($hike) {

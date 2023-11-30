@@ -24,6 +24,7 @@
                 <div class="x_content">
                     <br />
                     <?= form_open_multipart('', ['class' => 'form-horizontal form-label-left']) ?>
+                        <input type="hidden" name="id" value="<?= $hike->id ?>"/>
                         <div class="item form-group">
                             <label for="active-hike" class="col-form-label col-md-3 col-sm-3 label-align">
                                 Активний
@@ -83,20 +84,18 @@
                                 <input id="image_name" class="form-control" type="file" name="image_name">
                             </div>
                         </div>
-                        <div class="item form-group">
-                            <label for="parsed_url" class="col-form-label col-md-3 col-sm-3 label-align" data-toggle="tooltip" data-placement="top" title="При вказанні цієї адреси адмінка спробує скопіювати текст та фото походу">
-                                Адреса Telegram сторінки
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <input id="parsed_url" class="form-control" type="text" name="parsed_url" placeholder="<?= $hike->parsed_url ?>">
-                            </div>
-                        </div>
                         <div class="ln_solid"></div>
                         <div class="item form-group">
                             <div class="col-md-6 col-sm-6 offset-md-3">
-                                <a href="<?= site_url('admin/hike/' . $hike->hike_type) ?>" class="btn btn-primary" type="button">Назад</a>
-                                <button class="btn btn-primary" type="reset" onClick="if (confirm('Delete selected item?')){location.reload();}else{event.stopPropagation(); event.preventDefault();};">Скинути</button>
-                                <button type="submit" class="btn btn-success">Зберегти</button>
+                                <a href="<?= site_url('admin/hike/' . $hike->hike_type) ?>" class="btn btn-secondary" type="button">
+                                    <i class="fa fa-arrow-left"></i> Назад
+                                </a>
+                                <button class="btn btn-warning" type="reset" onClick="if (confirm('Delete selected item?')){location.reload();}else{event.stopPropagation(); event.preventDefault();};">
+                                    <i class="fa fa-rotate-left"></i> Скинути
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-save"></i> Зберегти
+                                </button>
                             </div>
                         </div>
                     <?= form_close() ?>
@@ -105,3 +104,5 @@
         </div>
     </div>
 </div>
+
+<div class="clearfix"></div>
