@@ -56,15 +56,31 @@
                                 SEO Description
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="seo-description" name="description" class="form-control" value="<?= $hike->description ?>">
+                                <textarea id="seo-description" name="description" class="form-control" rows="5"><?= $hike->description ?></textarea>
                             </div>
                         </div>
                         <div class="item form-group">
-                            <label for="seo-tags" class="col-form-label col-md-3 col-sm-3 label-align">
-                                SEO Tags
+                            <label for="days" class="col-form-label col-md-3 col-sm-3 label-align">
+                                Днів
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input id="seo-tags" class="form-control" type="text" name="tags" value="<?= $hike->tags ?>">
+                                <input id="days" class="form-control" type="text" name="days" value="<?= $hike->days ?>">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label for="dates" class="col-form-label col-md-3 col-sm-3 label-align">
+                                Дати
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input id="dates" class="form-control" type="text" name="dates" value="<?= $hike->dates ?>">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label for="format" class="col-form-label col-md-3 col-sm-3 label-align">
+                                Формат
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input id="format" class="form-control" type="text" name="format" value="<?= $hike->format ?>">
                             </div>
                         </div>
                         <div class="item form-group">
@@ -76,12 +92,44 @@
                             </div>
                         </div>
                         <div class="item form-group">
+                            <label for="participants" class="col-form-label col-md-3 col-sm-3 label-align">
+                                Учасники
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input id="participants" class="form-control" type="text" name="participants" value="<?= $hike->participants ?>">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label for="distance" class="col-form-label col-md-3 col-sm-3 label-align">
+                                Дистанція
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input id="distance" class="form-control" type="text" name="distance" value="<?= $hike->distance ?>">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label for="route" class="col-form-label col-md-3 col-sm-3 label-align">
+                                Маршрут
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input id="route" class="form-control" type="text" name="route" value="<?= $hike->route ?>">
+                            </div>
+                        </div>
+                        <div class="item form-group">
                             <label for="image_name" class="col-form-label col-md-3 col-sm-3 label-align">
                                 Обкладинка
                             </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <img class="img-fluid" src="<?= site_url('image/' . ($hike->image_name ? $hike->image_name : 'hike/no_image.jpg') ) ?>" />
                                 <input id="image_name" class="form-control" type="file" name="image_name">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="parsed-url">
+                                Звідки скачали
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                                <input type="text" id="parsed-url" class="form-control" value="<?= $hike->parsed_url ?>">
                             </div>
                         </div>
                         <div class="ln_solid"></div>

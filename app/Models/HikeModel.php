@@ -11,16 +11,20 @@ class HikeModel extends Model
     
     protected $allowedFields = [
         'id',
-        'alias',
-        'caption',
-        'description',
-        'tags',
-        'price',
         'hike_type',
-        'image_name',
-        'active',
-        'content',
+        'caption',
+        'alias',
         'parsed_url',
+        'description',
+        'days',
+        'dates',
+        'format',
+        'price',
+        'participants',
+        'distance',
+        'route',
+        'active',
+        'image_name',
     ];
     
     public function getData() {

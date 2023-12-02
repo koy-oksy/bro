@@ -28,6 +28,7 @@
                             <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Заголовок / Аліас</th>
                                         <th>Ціна</th>
                                         <th>Дати</th>
@@ -38,11 +39,20 @@
                                 <tbody>
                                     <?php foreach ($hikes as $hike) : ?>
                                         <tr>
+                                            <td><?= $hike->id ?></td>
                                             <td><?= $hike->caption ?><br><?= $hike->alias ?></td>
                                             <td><?= $hike->price ?></td>
-                                            <td>1-2 грудня / 16-17 грудня / 20-21 січня / 10-11 лютого</td>
+                                            <td><?= $hike->dates ?></td>
                                             <td><i class="fa <?= $hike->active ? 'fa-eye' : 'fa-power-off' ?>"></i></td>
-                                            <td><a href="<?= site_url(sprintf('admin/hike/%s?hike=%s', $hike->hike_type, $hike->alias)) ?>">Редагування</a></td>
+                                            <td>
+                                                <a class="btn btn-secondary btn-sm" href="<?= site_url(sprintf('admin/hike/%s?hike=%s', $hike->hike_type, $hike->alias)) ?>">
+                                                    <i class="fa fa-pencil"></i> Редагування
+                                                </a>
+                                                <br/>
+                                                <a class="btn btn-danger btn-sm" onClick="return confirm('Ви впевнені що хочете видалити цей похід?');" href="<?= site_url(sprintf('admin/hike/%s?hike=%s&delete=1', $hike->hike_type, $hike->alias)) ?>">
+                                                    <i class="fa fa-trash"></i> Видалити
+                                                </a>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>
@@ -78,6 +88,7 @@
             <div class="x_content">
                 <div class="col-12">
                     <p>Для додавання походу вкажіть адресу сторінки Telegram, де міститься опис походу і натисність кнопку "<i class="fa fa-plus"></i> Додати!"</p>
+                    <p>Система проаналізує сторінку по посиланню і скопіює звідти картинки, текст та параметри походу</p>
                     <p>Сторінка може містити вказані нижче параметри, які розпізнаються системою:</p>
                     <ul>
                         <li><b>Тривалість:</b></li>
@@ -93,20 +104,19 @@
 
                 </div>
 
-
-                <form class="form-horizontal form-label-left">
+                <?= form_open('', ['class' => 'form-horizontal form-label-left']) ?>
                     <div class="form-group">
                         <label class="col-sm-3 col-form-label"><b>Адреса сторінки опису походу</b></label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="" placeholder="https://telegra.ph/...">
+                                <input type="text" class="form-control" name="parsed_url" placeholder="https://telegra.ph/...">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Додати!</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Додати!</button>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </form>
+                <?= form_close() ?>
             </div>
         </div>
     </div>

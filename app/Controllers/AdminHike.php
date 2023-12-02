@@ -58,11 +58,6 @@ class Adminhike extends BaseController
                 'tags' => $request->getPost('tags'),
                 'price' => $request->getPost('price'),
             ];
-            if ($request->getPost('parsed_url')) {
-                $data['parsed_url'] = $request->getPost('parsed_url');
-                $parsed_data = parse_bro_url($request->getPost('parsed_url'));
-                var_dump($parsed_data); die;
-            }
             if (isset($_FILES['image_name']) && $_FILES['image_name']['size'] > 0) {
                 $img = $request->getFile('image_name');
                 if (! $img->hasMoved()) {
@@ -72,13 +67,48 @@ class Adminhike extends BaseController
             $hikeModel = new \App\Models\HikeModel();
             $hikeModel->update($id, $data);
             
-            
             $redirect .= "?hike=$hike";
+            session()->setFlashdata('message_controller', 'Зміни збережені!');
+            return redirect()->redirect($redirect);
         } else {
+            // add a new hike
+            $data['parsed_url'] = $request->getPost('parsed_url');
+
+            if (strpos($data['parsed_url'], 'https://telegra.ph/') === false) {
+                session()->setFlashdata('message_controller', 'Вкажіть адресу сторінки яка починається з https://telegra.ph/');
+                return redirect()->redirect($redirect);
+            }            
+            $parsed_params = parse_bro_url($request->getPost('parsed_url'));
             
+//            var_dump($parsed_params); die;
+
+            $parsed_params['image']; // image_name
+            $parsed_params['chapters'];
+            
+            $alias = translit_ukr($parsed_params['title']);
+            
+            $new_hike = [
+                'hike_type' => $type,
+                'caption' => $parsed_params['title'],
+                'alias' => $alias,
+                'parsed_url' => $data['parsed_url'],
+                'description' => $parsed_params['description'],
+                'days' => $parsed_params['days'],
+                'dates' => $parsed_params['date'] ? $parsed_params['date'] : $parsed_params['dates'],
+                'format' => $parsed_params['format'],
+                'price' => $parsed_params['price'],
+                'participants' => $parsed_params['participants'],
+                'distance' => $parsed_params['distance'],
+                'route' => $parsed_params['route'],
+                'active' => 0,
+                'image_name' => '',
+            ];
+            $hikeModel = new \App\Models\HikeModel();
+            $hikeModel->insert($new_hike);
+            $redirect .= "?hike=$alias";
+            session()->setFlashdata('message_controller', 'Новий похід створено!');
+            return redirect()->redirect($redirect);
         }
-        session()->setFlashdata('message_controller', 'Зміни збережені!');
-        return redirect()->redirect($redirect);
     }
     
     public function index($type = 'carpatian')
@@ -92,13 +122,20 @@ class Adminhike extends BaseController
         if ($hike) {
             $db = \Config\Database::connect();
             $builder = $db->table('hike');
+            $delete = $request->getGet('delete');
+            if ($delete) {
+                $builder->where('alias', $hike);
+                $builder->delete();
+                $redirect = "/admin/hike/$type";
+                return redirect()->redirect($redirect);
+            }
             $output = $builder->where(['hike_type' => $type, 'alias' => $hike])->get();
             $page_data['hike'] = $output->getRow();
             $layout_data['content'] = view('admin/hike', $page_data);
         } else {
             $db = \Config\Database::connect();
             $builder = $db->table('hike');
-            $output = $builder->where(['hike_type' => $type])->get();
+            $output = $builder->where(['hike_type' => $type])->orderBy('id', 'desc')->get();
             $page_data['hikes'] = $output->getResult();
             $layout_data['content'] = view('admin/hikes', $page_data);
         }
