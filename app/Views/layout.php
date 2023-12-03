@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>{title}</title>
     <meta name="description" content="{description}">
-    <meta name="tags" content="{tags}">
     <meta name="robots" content="all,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />

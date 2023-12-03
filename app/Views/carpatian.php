@@ -40,7 +40,6 @@
             </div>
         </div>
         <div class="row">
-            <!--
             <?php foreach ($hikes as $hike) : ?>
 
                 <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
@@ -49,113 +48,17 @@
                             <img src="<?= $img ?>/kukulmain.webp" alt="Image" class="img-fluid">
                         </div>
                         <div class="listing-item-content">
-                            <a class="px-3 mb-3 category bg-success" href="">27-29 жовтня </a>
-                            <a class="px-3 mb-3 category bg-primary" href="<?= site_url('carpatian-hikes/kukul') ?>">Детальніше</a>
-                            <h2 class="mb-1"><?= $hike->caption ?></h2>
+                            <?php if ($hike['dates']) : ?>
+                            <a class="px-3 mb-3 category bg-success" href=""><?= $hike['dates'] ?></a>
+                            <?php endif ?>
+                            <a class="px-3 mb-3 category bg-primary" href="<?= site_url('carpatian-hikes/' . $hike['alias']) ?>">Детальніше</a>
+                            <h2 class="mb-1"><?= $hike['caption'] ?></h2>
                         </div>
                     </div>
                 </div>
 
             <?php endforeach ?>
-            -->
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/hoverlamain.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1">Некласична Говерла і панорамний Кукул</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">10-12 листопада</a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/hoverla') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 5600 грн</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/krunta.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1">По краю зими: похід на Кринту-Скупову</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">17-19 листопада </a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/krynta') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 4700 грн</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/kostelrock.webp" alt="Image" class="img-fluid">
-
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1"> Хайкінг у Карпатах: скеля Костел і похід на Ротило</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">18-19 листопада </a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/rotylo') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 4700 грн</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/IMG_8013.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1">Чорногора з комфортом: Ґаджина, Бребенескул, Кізі-Увлоги</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">24-26 листопада</a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/brebeneskul') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 5900 грн</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/IMG_8315.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1">Зимовий похід з ночівлею в колибі</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">1-3 грудня</a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/colibbing') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 3500 грн</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/IMG_9202.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1">Новий Рік у Колочаві + Стримба</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">30 грудня - 2 січня</a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/newyearkolochava') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 10500 -11000 грн</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
-                <div class="listing-item">
-                    <div class="listing-image">
-                        <img src="<?= $img ?>/6166.webp" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="listing-item-content">
-                        <h2 class="mb-1">Новий Рік у Верховині + Говерла</h2>
-                        <a class="px-3 mb-3 category bg-success" href="">30 грудня 2022 - 2 січня</a>
-                        <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/newyearverkhovyna') ?>">Детальніше</a>
-                        <p class="text-success">Ціна 10800 -11500 грн</p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>

@@ -83,7 +83,8 @@ class Adminhike extends BaseController
 //            var_dump($parsed_params); die;
 
             $parsed_params['image']; // image_name
-            $parsed_params['chapters'];
+            $parsed_params['chapters']; // texts
+            $parsed_params['download_src']; // all images from article
             
             $alias = translit_ukr($parsed_params['title']);
             
@@ -105,6 +106,17 @@ class Adminhike extends BaseController
             ];
             $hikeModel = new \App\Models\HikeModel();
             $hikeModel->insert($new_hike);
+            
+            $hike_id = $hikeModel->getInsertID();
+            foreach ($parsed_params['chapters'] as $chapter_data) {
+                $chapter = new \App\Models\ChapterModel();
+                $data = [
+                    'hike_id' => $hike_id,
+                    'text' => implode('', $chapter_data),
+                ];
+                $chapter->insert($data);
+            }
+            
             $redirect .= "?hike=$alias";
             session()->setFlashdata('message_controller', 'Новий похід створено!');
             return redirect()->redirect($redirect);
@@ -113,6 +125,7 @@ class Adminhike extends BaseController
     
     public function index($type = 'carpatian')
     {
+        $db = \Config\Database::connect();
         $request = \Config\Services::request();
         $hike = $request->getGet('hike');
         $layout_data = $this->parent_data;
@@ -120,20 +133,18 @@ class Adminhike extends BaseController
         
         $page_data = $this->parent_data;
         if ($hike) {
-            $db = \Config\Database::connect();
-            $builder = $db->table('hike');
             $delete = $request->getGet('delete');
             if ($delete) {
-                $builder->where('alias', $hike);
-                $builder->delete();
+                $hikeModel = new \App\Models\HikeModel();
+                $hikeModel->deleteHike($type, $hike);
                 $redirect = "/admin/hike/$type";
                 return redirect()->redirect($redirect);
             }
+            $builder = $db->table('hike');
             $output = $builder->where(['hike_type' => $type, 'alias' => $hike])->get();
             $page_data['hike'] = $output->getRow();
             $layout_data['content'] = view('admin/hike', $page_data);
         } else {
-            $db = \Config\Database::connect();
             $builder = $db->table('hike');
             $output = $builder->where(['hike_type' => $type])->orderBy('id', 'desc')->get();
             $page_data['hikes'] = $output->getResult();

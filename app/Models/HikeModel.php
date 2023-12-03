@@ -30,4 +30,14 @@ class HikeModel extends Model
     public function getData() {
         return $this->findAll();
     }
+    
+    public function deleteHike($type, $alias) {
+        $db = \Config\Database::connect();
+        $builder = $db->table('hike');
+        $keys = ['hike_type' => $type, 'alias' => $alias];
+        $hike = $builder->where($keys)->get()->getRow();
+        $builder->where($keys)->delete();
+        $db->table('hike-chapter')->where(['hike_id' => $hike->id])->delete();
+        return true;
+    }
 }
