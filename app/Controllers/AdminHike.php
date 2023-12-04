@@ -22,7 +22,7 @@ class Adminhike extends BaseController
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        helper(['filesystem', 'form']);
+        helper(['filesystem', 'form', 'filesystem']);
         
         $this->parser = \Config\Services::parser();
         $this->site_name = get_config('site_name');
@@ -80,13 +80,13 @@ class Adminhike extends BaseController
             }            
             $parsed_params = parse_bro_url($request->getPost('parsed_url'));
             
-//            var_dump($parsed_params); die;
-
-            $parsed_params['image']; // image_name
-            $parsed_params['chapters']; // texts
-            $parsed_params['download_src']; // all images from article
-            
             $alias = translit_ukr($parsed_params['title']);
+            
+            $parsed_params['download_src'][] = $parsed_params['image'];
+            foreach ($parsed_params['download_src'] as $src) {
+//                $file_contents = file_get_contents("https://telegra.ph" . $src);
+//                write_file(WRITEPATH . 'uploads' . $src, $file_contents);
+            }
             
             $new_hike = [
                 'hike_type' => $type,
