@@ -22,7 +22,13 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <br />
+                    <div class="row">
+                        <?php foreach ($download_src as $image) : ?>
+                        <div class="col-md-3 col-sm-6 py-3">
+                            <img image_id="<?= $image['id'] ?>" src="<?= $image['loaded'] ? site_url('image' . $image['download_src']) : base_url('img/loading.gif') ?>" class="img-fluid"/>
+                        </div>
+                        <?php endforeach ?>
+                    </div>
                     <?= form_open_multipart('', ['class' => 'form-horizontal form-label-left']) ?>
                         <input type="hidden" name="id" value="<?= $hike->id ?>"/>
                         <div class="item form-group">

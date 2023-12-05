@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 class Adminhike extends BaseController
 {
     
-    protected $helpers = ['config', 'parser'];
+    protected $helpers = ['config', 'parser', 'filesystem', 'form'];
     
     protected $site_name;
     protected $parent_data;
@@ -22,11 +22,10 @@ class Adminhike extends BaseController
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        helper(['filesystem', 'form', 'filesystem']);
-        
         $this->parser = \Config\Services::parser();
         $this->site_name = get_config('site_name');
         $this->parent_data = [
+            'site_url' => site_url(),
             'css' => base_url('admin/css'),
             'js' => base_url('admin/js'),
             'img' => base_url('admin/img'),
@@ -82,10 +81,9 @@ class Adminhike extends BaseController
             
             $alias = translit_ukr($parsed_params['title']);
             
-            $parsed_params['download_src'][] = $parsed_params['image'];
-            foreach ($parsed_params['download_src'] as $src) {
-//                $file_contents = file_get_contents("https://telegra.ph" . $src);
-//                write_file(WRITEPATH . 'uploads' . $src, $file_contents);
+            // we check if hike poster not present at hike images, than add it
+            if (array_search($parsed_params['image'], $parsed_params['download_src']) === false) {
+                $parsed_params['download_src'][] = $parsed_params['image'];
             }
             
             $new_hike = [
@@ -101,8 +99,8 @@ class Adminhike extends BaseController
                 'participants' => $parsed_params['participants'],
                 'distance' => $parsed_params['distance'],
                 'route' => $parsed_params['route'],
+                'image_name' => $parsed_params['image'],
                 'active' => 0,
-                'image_name' => '',
             ];
             $hikeModel = new \App\Models\HikeModel();
             $hikeModel->insert($new_hike);
@@ -115,6 +113,17 @@ class Adminhike extends BaseController
                     'text' => implode('', $chapter_data),
                 ];
                 $chapter->insert($data);
+            }
+            
+            foreach ($parsed_params['download_src'] as $src) {
+                $imageModel = new \App\Models\ImageModel();
+                $imageModel->insert([
+                    'hike_id' => $hike_id,
+                    'download_src' => $src,
+                ]);
+                
+//                $file_contents = file_get_contents("https://telegra.ph" . $src);
+//                write_file(WRITEPATH . 'uploads' . $src, $file_contents);
             }
             
             $redirect .= "?hike=$alias";
@@ -143,6 +152,10 @@ class Adminhike extends BaseController
             $builder = $db->table('hike');
             $output = $builder->where(['hike_type' => $type, 'alias' => $hike])->get();
             $page_data['hike'] = $output->getRow();
+            
+            $builder = $db->table('images-to-load');
+            $output = $builder->where(['hike_id' => $page_data['hike']->id])->get();
+            $page_data['download_src'] = $output->getResultArray();
             $layout_data['content'] = view('admin/hike', $page_data);
         } else {
             $builder = $db->table('hike');

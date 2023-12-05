@@ -272,9 +272,7 @@ jQuery(document).ready(function ($) {
     OnePageNavigation();
 
     var siteScroll = function () {
-
-
-
+        
         $(window).scroll(function () {
 
             var st = $(this).scrollTop();
@@ -285,7 +283,7 @@ jQuery(document).ready(function ($) {
                 $('.js-sticky-header').removeClass('shrink');
             }
 
-        })
+        });
 
     };
     siteScroll();

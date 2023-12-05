@@ -28,6 +28,10 @@
         <style id="style2" type="text/css"></style>
         <link id="theme1" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css" rel="stylesheet" />
 
+        <script type="text/javascript">
+        let site_url = '{site_url}';
+        </script>
+        
     </head>
 
     <body class="nav-md footer_fixed">

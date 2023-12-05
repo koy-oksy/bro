@@ -48,8 +48,7 @@ if (! function_exists('parse_bro_url')) {
             $figure_content = str_replace(['<figure>', '</figure>'], '', $figure_content);
             preg_match('/src="(.*)"/', $figure_content, $output_array);
             if ($output_array) {
-                $src = "https://telegra.ph" . $output_array[1];
-                $parsed_data['image'] = $src;
+                $parsed_data['image'] = $output_array[1];
             }
         }
         
