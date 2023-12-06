@@ -42,6 +42,10 @@ class Hike extends BaseController
             $builder->where('alias', $hike);
             $row = $builder->get()->getRowArray();
             
+            if (empty($row)) {
+                throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+            }
+            
             $builder = $db->table('hike-chapter');
             $row['chapters'] = $builder->where(['hike_id' => $row['id']])->get()->getResultArray();
             
