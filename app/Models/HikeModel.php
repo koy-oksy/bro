@@ -32,12 +32,38 @@ class HikeModel extends Model
     }
     
     public function deleteHike($type, $alias) {
-        $db = \Config\Database::connect();
-        $builder = $db->table('hike');
-        $keys = ['hike_type' => $type, 'alias' => $alias];
-        $hike = $builder->where($keys)->get()->getRow();
-        $builder->where($keys)->delete();
-        $db->table('hike-chapter')->where(['hike_id' => $hike->id])->delete();
+        try {
+            $db = \Config\Database::connect();
+            $builder = $db->table('hike');
+            $hike = $builder->where(['hike_type' => $type, 'alias' => $alias])->get()->getRow();
+            
+            $builder = $db->table('images-to-load');
+            $images = $builder->where(['hike_id' => $hike->id])->get()->getResultArray();
+            foreach ($images as $img) {
+                $file = WRITEPATH . 'uploads' . $img['download_src'];
+                if (is_file($file)) {
+                    unlink($file);
+                }
+                
+                $file = WRITEPATH . 'uploads' . modify_image_name($img['download_src'], 'vertical_');
+                if (is_file($file)) {
+                    unlink($file);
+                }
+                
+                $file = WRITEPATH . 'uploads' . modify_image_name($img['download_src'], 'horizontal_');
+                if (is_file($file)) {
+                    unlink($file);
+                }
+                
+            }
+            
+            $db->table('hike')->where(['hike_type' => $type, 'alias' => $alias])->delete();
+            $db->table('hike-chapter')->where(['hike_id' => $hike->id])->delete();
+            $db->table('images-to-load')->where(['hike_id' => $hike->id])->delete();
+            
+        } catch (\Throwable $e) {
+            var_dump($e->getMessage()); die;
+        }
         return true;
     }
 }

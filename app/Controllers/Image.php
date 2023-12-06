@@ -10,7 +10,7 @@ use Throwable;
 class Image extends BaseController
 {
 
-    protected $helpers = ['config', 'parser', 'filesystem'];
+    protected $helpers = ['config', 'parser', 'filesystem', 'page'];
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -20,11 +20,24 @@ class Image extends BaseController
     
     public function index($image_date, $image_name): string
     {
-        $path = sprintf("%suploads" . DIRECTORY_SEPARATOR . "%s" . DIRECTORY_SEPARATOR . "%s", WRITEPATH, $image_date, $image_name);
-        $image = fopen($path, 'rb');
-        header("Content-Type: image/webp");
-        header("Content-Length: " . filesize($path));
-        fpassthru($image);
+        $path = sprintf(WRITEPATH . "uploads" . DIRECTORY_SEPARATOR . $image_date . DIRECTORY_SEPARATOR . $image_name);
+        drop_image_into_browser($path);
+        exit;
+    }
+    
+    public function vertical($image_date, $image_name): string
+    {
+        $image_name = 'vertical_' . $image_name;
+        $path = sprintf(WRITEPATH . "uploads" . DIRECTORY_SEPARATOR . $image_date . DIRECTORY_SEPARATOR . $image_name);
+        drop_image_into_browser($path);
+        exit;
+    }
+    
+    public function horizontal($image_date, $image_name): string
+    {
+        $image_name = 'horizontal_' . $image_name;
+        $path = sprintf(WRITEPATH . "uploads" . DIRECTORY_SEPARATOR . $image_date . DIRECTORY_SEPARATOR . $image_name);
+        drop_image_into_browser($path);
         exit;
     }
     
@@ -57,12 +70,24 @@ class Image extends BaseController
             try {
                 $src = $img['download_src'];
                 $file_contents = file_get_contents("https://telegra.ph" . $src);
-                write_file(WRITEPATH . 'uploads' . $src, $file_contents);
+                $dir = WRITEPATH . 'uploads';
+                write_file($dir . $src, $file_contents);
+                // copy file and resize
+                $image = \Config\Services::image();
+                
+                $image->withFile($dir . $src) 
+                    ->fit(510, 703, 'center') 
+                    ->save($dir . modify_image_name($src, 'vertical_'));
+                
+                $image->withFile($dir . $src) 
+                    ->fit(510, 340, 'center') 
+                    ->save($dir . modify_image_name($src, 'horizontal_'));
+                
                 $upd = ['loaded' => 1];
                 $keyhash = ['id' => $img['id']];
                 $builder->update($upd, $keyhash);
                 $processed++;
-            } catch (Throwable $e) {
+            } catch (\Throwable $e) {
                 $errors[] = $e->getMessage();
                 $failed++;
             }

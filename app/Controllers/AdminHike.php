@@ -83,7 +83,7 @@ class Adminhike extends BaseController
             
             // we check if hike poster not present at hike images, than add it
             if (array_search($parsed_params['image'], $parsed_params['download_src']) === false) {
-                $parsed_params['download_src'][] = $parsed_params['image'];
+                array_unshift($parsed_params['download_src'], $parsed_params['image']);
             }
             
             $new_hike = [
@@ -121,9 +121,6 @@ class Adminhike extends BaseController
                     'hike_id' => $hike_id,
                     'download_src' => $src,
                 ]);
-                
-//                $file_contents = file_get_contents("https://telegra.ph" . $src);
-//                write_file(WRITEPATH . 'uploads' . $src, $file_contents);
             }
             
             $redirect .= "?hike=$alias";

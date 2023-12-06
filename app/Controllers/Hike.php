@@ -9,7 +9,7 @@ use Psr\Log\LoggerInterface;
 class Hike extends BaseController
 {
 
-    protected $helpers = ['config', 'menu', 'page'];
+    protected $helpers = ['config', 'menu', 'page', 'parser'];
 
     protected $site_name;
     protected $parent_data;
@@ -52,9 +52,6 @@ class Hike extends BaseController
         } else {
             $builder = $db->table('hike');
             $page_data['hikes'] = $builder->where(['active' => 1])->get()->getResultArray();
-            
-            
-            
             
             $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
             $layout_data['description'] = get_config('carpatians-description');

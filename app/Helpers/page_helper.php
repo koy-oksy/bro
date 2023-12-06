@@ -17,3 +17,15 @@ if (! function_exists('replace_image_url')) {
         return site_url('image/' . $url);
     }
 }
+
+if (! function_exists('drop_image_into_browser')) {
+    function drop_image_into_browser($path) {
+        if (!$path) {
+            return '';
+        }
+        $image = fopen($path, 'rb');
+        header("Content-Type: image/webp");
+        header("Content-Length: " . filesize($path));
+        fpassthru($image);
+    }
+}

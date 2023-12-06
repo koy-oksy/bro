@@ -45,7 +45,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 aos-init" data-aos="fade-up">
                     <div class="listing-item">
                         <div class="listing-image">
-                            <img src="<?= $img ?>/kukulmain.webp" alt="Image" class="img-fluid">
+                            <img src="<?= site_url('image' . modify_image_name_url($hike['image_name'], 'vertical_')); ?>" alt="<?= $hike['alias'] ?>" class="img-fluid">
                         </div>
                         <div class="listing-item-content">
                             <?php if ($hike['dates']) : ?>

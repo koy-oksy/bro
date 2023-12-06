@@ -25,7 +25,14 @@
                     <div class="row">
                         <?php foreach ($download_src as $image) : ?>
                         <div class="col-md-3 col-sm-6 py-3">
-                            <img image_id="<?= $image['id'] ?>" src="<?= $image['loaded'] ? site_url('image' . $image['download_src']) : base_url('img/loading.gif') ?>" class="img-fluid"/>
+                            <?php if ($hike->image_name === $image['download_src']) : ?>
+                            <div class="position-absolute p-3 btn btn-sm"><i class="fa fa-check-square-o"></i> Обкладинка</div>
+                            <?php else : ?>
+                            <div class="position-absolute p-2">
+                                <a href="#" class="btn btn-sm btn-light">Зробити обкладинкою</a>
+                            </div>
+                            <?php endif ?>
+                            <img image_id="<?= $image['id'] ?>" image_src="" src="<?= $image['loaded'] ? site_url('image' . modify_image_name_url($image['download_src'], 'horizontal_')) : base_url('img/loading.gif') ?>" class="img-fluid"/>
                         </div>
                         <?php endforeach ?>
                     </div>
@@ -37,7 +44,7 @@
                             </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <label>
-                                    <input id="active-hike" name="active" type="checkbox" class="js-switch" <?= $hike->active ? 'checked' : '' ?> /> Checked
+                                    <input id="active-hike" name="active" type="checkbox" class="js-switch" <?= $hike->active ? 'checked' : '' ?> />
                                 </label>
                             </div>
                         </div>
@@ -119,15 +126,6 @@
                             </label>
                             <div class="col-md-6 col-sm-6 ">
                                 <input id="route" class="form-control" type="text" name="route" value="<?= $hike->route ?>">
-                            </div>
-                        </div>
-                        <div class="item form-group">
-                            <label for="image_name" class="col-form-label col-md-3 col-sm-3 label-align">
-                                Обкладинка
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                <img class="img-fluid" src="<?= site_url('image/' . ($hike->image_name ? $hike->image_name : 'hike/no_image.jpg') ) ?>" />
-                                <input id="image_name" class="form-control" type="file" name="image_name">
                             </div>
                         </div>
                         <div class="item form-group">

@@ -16,7 +16,7 @@
         
       </div>
       <div class="col-md-6" data-aos="fade-right">
-        <img src="{img}/hajina.webp" alt="Image" class="img-fluid">
+          <img src="<?= site_url('image' . modify_image_name_url($image_name, 'horizontal_')) ?>" alt="<?= $alias ?>" class="img-fluid">
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
         <div class="heading-39101 mb-5"><?= $chapter['text'] ?></div>
       </div>
       <div class="col-md-6" data-aos="fade-right">
-        <img src="{img}/balcony.webp" alt="Image" class="img-fluid">
+        <img src="<?= site_url('image' . modify_image_name_url($image_name, 'horizontal_')) ?>" alt="<?= $alias ?>" class="img-fluid">
         <p>Кімнати 6-місні, ліжка з постіллю, балкон з видом на Чорногору</p>
       </div>
     </div>

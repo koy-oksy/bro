@@ -152,3 +152,23 @@ if (! function_exists('translit_ukr')) {
         return $s; // повертаємо результат
     }
 }
+
+if (! function_exists('modify_image_name')) {
+    function modify_image_name($image_name, $modify) {
+        $parts = explode('/', $image_name);
+        $filename = end($parts);
+        unset($parts[count($parts) - 1]);
+        $path = implode(DIRECTORY_SEPARATOR, $parts);
+        return $path . DIRECTORY_SEPARATOR . $modify . $filename;
+    }
+}
+
+if (! function_exists('modify_image_name_url')) {
+    function modify_image_name_url($image_name, $modify) {
+        $parts = explode('/', $image_name);
+        $filename = end($parts);
+        unset($parts[count($parts) - 1]);
+        $path = implode('/', $parts);
+        return $path . '/' . $modify . $filename;
+    }
+}
