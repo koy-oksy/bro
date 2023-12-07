@@ -139,11 +139,36 @@ class Adminhike extends BaseController
         
         $page_data = $this->parent_data;
         if ($hike) {
+            $rescan = $request->getGet('rescan');
+            if ($rescan) {
+                return $this->save($type);
+            }
+            
             $delete = $request->getGet('delete');
             if ($delete) {
                 $hikeModel = new \App\Models\HikeModel();
                 $hikeModel->deleteHike($type, $hike);
                 $redirect = "/admin/hike/$type";
+                return redirect()->redirect($redirect);
+            }
+            
+            $set_poster = $request->getGet('set_poster');
+            if ($set_poster) {
+                $redirect = "/admin/hike/$type?hike=$hike";
+                $imageModel = new \App\Models\ImageModel();
+                $image = $imageModel->find($set_poster);
+                if (empty($image)) {
+                    session()->setFlashdata('message_controller', 'Помилка: зображення не знайдено, оновіть сторінку');
+                    return redirect()->redirect($redirect);    
+                }
+                $image_name = $image['download_src'];
+                
+                $hikeModel = new \App\Models\HikeModel();
+                $hikeModel->where('alias', $hike)
+                    ->set(['image_name' => $image_name])
+                    ->update();
+                
+                session()->setFlashdata('message_controller', 'Обкладинку походу змінено');
                 return redirect()->redirect($redirect);
             }
             $builder = $db->table('hike');

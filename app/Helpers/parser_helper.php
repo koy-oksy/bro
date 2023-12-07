@@ -58,11 +58,6 @@ if (! function_exists('parse_bro_url')) {
             $parsed_data = array_merge($parsed_data, $parsed_content);
         }
         
-        if ($parsed_data['text']) {
-            // split to blocks
-            preg_match_all('/(<p>|<ul>|<figure>)(.*?)(<\/p>|<\/ul>|<\/figure>)/', $parsed_data['text'], $output_array);
-        }
-        
         return $parsed_data;
     }
 
@@ -120,7 +115,8 @@ if (! function_exists('parse_hike_content')) {
         $chapters = [];
         $chapter = 0;
         // split content into liness
-        preg_match_all('/(<p>|<ul>|<figure>)(.*?)(<\/p>|<\/ul>|<\/figure>)/', $content, $output_array);
+        preg_match_all('/(<p>|<ul>|<figure>|<blockquote>)(.*?)(<\/p>|<\/ul>|<\/figure>|<\/blockquote>)/', $content, $output_array);
+        
         foreach($output_array[0]as $line) {
             preg_match('/<strong>(\s*)День\s\d(.*)<\/strong>/', $line, $found_day);
             if ($found_day || $line == '<hr>') {
