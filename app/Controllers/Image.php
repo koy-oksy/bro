@@ -58,10 +58,39 @@ class Image extends BaseController
         return $this->response->setJSON($download);
     }
     
-    public function processQueue() {
+    public function processimage($image_id) {
+        $error = '';
         $db = \Config\Database::connect();
         $builder = $db->table('images-to-load');
-        $output = $builder->where(['loaded' => 0])->get();
+        $where = [
+            'id' => $image_id,
+        ];
+        $output = $builder->where($where)->get();
+        $img = $output->getRowArray();
+        if (!$img['loaded']) {
+            try {
+                $src = $img['download_src'];
+                $imageModel = new \App\Models\ImageModel();
+                $imageModel->downloadImage($src);
+                $builder->update(['loaded' => 1], ['id' => $img['id']]);
+            } catch (\Throwable $e) {
+                $error = $e->getMessage();
+            }
+        }
+        $response = [
+            'src' => $src,
+            'vertical' => modify_image_name_url($src, 'vertical_'),
+            'horizontal' => modify_image_name_url($src, 'horizontal_'),
+            'error' => $error,
+        ];
+        return $this->response->setJSON($response);
+    }
+    
+    public function processqueue() {
+        $db = \Config\Database::connect();
+        $builder = $db->table('images-to-load');
+        $where = ['loaded' => 0];
+        $output = $builder->where($where)->get();
         $download = $output->getResultArray();
         $processed = 0;
         $failed = 0;
@@ -69,20 +98,8 @@ class Image extends BaseController
         foreach ($download as $img) {
             try {
                 $src = $img['download_src'];
-                $file_contents = file_get_contents("https://telegra.ph" . $src);
-                $dir = WRITEPATH . 'uploads';
-                write_file($dir . $src, $file_contents);
-                // copy file and resize
-                $image = \Config\Services::image();
-                
-                $image->withFile($dir . $src) 
-                    ->fit(510, 703, 'center') 
-                    ->save($dir . modify_image_name($src, 'vertical_'));
-                
-                $image->withFile($dir . $src) 
-                    ->fit(510, 340, 'center') 
-                    ->save($dir . modify_image_name($src, 'horizontal_'));
-                
+                $imageModel = new \App\Models\ImageModel();
+                $imageModel->downloadImage($src);
                 $upd = ['loaded' => 1];
                 $keyhash = ['id' => $img['id']];
                 $builder->update($upd, $keyhash);

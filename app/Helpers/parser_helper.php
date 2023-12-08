@@ -76,6 +76,7 @@ if (! function_exists('parse_hike_content')) {
             'participants' => '',
             'distance' => '',
             'route' => '',
+            'difficulty' => '',
             'chapters' => [],
         ];
         
@@ -99,6 +100,7 @@ if (! function_exists('parse_hike_content')) {
             'participants' => 'Кількість місць:',
             'distance' => 'Протяжність:',
             'route' => 'Маршрут:',
+            'difficulty' => 'Складність:',
         ];
         $param_name_f = implode('|', $param_name);
         preg_match_all("/<p>(<strong>)*($param_name_f)(\s)*(<\/strong>)*(.*?)<\/p>/", $content, $output_array);
@@ -117,7 +119,7 @@ if (! function_exists('parse_hike_content')) {
         // split content into liness
         preg_match_all('/(<p>|<ul>|<figure>|<blockquote>)(.*?)(<\/p>|<\/ul>|<\/figure>|<\/blockquote>)/', $content, $output_array);
         
-        foreach($output_array[0]as $line) {
+        foreach($output_array[0] as $line) {
             preg_match('/<strong>(\s*)День\s\d(.*)<\/strong>/', $line, $found_day);
             if ($found_day || $line == '<hr>') {
                 $chapter++;

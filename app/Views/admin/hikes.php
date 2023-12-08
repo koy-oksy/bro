@@ -32,7 +32,7 @@
                                         <th>Заголовок / Аліас</th>
                                         <th>Ціна</th>
                                         <th>Дати</th>
-                                        <th>Активно</th>
+                                        <th>Включений</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -43,13 +43,13 @@
                                             <td><?= $hike->caption ?><br><?= $hike->alias ?></td>
                                             <td><?= $hike->price ?></td>
                                             <td><?= $hike->dates ?></td>
-                                            <td><i class="fa <?= $hike->active ? 'fa-eye' : 'fa-power-off' ?>"></i></td>
+                                            <td><i class="fa <?= $hike->active ? 'fa-check' : 'fa-power-off' ?>"></i></td>
                                             <td>
                                                 <a class="btn btn-secondary btn-sm" href="<?= site_url(sprintf('admin/hike/%s?hike=%s', $hike->hike_type, $hike->alias)) ?>">
                                                     <i class="fa fa-pencil"></i> Редагування
                                                 </a>
                                                 <br/>
-                                                <a class="btn btn-danger btn-sm" onClick="return confirm('Ви впевнені що хочете видалити цей похід?');" href="<?= site_url(sprintf('admin/hike/%s?hike=%s&delete=1', $hike->hike_type, $hike->alias)) ?>">
+                                                <a class="btn btn-danger btn-sm" onClick="return confirm('Ви впевнені що хочете видалити цей похід?');" href="<?= site_url(sprintf('admin/hike/%s/delete?hike=%s', $hike->hike_type, $hike->alias)) ?>">
                                                     <i class="fa fa-trash"></i> Видалити
                                                 </a>
                                             </td>
@@ -99,6 +99,7 @@
                         <li><b>Кількість місць:</b></li>
                         <li><b>Протяжність:</b></li>
                         <li><b>Маршрут:</b></li>
+                        <li><b>Складність:</b></li>
                     </ul>
                     <p>Будь ласка, зверніть увагу що всі назви параметрів на сторінці мають закінчуватись на <b>двокрапку</b> інакше система їх не побачить (але можна буде додати їх потім вручну)</p>
 

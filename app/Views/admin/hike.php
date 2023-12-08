@@ -32,12 +32,12 @@
                             </div>
                             <?php else : ?>
                             <div class="position-absolute p-2">
-                                <a href="<?= site_url("admin/hike/" . $hike->hike_type . "?hike=" . $hike->alias . "&set_poster=" . $image['id']) ?>" class="btn btn-sm btn-light">
+                                <a href="<?= site_url("admin/hike/" . $hike->hike_type . "/setposter?hike=" . $hike->alias . "&set_poster=" . $image['id']) ?>" class="btn btn-sm btn-light">
                                     Зробити обкладинкою
                                 </a>
                             </div>
                             <?php endif ?>
-                            <img image_id="<?= $image['id'] ?>" image_src="" src="<?= $image['loaded'] ? site_url('image' . modify_image_name_url($image['download_src'], 'horizontal_')) : base_url('img/loading.gif') ?>" class="img-fluid"/>
+                            <img image_id="<?= $image['id'] ?>" loaded="<?= $image['loaded'] ? "1" : "0" ?>" src="<?= $image['loaded'] ? site_url('image' . modify_image_name_url($image['download_src'], 'horizontal_')) : base_url('img/loading.gif') ?>" class="img-fluid"/>
                         </div>
                         <?php endforeach ?>
                     </div>
@@ -45,7 +45,7 @@
                         <input type="hidden" name="id" value="<?= $hike->id ?>"/>
                         <div class="item form-group">
                             <label for="active-hike" class="col-form-label col-md-3 col-sm-2 label-align">
-                                Активний
+                                Включити
                             </label>
                             <div class="col-md-9 col-sm-10">
                                 <label data-toggle="tooltip" data-placement="top" title="Перемикач який відповідає за показ походу для відвідувача">
@@ -146,11 +146,20 @@
                             </div>
                         </div>
                         <div class="item form-group">
+                            <label for="route" class="col-form-label col-md-3 col-sm-2 label-align">
+                                Складність
+                            </label>
+                            <div class="col-md-9 col-sm-10">
+                                <input id="route" class="form-control" type="text" name="difficulty" value="<?= $hike->difficulty ?>"
+                                    data-toggle="tooltip" data-placement="top" title="Рівень складності маршруту">
+                            </div>
+                        </div>
+                        <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-2 label-align" for="parsed-url">
                                 Звідки скачали
                             </label>
                             <div class="col-md-9 col-sm-10">
-                                <input type="text" id="parsed-url" class="form-control" value="<?= $hike->parsed_url ?>"
+                                <input disabled="disabled" type="text" id="parsed-url" class="form-control" value="<?= $hike->parsed_url ?>"
                                     data-toggle="tooltip" data-placement="top" title="Ссилка по якій був завантажений похід">
                             </div>
                         </div>
@@ -163,10 +172,10 @@
                                 >
                                     <i class="fa fa-arrow-left"></i> Назад
                                 </a>
-                                <a href="<?= site_url('admin/hike/' . $hike->hike_type . '?hike=' . $hike->alias . '&rescan=1') ?>" 
+                                <a href="<?= site_url('admin/hike/' . $hike->hike_type  . '/rescan' . '?hike=' . $hike->alias) ?>" 
                                     class="btn btn-danger" type="reset" 
-                                    data-toggle="tooltip" data-placement="top" title="Система ще раз просканує похід по лінку вище, замінить все"
-                                    onClick="if (confirm('Це призведе до перезапису даних походу, поїхали?')){location.reload();}else{event.stopPropagation(); event.preventDefault();};"
+                                    data-toggle="tooltip" data-placement="top" title="Система ще раз просканує похід з telegra.ph та оновить всі данні"
+                                    onClick="if (confirm('Це призведе до перезапису даних походу, поїхали?')){return true;}else{event.stopPropagation(); event.preventDefault();};"
                                 >
                                     <i class="fa fa-flash"></i> Пересканувати
                                 </a>
