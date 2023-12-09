@@ -20,7 +20,10 @@ if (! function_exists('parse_bro_url')) {
         preg_match_all('/<meta property="og:(.+?)" content="((.|\n)*?)">/', $content, $output_array);
         if ($output_array) {
             foreach ($output_array[1] as $key => $property_name) {
-                if (in_array($property_name, ['title', 'description', 'image'])) {
+                if ($property_name === 'image') {
+                    $parsed_data[$property_name] = str_replace("https://telegra.ph", "", trim($output_array[2][$key]));
+                }
+                if (in_array($property_name, ['title', 'description'])) {
                     $parsed_data[$property_name] = trim($output_array[2][$key]);
                 }
             }
@@ -48,7 +51,7 @@ if (! function_exists('parse_bro_url')) {
             $figure_content = str_replace(['<figure>', '</figure>'], '', $figure_content);
             preg_match('/src="(.*)"/', $figure_content, $output_array);
             if ($output_array) {
-                $parsed_data['image'] = $output_array[1];
+                $parsed_data['image'] = str_replace("https://telegra.ph", "", $output_array[1]);
             }
         }
         
@@ -126,6 +129,10 @@ if (! function_exists('parse_hike_content')) {
                 if ($line == '<hr>') {
                     continue; // skip line
                 }
+            }
+            preg_match('/src="https:\/\/telegra.ph(.*?)"/', $line, $figure_match);
+            if ($figure_match) {
+                $line = str_replace("https:\/\/telegra.ph", "", $line);
             }
             $chapters[$chapter][] = $line;
         }
