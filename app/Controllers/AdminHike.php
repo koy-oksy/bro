@@ -132,6 +132,7 @@ class Adminhike extends BaseController
             $builder = $db->table('hike');
             $output = $builder->where(['hike_type' => $hike_type])->orderBy('id', 'desc')->get();
             $page_data['hikes'] = $output->getResult();
+            $page_data['hike_type'] = $hike_type;
             $layout_data['content'] = view('admin/hikes', $page_data);
         }
         return $this->parser->setData($layout_data)->render('admin/layout');
