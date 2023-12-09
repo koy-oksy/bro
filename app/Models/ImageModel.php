@@ -27,10 +27,10 @@ class ImageModel extends Model
         // copy file and resize
         $image = \Config\Services::image();
         $image->withFile($dir . $download_src) 
-            ->fit(510, 703, 'center') 
+            ->fit(1100, 1518, 'center') 
             ->save($dir . modify_image_name($download_src, 'vertical_'));
         $image->withFile($dir . $download_src) 
-            ->fit(510, 340, 'center') 
+            ->fit(1100, 734, 'center') 
             ->save($dir . modify_image_name($download_src, 'horizontal_'));
         return true;
     }

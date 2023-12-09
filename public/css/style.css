@@ -4917,3 +4917,11 @@
 .icon-zoom_out_map:before {
   content: "\e56b";
 }
+
+figcaption {
+    position: absolute;
+}
+
+strong {
+    font-size: 24px;
+}

@@ -170,3 +170,31 @@ if (! function_exists('modify_image_name_url')) {
         return $path . '/' . $modify . $filename;
     }
 }
+
+if (! function_exists('format_chapter_output')) {
+    function format_chapter_output($chapter) {
+        preg_match_all('/<figure>(.*?)<\/figure>/', $chapter, $output_array);
+        
+        $chapter = str_replace('????', ' - ', $chapter);
+        
+        $figures = [];
+        if ($output_array) {
+            foreach ($output_array[0] as $figure) {
+                $chapter = str_replace($figure, '', $chapter);
+                preg_match('/src="(.*?)"/', $figure, $figure_match);
+                if ($figure_match) {
+                    $img_url = site_url('image' . modify_image_name_url($figure_match[1], 'horizontal_'));
+                    $figure = str_replace($figure_match[1], $img_url, $figure);
+                    $figure = str_replace('<img', '<img class="img-fluid"', $figure);
+                }
+                $figures[] = $figure;
+                
+            }
+        }
+        
+        return [
+            'chapter' => $chapter,
+            'figures' => $figures,
+        ];
+    }
+}

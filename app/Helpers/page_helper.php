@@ -5,7 +5,7 @@ if (! function_exists('show_param')) {
         if (!$value) {
             return '';
         }
-        return "<p><strong>$name</strong>: $value</p>";
+        return "<p><b>$name</b>: $value</p>";
     }
 }
 

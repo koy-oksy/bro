@@ -48,11 +48,14 @@
                             <img src="<?= site_url('image' . modify_image_name_url($hike['image_name'], 'vertical_')); ?>" alt="<?= $hike['alias'] ?>" class="img-fluid">
                         </div>
                         <div class="listing-item-content">
-                            <?php if ($hike['dates']) : ?>
-                            <a class="px-3 mb-3 category bg-success" href=""><?= $hike['dates'] ?></a>
-                            <?php endif ?>
-                            <a class="px-3 mb-3 category bg-primary" href="<?= site_url('carpatian-hikes/' . $hike['alias']) ?>">Детальніше</a>
                             <h2 class="mb-1"><?= $hike['caption'] ?></h2>
+                            <?php if ($hike['dates']) : ?>
+                            <a class="px-3 mb-3 category bg-success" href="<?= site_url('carpatian-hikes/' . $hike['alias']) ?>"><?= $hike['dates'] ?></a>
+                            <?php endif ?>
+                            <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/' . $hike['alias']) ?>">Детальніше</a>
+                            <?php if ($hike['price']) : ?>
+                            <p class="text-success"><?= $hike['price'] ?></p>
+                            <?php endif ?>
                         </div>
                     </div>
                 </div>
