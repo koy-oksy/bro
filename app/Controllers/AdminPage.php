@@ -27,7 +27,7 @@ class Adminpage extends BaseController
         helper(['filesystem', 'form']);
         
         $this->parser = \Config\Services::parser();
-        $this->site_name = get_config('site_name');
+        $this->site_name = get_config('site-name');
         $this->parent_data = [
             'css' => base_url('admin/css'),
             'js' => base_url('admin/js'),
@@ -105,16 +105,7 @@ class Adminpage extends BaseController
     // !!! PAGES SECTION !!!
     
     public function home() {
-        $layout_data = $this->parent_data;
-        $layout_data['title'] = $this->site_name . ' - Admin';
-        $layout_data['menu_entries'] = $this->menu_data;
-        $page_data = [];
-        try {
-            $layout_data['content'] = $this->parser->setData($page_data)->render('admin/home');
-        } catch (\Throwable $e) {
-            $layout_data['content'] = $e->getMessage();
-        }
-        return $this->parser->setData($layout_data)->render('admin/layout');
+        return $this->simplePage('home');
     }
     
     private function main() {

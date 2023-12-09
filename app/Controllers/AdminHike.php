@@ -23,7 +23,7 @@ class Adminhike extends BaseController
         parent::initController($request, $response, $logger);
 
         $this->parser = \Config\Services::parser();
-        $this->site_name = get_config('site_name');
+        $this->site_name = get_config('site-name');
         $this->parent_data = [
             'site_url' => site_url(),
             'css' => base_url('admin/css'),

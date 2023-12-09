@@ -72,13 +72,13 @@
                                             <li class="active"><a>Головна<span class="fa fa-chevron-down"></span></a>
                                                 <ul class="nav child_menu" style="display: block;">
                                                     <li class="sub_menu">
-                                                        <a href="{admin}/main">Html</a>
+                                                        <a href="{admin}/main">Структура сторінки</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{admin}/main/slider">Slider</a>
+                                                        <a href="{admin}/main/slider">Слайдер</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{admin}/main/counters">Counters</a>
+                                                        <a href="{admin}/main/counters">Лічильники</a>
                                                     </li>
                                                 </ul>
                                             </li>

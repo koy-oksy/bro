@@ -28,7 +28,7 @@ class Staticpage extends BaseController
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        $this->site_name = get_config('site_name');
+        $this->site_name = get_config('site-name');
         $this->parent_data = [
             'css' => base_url('css'),
             'js' => base_url('js'),
