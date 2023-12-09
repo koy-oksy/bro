@@ -246,5 +246,33 @@ class Adminpage extends BaseController
         return view('admin/widget/counters', $page_data);
     }
     
+    private function loveSave() {
+        $request = \Config\Services::request();
+        $id = $request->getVar('id');
+        $text = $request->getVar('text');
+        $widget_model = new \App\Models\LoveModel();
+        $data = [
+            'text' => $text,
+        ];
+        if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+            $img = $request->getFile('image');
+            if (! $img->hasMoved()) {
+                $data['image_name'] = $img->store();
+            }
+        }
+        $widget_model->update($id, $data);
+        session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        return redirect()->to('/admin/main/love');
+    }
+    
+    private function love() {
+        $widget_model = new \App\Models\LoveModel();
+        $page_data = array_merge($this->parent_data, [
+            'widget_entries' => $widget_model->getData(),
+            'widget_name' => 'love',
+        ]);
+        return view('admin/widget/love', $page_data);
+    }
+    
     // !!! END WIDGETS SECTION !!!
 }

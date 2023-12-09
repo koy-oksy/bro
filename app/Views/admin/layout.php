@@ -86,6 +86,9 @@
                                                     <li>
                                                         <a href="{admin}/main/advantage">Чому варто піти в гори з нами?</a>
                                                     </li>
+                                                    <li>
+                                                        <a href="{admin}/main/love">Ми любимо, те що робимо</a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                             <li><a href="{admin}/useful">Корисне</a></li>

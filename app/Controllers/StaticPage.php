@@ -40,6 +40,7 @@ class Staticpage extends BaseController
         $this->parent_data['counters'] = $this->connectWidget('counters');
         $this->parent_data['about'] = $this->connectWidget('about');
         $this->parent_data['advantage'] = $this->connectWidget('advantage');
+        $this->parent_data['love'] = $this->connectWidget('love');
         $this->parent_data['menu_entries'] = get_menu();
     }
 
