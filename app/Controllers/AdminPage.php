@@ -135,7 +135,7 @@ class Adminpage extends BaseController
         $id = $request->getVar('id');
         $caption = $request->getVar('caption');
         $text = $request->getVar('text');
-        $sliderModel = new \App\Models\SliderModel();
+        $widget_model = new \App\Models\SliderModel();
         $data = [
             'caption' => $caption,
             'text' => $text,
@@ -146,9 +146,9 @@ class Adminpage extends BaseController
                 $data['image_name'] = $img->store();
             }
         }
-        $sliderModel->update($id, $data);
+        $widget_model->update($id, $data);
         session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
-        return redirect()->to('/admin/slider');
+        return redirect()->to('/admin/main/slider');
     }
     
     private function slider() {
@@ -160,12 +160,68 @@ class Adminpage extends BaseController
         return view('admin/widget/slider', $page_data);
     }
     
+    private function aboutSave() {
+        $request = \Config\Services::request();
+        $id = $request->getVar('id');
+        $text = $request->getVar('text');
+        $widget_model = new \App\Models\AboutModel();
+        $data = [
+            'text' => $text,
+        ];
+        if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+            $img = $request->getFile('image');
+            if (! $img->hasMoved()) {
+                $data['image_name'] = $img->store();
+            }
+        }
+        $widget_model->update($id, $data);
+        session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        return redirect()->to('/admin/main/about');
+    }
+    
+    private function about() {
+        $widget_model = new \App\Models\AboutModel();
+        $page_data = array_merge($this->parent_data, [
+            'widget_entries' => $widget_model->getData(),
+            'widget_name' => 'about',
+        ]);
+        return view('admin/widget/about', $page_data);
+    }
+    
+    private function advantageSave() {
+        $request = \Config\Services::request();
+        $id = $request->getVar('id');
+        $text = $request->getVar('text');
+        $widget_model = new \App\Models\AdvantageModel();
+        $data = [
+            'text' => $text,
+        ];
+        if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+            $img = $request->getFile('image');
+            if (! $img->hasMoved()) {
+                $data['image_name'] = $img->store();
+            }
+        }
+        $widget_model->update($id, $data);
+        session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        return redirect()->to('/admin/main/advantage');
+    }
+    
+    private function advantage() {
+        $widget_model = new \App\Models\AdvantageModel();
+        $page_data = array_merge($this->parent_data, [
+            'widget_entries' => $widget_model->getData(),
+            'widget_name' => 'advantage',
+        ]);
+        return view('admin/widget/advantage', $page_data);
+    }
+    
     private function countersSave() {
         $request = \Config\Services::request();
         $id = $request->getVar('id');
         $max_number = $request->getVar('max_number');
         $text = $request->getVar('text');
-        $countersModel = new \App\Models\CountersModel();
+        $widget_model = new \App\Models\CountersModel();
         $data = [
             'max_number' => $max_number,
             'text' => $text,
@@ -176,9 +232,9 @@ class Adminpage extends BaseController
                 $data['image_name'] = $img->store();
             }
         }
-        $countersModel->update($id, $data);
+        $widget_model->update($id, $data);
         session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
-        return redirect()->to('/admin/counters');
+        return redirect()->to('/admin/main/counters');
     }
     
     private function counters() {

@@ -78,7 +78,13 @@
                                                         <a href="{admin}/main/slider">Слайдер</a>
                                                     </li>
                                                     <li>
+                                                        <a href="{admin}/main/about">Про нас</a>
+                                                    </li>
+                                                    <li>
                                                         <a href="{admin}/main/counters">Лічильники</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{admin}/main/advantage">Чому варто піти в гори з нами?</a>
                                                     </li>
                                                 </ul>
                                             </li>

@@ -38,6 +38,8 @@ class Staticpage extends BaseController
         ];
         $this->parent_data['slider'] = $this->connectWidget('slider');
         $this->parent_data['counters'] = $this->connectWidget('counters');
+        $this->parent_data['about'] = $this->connectWidget('about');
+        $this->parent_data['advantage'] = $this->connectWidget('advantage');
         $this->parent_data['menu_entries'] = get_menu();
     }
 
@@ -124,22 +126,16 @@ class Staticpage extends BaseController
             // if we are here, we passed the validation
             $username = $this->request->getVar('username');
             $text = $this->request->getVar('text');
-            $phone = $this->request->getVar('phone');
-
-
-
+            $phone = $this->request->getVar('phone');            
             $message =  ' Нове повідомлення '  . $username  . $text  . $phone;
-
-
             $this->message_to_telegram($message);
-
-
             session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми Вам передзвонимо найближчим часом!");
         } else {
             // if we are here validation was failed and we transfer error messages to UI
             session()->setFlashData("frontend_message_controller", $this->validator->listErrors());
         }
     }
+    
     function message_to_telegram($text)
     {
         $ch = curl_init();
