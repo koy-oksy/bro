@@ -35,7 +35,11 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-7">
                 <div class="heading-39101 mb-5">
+                    <?php if (empty($hikes)) : ?>
+                    <h3>Походи скоро з'являться, не перемикайтесь!</h3>
+                    <?php else : ?>
                     <h3>Найближчі походи</h3>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
