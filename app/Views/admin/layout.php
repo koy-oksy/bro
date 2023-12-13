@@ -69,28 +69,7 @@
                                     </li>
                                     <li><a><i class="fa fa-edit"></i> Сторінки <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li class="active"><a>Головна<span class="fa fa-chevron-down"></span></a>
-                                                <ul class="nav child_menu" style="display: block;">
-                                                    <li class="sub_menu">
-                                                        <a href="{admin}/main">Структура сторінки</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{admin}/main/slider">Слайдер</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{admin}/main/about">Про нас</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{admin}/main/counters">Лічильники</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{admin}/main/advantage">Чому варто піти в гори з нами?</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{admin}/main/love">Ми любимо, те що робимо</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="{admin}/main">Головна</a></li>
                                             <li><a href="{admin}/useful">Корисне</a></li>
                                             <li><a href="{admin}/contacts">Контакти</a></li>
                                         </ul>

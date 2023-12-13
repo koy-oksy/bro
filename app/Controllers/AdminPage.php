@@ -59,17 +59,39 @@ class Adminpage extends BaseController
         return $this->$method();
     }
     
-    public function index($page = false, $widget = false): string
+    public function index($page = false): string
     {
         $layout_data = $this->parent_data;
+        $page_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         try {
-            if ($widget) {
-                $layout_data['content'] = $this->$widget();
-            } else  {
-                $layout_data['content'] = $this->$page();
+            $model = new \App\Models\StaticpageModel();
+            $db_content = $model->where(['alias' => $page])->first();
+            $page_data['page'] = $db_content;
+            
+            $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $db_content['tpl_name']);
+            $template_file = new File($template_path);
+            $structure = file_get_contents($template_file->getRealPath());
+            $page_data['structure'] = $structure;
+            
+            $db = \Config\Database::connect();
+            $builder = $db->table('page-widget');
+            $page_widget = $builder->where(['page_alias' => $page])->get();
+            $widgets = [];
+            foreach ($page_widget->getResultArray() as $w) {
+                $widget_class = "\\App\\Models\\" . ucfirst($w['widget_name']) . "Model";
+                $widget_model = new $widget_class();
+                $w_data = array_merge($this->parent_data, [
+                    'name' => $w['widget_name'],
+                    'caption' => $w['widget_caption'],
+                    'entries' => $widget_model->getData(),
+                ]);
+                $w_data['content'] = view('admin/widget/' . $w['widget_name'], $w_data);
+                $widgets[] = $w_data;
             }
+            $page_data['widgets'] = $widgets;
+            $layout_data['content'] = view('admin/static-page', $page_data);
         } catch (\Throwable $e) {
             $layout_data['content'] = $e->getMessage();
         }
