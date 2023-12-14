@@ -76,7 +76,7 @@ class Staticpage extends BaseController
 
         $layout_data['title'] = $this->site_name . ' - ' . $row->title;
         $layout_data['description'] = $row->description;
-        $layout_data['tags'] = $row->tags;
+
 
         if ($row->tpl_type === 'parser') {
             $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
@@ -127,7 +127,7 @@ class Staticpage extends BaseController
             // if we are here, we passed the validation
             $username = $this->request->getVar('username');
             $text = $this->request->getVar('text');
-            $phone = $this->request->getVar('phone');            
+            $phone = $this->request->getVar('phone');
             $message =  ' Нове повідомлення '  . $username  . $text  . $phone;
             $this->message_to_telegram($message);
             session()->setFlashData("frontend_message_controller", "Ваше повідомлення дуже важливе для нас! Ми Вам передзвонимо найближчим часом!");
@@ -136,7 +136,7 @@ class Staticpage extends BaseController
             session()->setFlashData("frontend_message_controller", $this->validator->listErrors());
         }
     }
-    
+
     function message_to_telegram($text)
     {
         $ch = curl_init();
