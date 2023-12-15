@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 class Adminhike extends BaseController
 {
     
-    protected $helpers = ['config', 'parser', 'filesystem', 'form'];
+    protected $helpers = ['config', 'parser', 'filesystem', 'form', 'menu'];
     
     protected $site_name;
     protected $parent_data;
@@ -135,7 +135,7 @@ class Adminhike extends BaseController
             $page_data['hike_type'] = $hike_type;
             $layout_data['content'] = view('admin/hikes', $page_data);
         }
-        return $this->parser->setData($layout_data)->render('admin/layout');
+        return view('admin/layout', $layout_data);
     }
     
 }

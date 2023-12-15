@@ -14,7 +14,6 @@ class StaticpageModel extends Model
         'alias',
         'title',
         'description',
-        'tpl_name',
         'tpl_type',
     ];
     
