@@ -79,9 +79,9 @@ class Staticpage extends BaseController
 
 
         if ($row->tpl_type === 'parser') {
-            $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->tpl_name);
+            $layout_data['content'] = $parser->setData($page_data)->render('staticPages/' . $row->alias);
         } else {
-            $layout_data['content'] = view('staticPages/' . $row->tpl_name, $page_data);
+            $layout_data['content'] = view('staticPages/' . $row->alias, $page_data);
         }
 
         return $parser->setData($layout_data)->render('layout');

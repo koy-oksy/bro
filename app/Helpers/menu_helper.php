@@ -33,3 +33,66 @@ if (! function_exists('get_menu')) {
     }
 
 }
+
+if (! function_exists('get_admin_menu')) {
+    function get_admin_menu(): array
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('static-page');
+        $output = $builder->get();
+        $static_pages = $output->getResultArray();
+        $static_pages_params = [];
+        foreach ($static_pages as $page) {
+            $static_pages_params[] = [
+                'title' => $page['title'],
+                'url' => $page['alias'],
+            ];
+        }
+        return [
+            [
+                'block_title' => 'Загальне',
+                'links' => [
+                    [
+                        'icon' => 'fa fa-home',
+                        'title' => 'Дім',
+                        'url' => '/home',
+                        'links' => [],
+                    ],
+                    [
+                        'icon' => 'fa fa-edit',
+                        'title' => 'Сторінки',
+                        'links' => $static_pages_params,
+                        'url' => '',
+                    ],
+                    [
+                        'icon' => 'fa fa-table',
+                        'title' => 'Каталог',
+                        'links' => [
+                            [
+                                'title' => 'Походи в Карпати',
+                                'url' => '/hike/carpatian'
+                            ],
+                            [
+                                'title' => 'Мандрівки закордон',
+                                'url' => '/hike/foreign'
+                            ],
+                        ],
+                        'url' => '',
+                    ],
+                    [
+                        'icon' => 'fa fa-gear',
+                        'title' => 'Сайт',
+                        'links' => [
+                            [
+                                'title' => 'Налаштування',
+                                'url' => '/settings',
+                            ]
+                        ],
+                        'url' => '',
+                    ],
+                ],
+            ],
+        ];
+    }
+
+}

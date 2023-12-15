@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 class Adminpage extends BaseController
 {
     
-    protected $helpers = ['config'];
+    protected $helpers = ['config', 'menu', 'filesystem', 'form'];
     
     protected $site_name;
     protected $parent_data;
@@ -24,8 +24,6 @@ class Adminpage extends BaseController
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        helper(['filesystem', 'form']);
-        
         $this->parser = \Config\Services::parser();
         $this->site_name = get_config('site-name');
         $this->parent_data = [
@@ -70,7 +68,7 @@ class Adminpage extends BaseController
             $db_content = $model->where(['alias' => $page])->first();
             $page_data['page'] = $db_content;
             
-            $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $db_content['tpl_name']);
+            $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $db_content['alias']);
             $template_file = new File($template_path);
             $structure = file_get_contents($template_file->getRealPath());
             $page_data['structure'] = $structure;
@@ -96,7 +94,7 @@ class Adminpage extends BaseController
             $layout_data['content'] = $e->getMessage();
         }
                 
-        return $this->parser->setData($layout_data)->render('admin/layout');
+        return view('admin/layout', $layout_data);
     }
     
     private function simplePage($template_name) {
