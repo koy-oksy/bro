@@ -68,8 +68,16 @@ class Adminpage extends BaseController
             $db_content = $model->where(['alias' => $page])->first();
             $page_data['page'] = $db_content;
             
-            $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $db_content['alias']);
+            $relative_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $db_content['alias']);
+            
+            if (!is_file($relative_path)) {
+                $f = fopen($relative_path, "w");
+                fwrite($f, '<!-- Нова сторінка -->');
+            }
+            
+            $template_path = $relative_path;
             $template_file = new File($template_path);
+            
             $structure = file_get_contents($template_file->getRealPath());
             $page_data['structure'] = $structure;
             

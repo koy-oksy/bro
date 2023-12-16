@@ -2,7 +2,10 @@
     <div class="col-md-12 col-sm-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><?= $page['title'] ?></h2>
+                <h2>
+                    <?= $page['title'] ?> 
+                    <small><a href="<?= site_url('page/' . $page['alias']) ?>" target="_blank"><?= site_url('page/' . $page['alias']) ?></a></small>
+                </h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -48,7 +51,9 @@
                                         <?php endforeach ?>
                                         </ul>
                                         <?php endif ?>
-                                        <textarea rows="10" class="form-control" name="template_code" id="structure"><?= $structure ?></textarea>
+                                        <div id="textarea-editor">
+                                        <textarea style="display:none;" name="template_code"><?= $structure ?></textarea>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-warning" type="reset" 

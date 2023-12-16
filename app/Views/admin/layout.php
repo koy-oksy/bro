@@ -29,6 +29,8 @@
     <style id="style2" type="text/css"></style>
     <link id="theme1" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="<?= base_url('admin/vendors/editor.md-master/css/editormd.css') ?>" />
+    
     <script type="text/javascript">
         let site_url = '<?= site_url() ?>';
     </script>
@@ -235,6 +237,7 @@
     <script src="<?= base_url('admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') ?>"></script>
     <script src="<?= base_url('admin/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') ?>"></script>
     <script src="<?= base_url('admin/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') ?>"></script>
+    <script src="<?= base_url('admin/vendors/editor.md-master/editormd.min.js') ?>"></script>
 
 
     <!-- Custom Theme Scripts -->
