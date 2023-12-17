@@ -14,7 +14,7 @@
             Текст <icon class="fa fa-question-circle"></icon>
         </label>
         <div class="textarea-editor" id="text<?= $name ?>-editor">
-            <textarea style="display:none;" name="template_code" text<?= $entry['id'] ?>><?= $entry['text'] ?></textarea>
+            <textarea style="display:none;" name="text" text<?= $entry['id'] ?>><?= $entry['text'] ?></textarea>
         </div>
     </div>
 </div>

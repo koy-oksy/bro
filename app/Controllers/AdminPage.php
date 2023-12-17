@@ -50,27 +50,26 @@ class Adminpage extends BaseController
             return redirect()->to('/admin/home');
         }
         if ($widget) {
-                
-                $id = $request->getVar('id');
-                $caption = $request->getVar('caption');
-                $text = $request->getVar('text');
-                $widget_model = new \App\Models\SliderModel();
-                $data = [
-                    'caption' => $caption,
-                    'text' => $text,
-                ];
-                if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
-                    $img = $request->getFile('image');
-                    if (! $img->hasMoved()) {
-                        $data['image_name'] = $img->store();
-                    }
+            $id = $request->getVar('id');
+            $caption = $request->getVar('caption');
+            $text = $request->getVar('text');
+            $model_name = "\\App\\Models\\" . ucfirst($widget) . "Model";
+            $widget_model = new $model_name();
+            $data = [
+                'caption' => $caption,
+                'text' => $text,
+            ];
+            if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+                $img = $request->getFile('image');
+                if (! $img->hasMoved()) {
+                    $data['image_name'] = $img->store();
                 }
-                $widget_model->update($id, $data);
-                session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
-                return redirect()->to('/admin/main/slider');
+            }
+            $widget_model->update($id, $data);
+            session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+            return redirect()->to('/admin/main/slider');
             
-            $method = $widget . 'Save';
-            $this->$method();
+            
         } else {
             $template_code = $request->getVar('template_code');
             $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $page);
