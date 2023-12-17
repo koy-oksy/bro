@@ -10,8 +10,12 @@
 </div>
 <div class="col-md-12">
     <div class="form-group">
-        <label data-original-title="Тут можна використовувати html теги" data-toggle="tooltip" data-placement="right" for="text<?= $entry['id'] ?>">Текст <icon class="fa fa-question-circle"></icon></label>
-        <textarea rows="5" class="form-control" id="text<?= $entry['id'] ?>" name="text"><?= $entry['text'] ?></textarea>
+        <label data-original-title="Тут можна використовувати html теги" data-toggle="tooltip" data-placement="right" for="text<?= $entry['id'] ?>">
+            Текст <icon class="fa fa-question-circle"></icon>
+        </label>
+        <div class="textarea-editor" id="text<?= $name ?>-editor">
+            <textarea style="display:none;" name="template_code" text<?= $entry['id'] ?>><?= $entry['text'] ?></textarea>
+        </div>
     </div>
 </div>
 <div class="col-md-12">

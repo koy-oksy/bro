@@ -10,8 +10,15 @@
             <input type="text" class="form-control" id="max_number<?= $entry['id'] ?>" value="<?= $entry['max_number'] ?>" name="max_number">
         </div>
         <div class="form-group">
-            <label data-original-title="Тут можна використовувати html теги" data-toggle="tooltip" data-placement="right" for="text<?= $entry['id'] ?>">Текст <icon class="fa fa-question-circle"></icon></label>
-            <textarea rows="6" class="form-control" id="text<?= $entry['id'] ?>" name="text"><?= $entry['text'] ?></textarea>
+            <label data-original-title="Тут можна використовувати html теги" 
+                   data-toggle="tooltip" data-placement="right" 
+                   for="text<?= $name.$entry['id'] ?>"
+            >
+                Текст <icon class="fa fa-question-circle"></icon>
+            </label>
+            <div class="textarea-editor" id="text<?= $name.$entry['id'] ?>-editor">
+                <textarea style="display:none;" name="template_code" text<?= $entry['id'] ?>><?= $entry['text'] ?></textarea>
+            </div>
         </div>
     </div>
     <div class="col-md-3">

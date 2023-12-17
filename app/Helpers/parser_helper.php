@@ -120,25 +120,18 @@ if (! function_exists('parse_hike_content')) {
         }
         
         $chapters = [];
-        $chapter = 0;
         // split content into liness
-        preg_match_all('/(<p>|<ul>|<figure>|<blockquote>)(.*?)(<\/p>|<\/ul>|<\/figure>|<\/blockquote>)/', $content, $output_array);
-        
-        foreach($output_array[0] as $line) {
-            preg_match('/<strong>(\s*)День\s\d(.*)<\/strong>/', $line, $found_day);
-            if ($found_day || $line == '<hr>') {
-                $chapter++;
-                if ($line == '<hr>') {
-                    continue; // skip line
+        $chs = explode('<hr/>', $content);
+        foreach ($chs as $chapter => $ch) {
+            preg_match_all('/(<p>|<ul>|<figure>|<blockquote>)(.*?)(<\/p>|<\/ul>|<\/figure>|<\/blockquote>)/', $ch, $output_array);
+            foreach($output_array[0] as $line) {
+                preg_match('/src="https:\/\/telegra.ph(.*?)"/', $line, $figure_match);
+                if ($figure_match) {
+                    $line = str_replace("https:\/\/telegra.ph", "", $line);
                 }
+                $chapters[$chapter][] = $line;
             }
-            preg_match('/src="https:\/\/telegra.ph(.*?)"/', $line, $figure_match);
-            if ($figure_match) {
-                $line = str_replace("https:\/\/telegra.ph", "", $line);
-            }
-            $chapters[$chapter][] = $line;
         }
-        
         $found_params['chapters'] = $chapters;
         
         return $found_params;
