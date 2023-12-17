@@ -100,7 +100,7 @@ if (! function_exists('parse_hike_content')) {
             'dates' => 'Дати:', 
             'format' => 'Формат:', 
             'price' => 'Вартість:', 
-            'participants' => 'Кількість місць:',
+            'participants' => 'Кількість учасників:',
             'distance' => 'Протяжність:',
             'route' => 'Маршрут:',
             'difficulty' => 'Складність:',
