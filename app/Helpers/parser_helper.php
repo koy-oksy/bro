@@ -118,7 +118,6 @@ if (! function_exists('parse_hike_content')) {
                 }
             } 
         }
-        
         $chapters = [];
         // split content into liness
         $chs = explode('<hr/>', $content);
