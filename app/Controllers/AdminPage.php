@@ -51,20 +51,17 @@ class Adminpage extends BaseController
         }
         if ($widget) {
             $id = $request->getVar('id');
-            $caption = $request->getVar('caption');
-            $text = $request->getVar('text');
+            $data = $request->getVar();
+            
             $model_name = "\\App\\Models\\" . ucfirst($widget) . "Model";
             $widget_model = new $model_name();
-            $data = [
-                'caption' => $caption,
-                'text' => $text,
-            ];
             if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
                 $img = $request->getFile('image');
                 if (! $img->hasMoved()) {
                     $data['image_name'] = $img->store();
                 }
             }
+            
             $widget_model->update($id, $data);
             session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
             return redirect()->to('/admin/main/slider');
