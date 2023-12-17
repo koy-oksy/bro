@@ -8,6 +8,7 @@
                     <?= show_param('Тривалість', $days) ?>
                     <?= show_param('Формат', $format) ?>
                     <?= show_param('Вартість', $price) ?>
+                    <?= show_param('Загальний бюджет подорожі', $total_price) ?>
                     <?= show_param('Кількість учасників', $participants) ?>
                     <?= show_param('Протяжність', $distance) ?>
                     <?= show_param('Маршрут', $route) ?>

@@ -29,7 +29,7 @@ $routes->get('admin/hike/(:segment)/setposter', 'AdminHike::setposter/$1');
 $routes->post('admin/hike/(:segment)', 'AdminHike::save/$1');
 
 $routes->get('admin/(:segment)', 'AdminPage::index/$1');
-$routes->post('admin/(:segment)', 'AdminPage::index/$1');
+$routes->post('admin/(:segment)', 'AdminPage::save/$1');
 $routes->get('admin/(:segment)/(:segment)', 'AdminPage::index/$1/$2');
 $routes->post('admin/(:segment)/(:segment)', 'AdminPage::save/$1/$2');
 

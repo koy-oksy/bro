@@ -50,11 +50,35 @@ class Adminpage extends BaseController
             return redirect()->to('/admin/home');
         }
         if ($widget) {
+                
+                $id = $request->getVar('id');
+                $caption = $request->getVar('caption');
+                $text = $request->getVar('text');
+                $widget_model = new \App\Models\SliderModel();
+                $data = [
+                    'caption' => $caption,
+                    'text' => $text,
+                ];
+                if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+                    $img = $request->getFile('image');
+                    if (! $img->hasMoved()) {
+                        $data['image_name'] = $img->store();
+                    }
+                }
+                $widget_model->update($id, $data);
+                session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+                return redirect()->to('/admin/main/slider');
+            
             $method = $widget . 'Save';
+            $this->$method();
         } else {
-            $method = $page . 'Save';
+            $template_code = $request->getVar('template_code');
+            $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $page);
+            $template_file = new File($template_path);
+            file_put_contents($template_file->getRealPath(), $template_code);
+            session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
         }
-        return $this->$method();
+        return redirect()->to('/admin/' . $page);
     }
     
     public function index($page = false): string
@@ -67,20 +91,15 @@ class Adminpage extends BaseController
             $model = new \App\Models\StaticpageModel();
             $db_content = $model->where(['alias' => $page])->first();
             $page_data['page'] = $db_content;
-            
             $relative_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $db_content['alias']);
-            
             if (!is_file($relative_path)) {
                 $f = fopen($relative_path, "w");
                 fwrite($f, '<!-- Нова сторінка -->');
             }
-            
             $template_path = $relative_path;
             $template_file = new File($template_path);
-            
             $structure = file_get_contents($template_file->getRealPath());
             $page_data['structure'] = $structure;
-            
             $db = \Config\Database::connect();
             $builder = $db->table('page-widget');
             $page_widget = $builder->where(['page_alias' => $page])->get();
@@ -101,61 +120,9 @@ class Adminpage extends BaseController
         } catch (\Throwable $e) {
             $layout_data['content'] = $e->getMessage();
         }
-                
         return view('admin/layout', $layout_data);
     }
-    
-    private function simplePage($template_name) {
-        $request = \Config\Services::request();
-        $template_path = sprintf('%s%s.php', self::PATH_TO_VIEWS, $template_name);
-        $template_file = new File($template_path);
-        if ($template_file->isWritable()) {
-            if ($request->getMethod() === 'post') {
-                $template_code = $request->getVar('template_code');
-                file_put_contents($template_file->getRealPath(), $template_code);
-                session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
-            }
-            $content = file_get_contents($template_file->getRealPath());
-            $page_data = [
-                'form_open' => form_open('admin/' . $template_name),
-                'form_close' => form_close(),
-                'template_name' => $template_name,
-                'template_content' => $content,
-            ];
-        } else {
-            $page_data = [
-                'template_content' => sprintf('Template File "%s" is not writebale', $template_path),
-            ];
-        }
-        return $this->parser->setData($page_data)->render(sprintf('admin/%s', $template_name));
-    }
-    
-    // !!! PAGES SECTION !!!
-    
-    public function home() {
-        return $this->simplePage('home');
-    }
-    
-    private function main() {
-        return $this->simplePage('main');
-    }
-    
-    private function useful() {
-        return $this->simplePage('useful');
-    }
-    
-    private function contacts() {
-        $page_data = [];
-        return $this->parser->setData($page_data)->render('admin/contacts');
-    }
-    
-    private function settings() {
-        $page_data = [];
-        return $this->parser->setData($page_data)->render('admin/settings');
-    }
-    
-    // !!! END PAGES SECTION !!!
-    
+        
     // !!! WIDGETS SECTION !!!
     
     private function sliderSave() {

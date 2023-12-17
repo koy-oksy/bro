@@ -62,6 +62,7 @@ class Adminhike extends BaseController
                 'route' => $request->getPost('route'),
                 'difficulty' => $request->getPost('difficulty'),
                 'price' => $request->getPost('price'),
+                'total_price' => $request->getPost('total_price'),
             ];
             $hikeModel->update($id, $data);
             $redirect = "/admin/hike/$hike_type?hike=$hike";

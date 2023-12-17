@@ -111,7 +111,7 @@
                     </div>
                     <div class="item form-group">
                         <label for="price" class="col-form-label col-md-3 col-sm-2 label-align">
-                            Ціна
+                            Вартість
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input id="price" class="form-control" type="text" name="price" value="<?= $hike->price ?>"
@@ -119,8 +119,17 @@
                         </div>
                     </div>
                     <div class="item form-group">
+                        <label for="total_price" class="col-form-label col-md-3 col-sm-2 label-align">
+                            Загальний бюджет подорожі
+                        </label>
+                        <div class="col-md-9 col-sm-10">
+                            <input id="total_price" class="form-control" type="text" name="total_price" value="<?= $hike->total_price ?>"
+                                   data-toggle="tooltip" data-placement="top" title="Загальна вартість походу">
+                        </div>
+                    </div>
+                    <div class="item form-group">
                         <label for="participants" class="col-form-label col-md-3 col-sm-2 label-align">
-                            Учасники
+                            Кількість учасників
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input id="participants" class="form-control" type="text" name="participants" value="<?= $hike->participants ?>"
@@ -129,7 +138,7 @@
                     </div>
                     <div class="item form-group">
                         <label for="distance" class="col-form-label col-md-3 col-sm-2 label-align">
-                            Дистанція
+                            Протяжність
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input id="distance" class="form-control" type="text" name="distance" value="<?= $hike->distance ?>"

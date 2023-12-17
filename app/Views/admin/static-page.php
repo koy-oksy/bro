@@ -28,9 +28,9 @@
                     <!-- required for floating -->
                     <!-- Nav tabs -->
                     <div class="nav nav-tabs flex-column  bar_tabs" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="page-home-tab" data-toggle="pill" href="#page-home-content" role="tab" aria-controls="page-home-content" aria-selected="true">Структура</a>
+                        <a class="nav-link active widget-handler" id="page-home-tab" data-toggle="pill" href="#page-home-content" role="tab" aria-controls="page-home-content" aria-selected="true">Структура</a>
                         <?php foreach ($widgets as $widget) : ?>
-                            <a class="nav-link" id="page-<?= $widget['name'] ?>-tab" data-toggle="pill" href="#page-<?= $widget['name'] ?>-content" role="tab" aria-controls="page-<?= $widget['name'] ?>-content" aria-selected="false"><?= $widget['caption'] ?></a>
+                            <a class="nav-link widget-handler" id="page-<?= $widget['name'] ?>-tab" data-toggle="pill" href="#page-<?= $widget['name'] ?>-content" role="tab" aria-controls="page-<?= $widget['name'] ?>-content" aria-selected="false"><?= $widget['caption'] ?></a>
                         <?php endforeach ?>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                                         <?php endforeach ?>
                                         </ul>
                                         <?php endif ?>
-                                        <div id="textarea-editor">
+                                        <div class="textarea-editor" id="content-editor">
                                         <textarea style="display:none;" name="template_code"><?= $structure ?></textarea>
                                         </div>
                                     </div>
@@ -75,7 +75,6 @@
                         <?php endforeach ?>
                     </div>
                 </div>
-
                 <div class="clearfix"></div>
             </div>
         </div>
