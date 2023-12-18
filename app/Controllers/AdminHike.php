@@ -21,7 +21,7 @@ class Adminhike extends BaseController
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
+        
         $this->parser = \Config\Services::parser();
         $this->site_name = get_config('site-name');
         $this->parent_data = [

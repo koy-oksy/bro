@@ -22,16 +22,25 @@ $routes->get('horizontal/(:segment)/(:segment)', 'Image::horizontal/$1/$2');
 /* End Special routes */
 
 /* Admin routes */
-$routes->get('admin/hike/(:segment)', 'AdminHike::index/$1');
-$routes->get('admin/hike/(:segment)/rescan', 'AdminHike::rescan/$1');
-$routes->get('admin/hike/(:segment)/delete', 'AdminHike::delete/$1');
-$routes->get('admin/hike/(:segment)/setposter', 'AdminHike::setposter/$1');
-$routes->post('admin/hike/(:segment)', 'AdminHike::save/$1');
 
-$routes->get('admin/(:segment)', 'AdminPage::index/$1');
-$routes->post('admin/(:segment)', 'AdminPage::save/$1');
-$routes->get('admin/(:segment)/(:segment)', 'AdminPage::index/$1/$2');
-$routes->post('admin/(:segment)/(:segment)', 'AdminPage::save/$1/$2');
+$routes->get("admin/login", "AdminLogin::index");
+$routes->post("admin/login", "AdminLogin::login");
+$routes->get("admin/logout", "AdminLogin::logout");
 
+// Filter on route group
+$routes->group("admin", ["filter" => "myauth"] , function($routes){
+    $routes->get('hike/(:segment)', 'AdminHike::index/$1');
+    $routes->get('hike/(:segment)/rescan', 'AdminHike::rescan/$1');
+    $routes->get('hike/(:segment)/delete', 'AdminHike::delete/$1');
+    $routes->get('hike/(:segment)/setposter', 'AdminHike::setposter/$1');
+    $routes->post('hike/(:segment)', 'AdminHike::save/$1');
 
+    $routes->get('(:segment)', 'AdminPage::index/$1');
+    $routes->post('(:segment)', 'AdminPage::save/$1');
+    $routes->get('(:segment)/(:segment)', 'AdminPage::index/$1/$2');
+    $routes->post('(:segment)/(:segment)', 'AdminPage::save/$1/$2');
+});
+
+// Filter on single route
+$routes->get("admin/profile", "AdminController::profile", ["filter" => "myauth"]);
 /* End Admin routes */

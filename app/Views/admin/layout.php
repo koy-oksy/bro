@@ -98,7 +98,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Вийти" href="login.html">
+                        <a data-toggle="tooltip" data-placement="top" title="Вийти" href="<?= site_url('admin/logout') ?>">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -120,7 +120,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:;">Допомога</a>
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Вийти</a>
+                                    <a class="dropdown-item" href="<?= site_url('admin/logout') ?>"><i class="fa fa-sign-out pull-right"></i> Вийти</a>
                                 </div>
                             </li>
 
