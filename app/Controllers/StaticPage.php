@@ -17,7 +17,7 @@ define('TELEGRAM_CHATID', '404016080');
 class Staticpage extends BaseController
 {
 
-    protected $helpers = ['config', 'menu_helper'];
+    protected $helpers = ['config', 'menu', 'page'];
 
     protected $site_name;
     protected $parent_data;
@@ -84,6 +84,8 @@ class Staticpage extends BaseController
             $layout_data['content'] = view('staticPages/' . $row->alias, $page_data);
         }
 
+        log_action($row->alias, 'static');
+        
         return $parser->setData($layout_data)->render('layout');
     }
 

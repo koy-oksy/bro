@@ -50,7 +50,7 @@ if (! function_exists('get_admin_menu')) {
         }
         return [
             [
-                'block_title' => 'Загальне',
+                'block_title' => 'Меню',
                 'links' => [
                     [
                         'icon' => 'fa fa-home',

@@ -54,8 +54,8 @@
                             <img src="<?= base_url('admin/img/logo.jpg') ?>" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Welcome,</span>
-                            <h2>Admin</h2>
+                            <span>Вітаю,</span>
+                            <h2>Brotour</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->

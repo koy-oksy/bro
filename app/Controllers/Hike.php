@@ -33,6 +33,7 @@ class Hike extends BaseController
 
     public function index($hike_type, $hike = null): string
     {
+//        var_dump($hike_type); die;
         $db = \Config\Database::connect();
         $parser = \Config\Services::parser();
         $page_data = $this->parent_data;
@@ -53,6 +54,9 @@ class Hike extends BaseController
             $layout_data['title'] = $this->site_name . ' - ' . $row['caption'];
             $layout_data['description'] = $row['description'];
             $layout_data['content'] = view('hike', $page_data);
+            
+            log_action($hike, $hike_type);
+            
         } else {
             $builder = $db->table('hike');
             $keys = [

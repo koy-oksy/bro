@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 class Adminpage extends BaseController
 {
     
-    protected $helpers = ['config', 'menu', 'filesystem', 'form'];
+    protected $helpers = ['config', 'menu', 'filesystem', 'form', 'page'];
     
     protected $site_name;
     protected $parent_data;
@@ -77,6 +77,9 @@ class Adminpage extends BaseController
     
     public function index($page = false): string
     {
+        if ($page === 'home') {
+            return $this->showHome();
+        }
         $layout_data = $this->parent_data;
         $page_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
@@ -114,6 +117,27 @@ class Adminpage extends BaseController
         } catch (\Throwable $e) {
             $layout_data['content'] = $e->getMessage();
         }
+        return view('admin/layout', $layout_data);
+    }
+    
+    private function showHome() {
+        $logModel = new \App\Models\LogModel();
+        $logs = $logModel->findAll(3);
+        
+        foreach ($logs as &$log) {
+            $date = $log['date'];
+            $user = $log['user_data'];
+            $log = get_page_by_alias_type($log['alias'], $log['type']);
+            $log['date'] = $date;
+            $log['user'] = $user;
+        }
+        
+        $layout_data = $this->parent_data;
+        $page_data = $this->parent_data;
+        $page_data['logs'] = $logs;
+        $layout_data['title'] = $this->site_name . ' - Admin';
+        $layout_data['menu_entries'] = $this->menu_data;
+        $layout_data['content'] = view('admin/home', $page_data);
         return view('admin/layout', $layout_data);
     }
 }

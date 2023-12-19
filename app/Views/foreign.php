@@ -54,9 +54,9 @@
                         <div class="listing-item-content">
                             <h2 class="mb-1"><?= $hike['caption'] ?></h2>
                             <?php if ($hike['dates']) : ?>
-                            <a class="px-3 mb-3 category bg-success" href="<?= site_url('carpatian-hikes/' . $hike['alias']) ?>"><?= $hike['dates'] ?></a>
+                            <a class="px-3 mb-3 category bg-success" href="<?= site_url('foreign-hikes/' . $hike['alias']) ?>"><?= $hike['dates'] ?></a>
                             <?php endif ?>
-                            <a class="px-3 mb-3 category" href="<?= site_url('carpatian-hikes/' . $hike['alias']) ?>">Детальніше</a>
+                            <a class="px-3 mb-3 category" href="<?= site_url('foreign-hikes/' . $hike['alias']) ?>">Детальніше</a>
                             <?php if ($hike['price']) : ?>
                             <p class="text-success"><?= $hike['price'] ?></p>
                             <?php endif ?>
