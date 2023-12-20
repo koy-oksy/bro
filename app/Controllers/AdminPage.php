@@ -123,11 +123,12 @@ class Adminpage extends BaseController
     private function showHome() {
         $layout_data = $this->parent_data;
         $page_data = $this->parent_data;
-        $logModel = new \App\Models\HikeModel();
-        $page_data['carpatian_count'] = $logModel->where('hike_type', 'carpatian')->countAllResults();
-        $page_data['foreign_count'] = $logModel->where('hike_type', 'foreign')->countAllResults();
-        
+        $hikeModel = new \App\Models\HikeModel();
+        $page_data['carpatian_count'] = $hikeModel->where('hike_type', 'carpatian')->countAllResults();
+        $page_data['foreign_count'] = $hikeModel->where('hike_type', 'foreign')->countAllResults();
+        $page_data['not_active_count'] = $hikeModel->where('active', '0')->countAllResults();
         $logModel = new \App\Models\LogModel();
+        $page_data['all_count'] = $logModel->countAllResults();
         $logs = $logModel->orderBy('created_at', 'desc')->findAll(3);
         $page_data['logs'] = $logs;
         $layout_data['title'] = $this->site_name . ' - Admin';

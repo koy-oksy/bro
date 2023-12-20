@@ -35,7 +35,7 @@
                     <div class="tile-stats">
                         <div class="icon"><i class="fa fa-eye"></i>
                         </div>
-                        <div class="count">179</div>
+                        <div class="count"><?= $all_count ?></div>
                         <h3>Переглядів</h3>
                         <p>Всіх сторінок сайту</p>
                     </div>
@@ -44,7 +44,7 @@
                     <div class="tile-stats">
                         <div class="icon"><i class="fa fa-eye-slash"></i>
                         </div>
-                        <div class="count">179</div>
+                        <div class="count"><?= $not_active_count ?></div>
                         <h3>Не активні походи</h3>
                         <p>Карпати + закордон.</p>
                     </div>
