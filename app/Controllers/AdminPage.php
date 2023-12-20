@@ -121,19 +121,14 @@ class Adminpage extends BaseController
     }
     
     private function showHome() {
-        $logModel = new \App\Models\LogModel();
-        $logs = $logModel->findAll(3);
-        
-        foreach ($logs as &$log) {
-            $date = $log['date'];
-            $user = $log['user_data'];
-            $log = get_page_by_alias_type($log['alias'], $log['type']);
-            $log['date'] = $date;
-            $log['user'] = $user;
-        }
-        
         $layout_data = $this->parent_data;
         $page_data = $this->parent_data;
+        $logModel = new \App\Models\HikeModel();
+        $page_data['carpatian_count'] = $logModel->where('hike_type', 'carpatian')->countAllResults();
+        $page_data['foreign_count'] = $logModel->where('hike_type', 'foreign')->countAllResults();
+        
+        $logModel = new \App\Models\LogModel();
+        $logs = $logModel->orderBy('created_at', 'desc')->findAll(3);
         $page_data['logs'] = $logs;
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;

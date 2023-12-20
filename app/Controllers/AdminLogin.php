@@ -35,16 +35,16 @@ class Adminlogin extends BaseController
         // hiking100km
         if ($login === 'brotour' && $this->hash($password) === '5c93a1a0206d04eddbdaa54c89097a52') {
             session()->set('isLoggedIn', '1');
-            return redirect()->redirect('admin/home');
+            return redirect()->redirect('/admin/home');
         } else {
             session()->setFlashdata('message_controller', 'Не правильний логін та(або) пароль!');
-            return redirect()->redirect('admin/login');
+            return redirect()->redirect('/admin/login');
         }
     }
     
     public function logout() {
         session()->set('isLoggedIn', '0');
-        return redirect()->redirect('admin/login');
+        return redirect()->redirect('/admin/login');
     }
     
     private function hash($password) {

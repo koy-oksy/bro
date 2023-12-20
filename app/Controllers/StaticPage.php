@@ -84,7 +84,7 @@ class Staticpage extends BaseController
             $layout_data['content'] = view('staticPages/' . $row->alias, $page_data);
         }
 
-        log_action($row->alias, 'static');
+        log_action(get_page_url($row->alias, 'static'), $row->title, 'static');
         
         return $parser->setData($layout_data)->render('layout');
     }

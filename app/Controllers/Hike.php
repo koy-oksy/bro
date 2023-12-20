@@ -55,7 +55,7 @@ class Hike extends BaseController
             $layout_data['description'] = $row['description'];
             $layout_data['content'] = view('hike', $page_data);
             
-            log_action($hike, $hike_type);
+            log_action(get_page_url($hike, $hike_type), $row['caption'], $hike_type);
             
         } else {
             $builder = $db->table('hike');

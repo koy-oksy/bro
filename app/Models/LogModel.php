@@ -11,10 +11,11 @@ class LogModel extends Model
     
     protected $allowedFields = [
         'id',
-        'alias',
-        'type',
+        'title',
+        'url',
+        'created_at',
         'user_data',
-        'date',
+        'type',
     ];
     
     public function getData() {
