@@ -68,7 +68,7 @@
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input type="text" id="alias" name="alias" required="required" class="form-control" value="<?= $hike->alias ?>"
-                                   data-toggle="tooltip" data-placement="top" title="Цей текст використовується в ссилці на похід. Не допускаються спеціальні символи крім '-', пробіли">
+                                   data-toggle="tooltip" data-placement="top" title="Цей текст використовується в посиланні на похід. Не допускаються спеціальні символи крім '-', пробіли">
                         </div>
                     </div>
                     <div class="item form-group">
@@ -169,7 +169,7 @@
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input disabled="disabled" type="text" id="parsed-url" class="form-control" value="<?= $hike->parsed_url ?>"
-                                   data-toggle="tooltip" data-placement="top" title="Ссилка по якій був завантажений похід">
+                                   data-toggle="tooltip" data-placement="top" title="Посилання по якій був завантажений похід">
                         </div>
                     </div>
                     <div class="ln_solid"></div>
