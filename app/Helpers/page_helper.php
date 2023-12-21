@@ -60,10 +60,12 @@ if (! function_exists('get_page_url')) {
 }
 
 if (! function_exists('get_url_view_count')) {
-    function get_url_view_count($url, $period = false) {
+    function get_url_view_count($url = '', $period = false) {
         $db      = \Config\Database::connect();
-        $builder = $db->table('log');   
-        $builder->where('url', $url);
+        $builder = $db->table('log');
+        if ($url) {
+            $builder->where('url', $url);
+        }
         switch ($period) {
             case 'month':
                 $builder->where('created_at > (NOW() - INTERVAL 1 MONTH)');
@@ -77,5 +79,28 @@ if (! function_exists('get_url_view_count')) {
             default:
         }
         return $builder->countAllResults();        
+    }
+}
+
+if (! function_exists('get_message_menu')) {
+    function get_message_menu() {
+        $logModel = new \App\Models\LogModel();
+        $logs = $logModel->orderBy('created_at', 'desc')->findAll(3);
+        foreach ($logs as &$log) {
+            switch ($log['type']) {
+                case 'carpatian':
+                    $log['icon'] = 'fa fa-area-chart';
+                    $log['type'] = 'Карпати';
+                    break;
+                case 'foreign':
+                    $log['icon'] = 'fa fa-plane';
+                    $log['type'] = 'Закордон';
+                    break;
+                default:
+                    $log['icon'] = 'fa fa-book';
+                    $log['type'] = 'Сторінка';
+            }
+        }
+        return $logs;
     }
 }

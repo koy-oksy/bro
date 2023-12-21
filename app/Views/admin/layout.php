@@ -116,7 +116,7 @@
                                     <img src="<?= base_url('admin/img/logo.jpg') ?>" alt="">Admin
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:;">Допомога</a>
+                                    <a class="dropdown-item" href="<?= site_url('admin/help') ?>">Допомога</a>
                                     <a class="dropdown-item" href="<?= site_url('admin/logout') ?>"><i class="fa fa-sign-out pull-right"></i> Вийти</a>
                                 </div>
                             </li>
@@ -124,61 +124,27 @@
                             <li role="presentation" class="nav-item dropdown open">
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
+                                    <span class="badge bg-green"><?= get_url_view_count('', 'day') ?></span>
                                 </a>
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                                    <?php foreach (get_message_menu() as $item) : ?>
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="<?= base_url('admin/img/logo.jpg') ?>" alt="Profile Image" /></span>
+                                            <span class="menu-icon"><i class="<?= $item['icon'] ?>"></i></span>
                                             <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
+                                                <b><?= $item['type'] ?></b>
+                                                <span class="time"><?= $item['created_at'] ?></span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                <?= $item['title'] ?>
                                             </span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="<?= base_url('admin/img/img.jpg') ?>" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="<?= base_url('admin/img/img.jpg') ?>" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="<?= base_url('admin/img/img.jpg') ?>" alt="Profile Image" /></span>
-                                            <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
+                                    <?php endforeach ?>
                                     <li class="nav-item">
                                         <div class="text-center">
-                                            <a class="dropdown-item">
-                                                <strong>See All Alerts</strong>
+                                            <a class="dropdown-item" href="<?= site_url('/admin/home') ?>">
+                                                <strong>Дивитись більше</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>

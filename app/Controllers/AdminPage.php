@@ -80,6 +80,9 @@ class Adminpage extends BaseController
         if ($page === 'home') {
             return $this->showHome();
         }
+        if ($page === 'help') {
+            return $this->showHelp();
+        }
         $layout_data = $this->parent_data;
         $page_data = $this->parent_data;
         $layout_data['title'] = $this->site_name . ' - Admin';
@@ -134,6 +137,14 @@ class Adminpage extends BaseController
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         $layout_data['content'] = view('admin/home', $page_data);
+        return view('admin/layout', $layout_data);
+    }
+    
+    private function showHelp() {
+        $layout_data = $this->parent_data;
+        $page_data = $this->parent_data;
+        $layout_data['content'] = view('admin/help', $page_data);
+        $layout_data['title'] = $this->site_name . ' - Admin';
         return view('admin/layout', $layout_data);
     }
 }
