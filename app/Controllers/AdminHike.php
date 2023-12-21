@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 class Adminhike extends BaseController
 {
     
-    protected $helpers = ['config', 'parser', 'filesystem', 'form', 'menu'];
+    protected $helpers = ['config', 'parser', 'filesystem', 'form', 'menu', 'page'];
     
     protected $site_name;
     protected $parent_data;
