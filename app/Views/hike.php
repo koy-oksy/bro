@@ -32,7 +32,7 @@
                 
                 <?php foreach ($data['figures'] as $i => $figure) : ?> 
                 
-                <div class="col-md-6" data-aos="fade-right">
+                <div class="col-md-<?= image_cols(count($data['figures']), $i) ?>" data-aos="fade-right">
                     <?= $figure ?>
                 </div>
 

@@ -71,8 +71,11 @@ class Image extends BaseController
             try {
                 $src = $img['download_src'];
                 $imageModel = new \App\Models\ImageModel();
-                $imageModel->downloadImage($src);
-                $builder->update(['loaded' => 1], ['id' => $img['id']]);
+                $orientation = $imageModel->downloadImage($src);
+                $builder->update([
+                    'loaded' => 1,
+                    'orientation' => $orientation,
+                ], ['id' => $img['id']]);
             } catch (\Throwable $e) {
                 $error = $e->getMessage();
             }

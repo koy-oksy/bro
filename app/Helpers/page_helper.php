@@ -104,3 +104,13 @@ if (! function_exists('get_message_menu')) {
         return $logs;
     }
 }
+
+if (! function_exists('image_cols')) {
+    function image_cols($count, $index) {
+        if ($index + 1 === $count && $index % 2) {
+            return '12';
+        } else {
+            return '6';
+        }
+    }
+}

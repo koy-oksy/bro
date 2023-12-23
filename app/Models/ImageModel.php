@@ -32,7 +32,11 @@ class ImageModel extends Model
         $image->withFile($dir . $download_src) 
             ->fit(1100, 734, 'center') 
             ->save($dir . modify_image_name($download_src, 'horizontal_'));
-        return true;
+        
+        $height = $image->withFile($dir . $download_src)->getHeight();
+        $width = $image->withFile($dir . $download_src)->getWidth();
+        
+        return $width > $height ? 'horizontal' : 'vertical';
     }
     
 }

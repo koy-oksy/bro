@@ -184,7 +184,11 @@ if (! function_exists('format_chapter_output')) {
                 $chapter = str_replace($figure, '', $chapter);
                 preg_match('/src="(.*?)"/', $figure, $figure_match);
                 if ($figure_match) {
-                    $img_url = site_url('image' . modify_image_name_url($figure_match[1], 'horizontal_'));
+                    $db = \Config\Database::connect();
+                    $builder = $db->table('images-to-load');
+                    $builder->where('download_src', $figure_match[1]);
+                    $image = $builder->get()->getRowArray();
+                    $img_url = site_url('image' . modify_image_name_url($figure_match[1], $image['orientation'] . '_'));
                     $figure = str_replace($figure_match[1], $img_url, $figure);
                     $figure = str_replace('<img', '<img class="img-fluid"', $figure);
                 }
