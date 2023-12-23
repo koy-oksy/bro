@@ -86,13 +86,13 @@
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Налаштування">
+                        <a href="<?= site_url('/admin/settings') ?>" data-toggle="tooltip" data-placement="top" title="Налаштування">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        <a href="<?= site_url('/admin/settings/send_test_message') ?>" data-toggle="tooltip" data-placement="top" title="Перевірка зв'язку">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                        <a href="<?= site_url('/admin/settings/turn_of_site') ?>" data-toggle="tooltip" data-placement="top" title="Виключити сайт">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
                         <a data-toggle="tooltip" data-placement="top" title="Вийти" href="<?= site_url('admin/logout') ?>">

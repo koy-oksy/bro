@@ -75,13 +75,16 @@ class Adminpage extends BaseController
         return redirect()->to('/admin/' . $page);
     }
     
-    public function index($page = false): string
+    public function index($page = false, $action = false)
     {
         if ($page === 'home') {
             return $this->showHome();
         }
         if ($page === 'help') {
             return $this->showHelp();
+        }
+        if ($page === 'settings') {
+            return $this->showSettings($action);
         }
         $layout_data = $this->parent_data;
         $page_data = $this->parent_data;
@@ -145,6 +148,29 @@ class Adminpage extends BaseController
         $page_data = $this->parent_data;
         $layout_data['content'] = view('admin/help', $page_data);
         $layout_data['title'] = $this->site_name . ' - Admin';
+        return view('admin/layout', $layout_data);
+    }
+    
+    private function send_test_message() {
+        return redirect()->to('/admin/settings');
+    }
+    
+    private function turn_of_site() {
+        return redirect()->to('/admin/settings');
+    }
+    
+    private function showSettings($action = false) {
+        if ($action === 'send_test_message') {
+            return $this->send_test_message();
+        }
+        if ($action === 'turn_of_site') {
+            return $this->turn_of_site();
+        }
+        $layout_data = $this->parent_data;
+        $page_data = $this->parent_data;
+        $layout_data['title'] = $this->site_name . ' - Admin';
+        $layout_data['menu_entries'] = $this->menu_data;
+        $layout_data['content'] = view('admin/settings', $page_data);
         return view('admin/layout', $layout_data);
     }
 }
