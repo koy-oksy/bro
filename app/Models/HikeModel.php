@@ -58,6 +58,12 @@ class HikeModel extends Model
                 return "/admin/hike/$hike_type?hike=$hike";
             }
             $parsed_url = $hike_rec->parsed_url;
+        } else {
+            $found_hike = $hikeModel->where('parsed_url', $parsed_url)->get()->getRow();
+            if ($found_hike) {
+                session()->setFlashdata('message_controller', 'Такіий похід вже було додано!');
+                return sprintf("/admin/hike/%s?hike=%s", $hike_type, $found_hike->alias);
+            }
         }
         $data['parsed_url'] = $parsed_url;
         if (strpos($data['parsed_url'], 'https://telegra.ph/') === false) {

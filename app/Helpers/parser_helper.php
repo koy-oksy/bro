@@ -123,6 +123,7 @@ if (! function_exists('parse_hike_content')) {
         $chs = explode('<hr/>', $content);
         foreach ($chs as $chapter => $ch) {
             preg_match_all('/(<p>|<ul>|<figure>|<blockquote>)(.*?)(<\/p>|<\/ul>|<\/figure>|<\/blockquote>)/', $ch, $output_array);
+//            var_dump($output_array); die;
             foreach($output_array[0] as $line) {
                 preg_match('/src="https:\/\/telegra.ph(.*?)"/', $line, $figure_match);
                 if ($figure_match) {
@@ -132,7 +133,7 @@ if (! function_exists('parse_hike_content')) {
             }
         }
         $found_params['chapters'] = $chapters;
-        
+//        var_dump($chapters); die;
         return $found_params;
     }
     
