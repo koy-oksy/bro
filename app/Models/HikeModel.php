@@ -36,7 +36,7 @@ class HikeModel extends Model
     public function deleteHike($type, $alias) {
         try {
             $db = \Config\Database::connect();
-            $builder = $db->table('hike');
+            $builder = $db->table($this->table);
             $hike = $builder->where(['hike_type' => $type, 'alias' => $alias])->get()->getRow();
             $this->deleteHikeImages($hike->id);
             $db->table('hike')->where(['hike_type' => $type, 'alias' => $alias])->delete();

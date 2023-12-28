@@ -48,6 +48,18 @@ if (! function_exists('get_admin_menu')) {
                 'url' => $page['alias'],
             ];
         }
+        
+        $builder = $db->table('dynamic');
+        $output = $builder->get();
+        $dynamic_pages = $output->getResultArray();
+        $dynamic_pages_params = [];
+        foreach ($dynamic_pages as $page) {
+            $dynamic_pages_params[] = [
+                'title' => $page['caption'],
+                'url' => 'dynamic/' . $page['alias'],
+            ];
+        }
+        
         return [
             [
                 'block_title' => 'Меню',
@@ -61,7 +73,7 @@ if (! function_exists('get_admin_menu')) {
                     [
                         'icon' => 'fa fa-edit',
                         'title' => 'Сторінки',
-                        'links' => $static_pages_params,
+                        'links' => array_merge($static_pages_params, $dynamic_pages_params),
                         'url' => '',
                     ],
                     [

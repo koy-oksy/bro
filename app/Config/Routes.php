@@ -34,6 +34,12 @@ $routes->group("admin", ["filter" => "myauth"] , function($routes){
     $routes->get('hike/(:segment)/delete', 'AdminHike::delete/$1');
     $routes->get('hike/(:segment)/setposter', 'AdminHike::setposter/$1');
     $routes->post('hike/(:segment)', 'AdminHike::save/$1');
+    
+    $routes->get('dynamic/(:segment)', 'AdminDynamic::index/$1');
+    $routes->get('dynamic/(:segment)/rescan', 'AdminDynamic::rescan/$1');
+    $routes->get('dynamic/(:segment)/delete', 'AdminDynamic::delete/$1');
+    $routes->get('dynamic/(:segment)/setposter', 'AdminDynamic::setposter/$1');
+    $routes->post('dynamic/(:segment)', 'AdminDynamic::save/$1');
 
     $routes->get('(:segment)', 'AdminPage::index/$1');
     $routes->post('(:segment)', 'AdminPage::save/$1');
