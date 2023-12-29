@@ -60,6 +60,11 @@ if (! function_exists('get_admin_menu')) {
             ];
         }
         
+        array_unshift($dynamic_pages_params, [
+            'title' => 'Додати сторінку',
+            'url' => 'dynamic/add',
+        ]);
+        
         return [
             [
                 'block_title' => 'Меню',
@@ -73,7 +78,13 @@ if (! function_exists('get_admin_menu')) {
                     [
                         'icon' => 'fa fa-edit',
                         'title' => 'Сторінки',
-                        'links' => array_merge($static_pages_params, $dynamic_pages_params),
+                        'links' => $static_pages_params,
+                        'url' => '',
+                    ],
+                    [
+                        'icon' => 'fa fa-plus',
+                        'title' => 'Допоміжні сторінки',
+                        'links' => $dynamic_pages_params,
                         'url' => '',
                     ],
                     [

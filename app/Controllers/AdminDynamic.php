@@ -82,6 +82,10 @@ class Admindynamic extends BaseController
         
     public function index($alias)
     {
+        if ($alias === 'add') {
+            return $this->add();
+        }
+        
         $db = \Config\Database::connect();
         $request = \Config\Services::request();
         $layout_data = $this->parent_data;
@@ -94,6 +98,17 @@ class Admindynamic extends BaseController
         $output = $builder->where(['dynamic_id' => $page_data['dynamic']->id])->get();
         $page_data['download_src'] = $output->getResultArray();
         $layout_data['content'] = view('admin/dynamic', $page_data);
+        return view('admin/layout', $layout_data);
+    }
+    
+    public function add()
+    {
+        $db = \Config\Database::connect();
+        $request = \Config\Services::request();
+        $layout_data = $this->parent_data;
+        $layout_data['title'] = $this->site_name . ' - Admin';
+        $page_data = $this->parent_data;
+        $layout_data['content'] = view('admin/dynamic_add', $page_data);
         return view('admin/layout', $layout_data);
     }
     
