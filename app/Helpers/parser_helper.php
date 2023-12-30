@@ -210,7 +210,7 @@ if (! function_exists('format_chapter_output')) {
                     continue;
                 }
                 $builder = $db->table('dynamic');
-                $found_page = $builder->where('parsed_url', $href)->get()->getRowArray();
+                $found_page = $builder->where('parsed_url', 'https://telegra.ph' . $href)->get()->getRowArray();
                 if ($found_page) {
                     $chapter = str_replace($href, site_url('/page/' . $found_page['alias']), $chapter);
                 }
