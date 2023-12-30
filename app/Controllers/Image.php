@@ -89,6 +89,37 @@ class Image extends BaseController
         return $this->response->setJSON($response);
     }
     
+    public function processdynamicimage($image_id) {
+        $error = '';
+        $db = \Config\Database::connect();
+        $builder = $db->table('dynamic-images-to-load');
+        $where = [
+            'id' => $image_id,
+        ];
+        $output = $builder->where($where)->get();
+        $img = $output->getRowArray();
+        if (!$img['loaded']) {
+            try {
+                $src = $img['download_src'];
+                $imageModel = new \App\Models\ImageModel();
+                $orientation = $imageModel->downloadImage($src);
+                $builder->update([
+                    'loaded' => 1,
+                    'orientation' => $orientation,
+                ], ['id' => $img['id']]);
+            } catch (\Throwable $e) {
+                $error = $e->getMessage();
+            }
+        }
+        $response = [
+            'src' => $src,
+            'vertical' => modify_image_name_url($src, 'vertical_'),
+            'horizontal' => modify_image_name_url($src, 'horizontal_'),
+            'error' => $error,
+        ];
+        return $this->response->setJSON($response);
+    }
+    
     public function processqueue() {
         $db = \Config\Database::connect();
         $builder = $db->table('images-to-load');

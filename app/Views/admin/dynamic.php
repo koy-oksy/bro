@@ -3,7 +3,9 @@
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Сторінка <?= $dynamic->caption ?> <a target="_blank" href="<?= site_url($dynamic->alias) ?>"><?= site_url($dynamic->alias) ?></a></h2>
+                    <h2><?= $dynamic->caption ?></h2>
+                    <div class="clearfix"></div>
+                    <p><a target="_blank" href="<?= site_url($dynamic->alias) ?>"><?= site_url($dynamic->alias) ?></a></p>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
@@ -28,7 +30,7 @@
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input type="text" id="caption" name="caption" required="required" class="form-control" value="<?= $dynamic->caption ?>"
-                                   data-toggle="tooltip" data-placement="top" title="Назва походу яку бачить відвідувач сайту">
+                                   data-toggle="tooltip" data-placement="top" title="Назва сторінки яку бачить відвідувач сайту">
                         </div>
                     </div>
                     <div class="item form-group">
@@ -36,8 +38,8 @@
                             Аліас <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-10">
-                            <input type="text" id="alias" name="alias" required="required" class="form-control" value="<?= $dynamic->alias ?>"
-                                   data-toggle="tooltip" data-placement="top" title="Цей текст використовується в посиланні на похід. Не допускаються спеціальні символи крім '-', пробіли">
+                            <input disabled="disabled" type="text" id="alias" name="alias" required="required" class="form-control" value="<?= $dynamic->alias ?>"
+                                   data-toggle="tooltip" data-placement="top" title="Цей текст використовується в посиланні на сторінку. Міняти не можна">
                         </div>
                     </div>
                     <div class="item form-group">
@@ -46,7 +48,7 @@
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <textarea id="seo-description" name="description" class="form-control" rows="5"
-                                      title="Опис сторінки з походом який необхідний для SEO просування" 
+                                      title="Опис сторінки який необхідний для SEO просування" 
                                       data-toggle="tooltip" data-placement="top" 
                                       ><?= $dynamic->description ?></textarea>
                         </div>
@@ -57,7 +59,7 @@
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input disabled="disabled" type="text" id="parsed-url" class="form-control" value="<?= $dynamic->parsed_url ?>"
-                                   data-toggle="tooltip" data-placement="top" title="Посилання по якій був завантажений похід">
+                                   data-toggle="tooltip" data-placement="top" title="Посилання по якому була завантажена сторінка">
                         </div>
                     </div>
                     <div class="ln_solid"></div>

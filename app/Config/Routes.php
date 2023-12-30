@@ -15,6 +15,7 @@ $routes->get('foreign-hikes/(:segment)', 'Hike::index/foreign/$1');
 
 /* Special routes */
 $routes->get('image/processimage/(:segment)', 'Image::processimage/$1');
+$routes->get('image/processdynamicimage/(:segment)', 'Image::processdynamicimage/$1');
 $routes->get('image/processqueue', 'Image::processqueue');
 $routes->get('image/(:segment)/(:segment)', 'Image::index/$1/$2');
 $routes->get('vertical/(:segment)/(:segment)', 'Image::vertical/$1/$2');
@@ -39,6 +40,7 @@ $routes->group("admin", ["filter" => "myauth"] , function($routes){
     $routes->get('dynamic/(:segment)/rescan', 'AdminDynamic::rescan/$1');
     $routes->get('dynamic/(:segment)/delete', 'AdminDynamic::delete/$1');
     $routes->get('dynamic/(:segment)/setposter', 'AdminDynamic::setposter/$1');
+    $routes->post('dynamic', 'AdminDynamic::save');
     $routes->post('dynamic/(:segment)', 'AdminDynamic::save/$1');
 
     $routes->get('(:segment)', 'AdminPage::index/$1');

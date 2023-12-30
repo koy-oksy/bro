@@ -21,7 +21,7 @@ class DynamicModel extends Model
         return $this->findAll();
     }
     
-    public function delete($alias) {
+    public function deleteDynamic($alias) {
         try {
             $db = \Config\Database::connect();
             $builder = $db->table($this->table);
@@ -44,22 +44,22 @@ class DynamicModel extends Model
             $dynamic_rec = $dynamicModel->where(['alias' => $alias])->get()->getRow();
             if (empty($dynamic_rec)) {
                 session()->setFlashdata('message_controller', 'Сторінку не знайдено!');
-                return "/admin/";
+                return "/admin/dynamic/add";
             }
             $parsed_url = $dynamic_rec->parsed_url;
         } else {
             $found_dynamic = $dynamicModel->where('parsed_url', $parsed_url)->get()->getRow();
             if ($found_dynamic) {
                 session()->setFlashdata('message_controller', 'Така сторінка вже була додана!');
-                return sprintf("/admin/%s", $found_dynamic->alias);
+                return sprintf("/admin/dynamic/%s", $found_dynamic->alias);
             }
         }
         $data['parsed_url'] = $parsed_url;
         if (strpos($data['parsed_url'], 'https://telegra.ph/') === false) {
             session()->setFlashdata('message_controller', 'Вкажіть адресу сторінки яка починається з https://telegra.ph/');
-            return "/admin/";
+            return "/admin/dynamic/add";
         }
-        $parsed_params = parse_bro_url($data['parsed_url']);
+        $parsed_params = parse_bro_url($data['parsed_url'], false);
         if (empty($alias)) {
             $alias = translit_ukr($parsed_params['title']);
         }
@@ -81,7 +81,7 @@ class DynamicModel extends Model
             $dynamicModel->insert($new_dynamic);
             $dynamic_id = $dynamicModel->getInsertID();
         }
-        $chapter = new \App\Models\ChapterModel();
+        $chapter = new \App\Models\DynamicChapterModel();
         $chapter->where(['dynamic_id' => $dynamic_id])->delete();
         foreach ($parsed_params['chapters'] as $chapter_data) {
             $data = [
@@ -91,11 +91,11 @@ class DynamicModel extends Model
             $chapter->insert($data);
         }
         $this->deleteDynamicImages($dynamic_id);
-        $image = new \App\Models\ImageModel();
+        $image = new \App\Models\DynamicImageModel();
         $image->where(['dynamic_id' => $dynamic_id])->delete();
         foreach ($parsed_params['download_src'] as $src) {
             $image->insert([
-                'hike_id' => $dynamic_id,
+                'dynamic_id' => $dynamic_id,
                 'download_src' => $src,
             ]);
         }
@@ -104,7 +104,7 @@ class DynamicModel extends Model
         } else {
             session()->setFlashdata('message_controller', 'Нову сторінку створено!');
         }
-        return "/admin/$alias";
+        return "/admin/dynamic/$alias";
     }
     
     public function deleteDynamicImages($dynamic_id) {

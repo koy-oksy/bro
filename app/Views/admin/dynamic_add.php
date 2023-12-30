@@ -13,7 +13,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                <?= form_open('', ['class' => 'form-horizontal form-label-left']) ?>
+                <?= form_open(site_url('/admin/dynamic'), ['class' => 'form-horizontal form-label-left']) ?>
                     <div class="form-group">
                         <label class="col-sm-3 col-form-label"><b>Адреса сторінки яку треба додати</b></label>
                         <div class="col-sm-9">

@@ -1,7 +1,7 @@
 <?php
 
 if (! function_exists('parse_bro_url')) {
-    function parse_bro_url($url = ''): array
+    function parse_bro_url($url = '', $with_hike_params = true): array
     {
         $parsed_data = [
             'title' => '',
@@ -57,7 +57,7 @@ if (! function_exists('parse_bro_url')) {
         
         if ($parsed_data['text']) {
             // try to get other hike data
-            $parsed_content = parse_hike_content($parsed_data['text']);
+            $parsed_content = parse_hike_content($parsed_data['text'], $with_hike_params);
             $parsed_data = array_merge($parsed_data, $parsed_content);
         }
         
@@ -67,25 +67,50 @@ if (! function_exists('parse_bro_url')) {
 }
 
 if (! function_exists('parse_hike_content')) {
-    function parse_hike_content($content = ''): array
+    function parse_hike_content($content, $with_hike_params = true): array
     {
-        $found_params = [
-            'download_src' => [],
-            'days' => '', 
-            'date' => '', 
-            'dates' => '', 
-            'format' => '', 
-            'price' => '', 
-            'total_price' => '',
-            'participants' => '',
-            'distance' => '',
-            'route' => '',
-            'difficulty' => '',
-            'chapters' => [],
-        ];
+        $found_params = [];
         
-        if (!$content) {
-            return $found_params;
+        if ($with_hike_params) {
+            $found_params = [
+                'download_src' => [],
+                'days' => '', 
+                'date' => '', 
+                'dates' => '', 
+                'format' => '', 
+                'price' => '', 
+                'total_price' => '',
+                'participants' => '',
+                'distance' => '',
+                'route' => '',
+                'difficulty' => '',
+                'chapters' => [],
+            ];
+        
+            //get params
+            $param_name = [
+                'days' => 'Тривалість:', 
+                'date' => 'Дата:', 
+                'dates' => 'Дати:', 
+                'format' => 'Формат:', 
+                'price' => 'Вартість:', 
+                'total_price' => 'Загальний бюджет подорожі:',
+                'participants' => 'Кількість учасників:',
+                'distance' => 'Протяжність:',
+                'route' => 'Маршрут:',
+                'difficulty' => 'Складність:',
+            ];
+            $param_name_f = implode('|', $param_name);
+            preg_match_all("/<p>(<strong>)*($param_name_f)(\s)*(<\/strong>)*(.*?)<\/p>/", $content, $output_array);
+            if ($output_array) {
+                foreach ($output_array[2] as $key => $name) {
+                    $f_params = array_flip($param_name);
+                    if (isset($f_params[trim($name)])) {
+                        $found_params[$f_params[trim($name)]] = strip_tags(trim($output_array[5][$key]));
+                        $content = str_replace($output_array[0][$key], '', $content);
+                    }
+                } 
+            }
         }
         
         // get image links
@@ -94,36 +119,11 @@ if (! function_exists('parse_hike_content')) {
             $found_params['download_src'] = $output_array[1];
         }
         
-        //get params
-        $param_name = [
-            'days' => 'Тривалість:', 
-            'date' => 'Дата:', 
-            'dates' => 'Дати:', 
-            'format' => 'Формат:', 
-            'price' => 'Вартість:', 
-            'total_price' => 'Загальний бюджет подорожі:',
-            'participants' => 'Кількість учасників:',
-            'distance' => 'Протяжність:',
-            'route' => 'Маршрут:',
-            'difficulty' => 'Складність:',
-        ];
-        $param_name_f = implode('|', $param_name);
-        preg_match_all("/<p>(<strong>)*($param_name_f)(\s)*(<\/strong>)*(.*?)<\/p>/", $content, $output_array);
-        if ($output_array) {
-            foreach ($output_array[2] as $key => $name) {
-                $f_params = array_flip($param_name);
-                if (isset($f_params[trim($name)])) {
-                    $found_params[$f_params[trim($name)]] = strip_tags(trim($output_array[5][$key]));
-                    $content = str_replace($output_array[0][$key], '', $content);
-                }
-            } 
-        }
         $chapters = [];
         // split content into liness
         $chs = explode('<hr/>', $content);
         foreach ($chs as $chapter => $ch) {
             preg_match_all('/(<p>|<ul>|<figure>|<blockquote>)(.*?)(<\/p>|<\/ul>|<\/figure>|<\/blockquote>)/', $ch, $output_array);
-//            var_dump($output_array); die;
             foreach($output_array[0] as $line) {
                 preg_match('/src="https:\/\/telegra.ph(.*?)"/', $line, $figure_match);
                 if ($figure_match) {
@@ -133,7 +133,6 @@ if (! function_exists('parse_hike_content')) {
             }
         }
         $found_params['chapters'] = $chapters;
-//        var_dump($chapters); die;
         return $found_params;
     }
     
