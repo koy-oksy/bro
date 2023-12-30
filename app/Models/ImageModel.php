@@ -21,7 +21,13 @@ class ImageModel extends Model
     }
     
     public function downloadImage($download_src) {
-        $file_contents = file_get_contents("https://telegra.ph" . $download_src);
+        if (strpos($download_src, 'http') === false) {
+            $file_contents = file_get_contents("https://telegra.ph" . $download_src);
+        } else {
+            $file_contents = file_get_contents($download_src);
+            $download_src = '/file/'. basename($download_src) . '.jpg';
+        }
+        
         $dir = WRITEPATH . 'uploads';
         write_file($dir . $download_src, $file_contents);
         // copy file and resize

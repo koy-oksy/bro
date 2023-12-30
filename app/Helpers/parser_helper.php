@@ -193,6 +193,12 @@ if (! function_exists('format_chapter_output')) {
                         $builder->where('download_src', $figure_match[1]);
                         $image = $builder->get()->getRowArray();
                     }
+                    
+                    if (strpos($figure_match[1], 'http') !== false) {
+                        $img_url = $figure_match[1];
+                        $figure_match[1] = '/file/'. basename($img_url) . '.jpg';
+                    }
+                    
                     $img_url = site_url('image' . modify_image_name_url($figure_match[1], $image['orientation'] . '_'));
                     $figure = str_replace($figure_match[1], $img_url, $figure);
                     $figure = str_replace('<img', '<img class="img-fluid"', $figure);
