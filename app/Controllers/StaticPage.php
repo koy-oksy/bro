@@ -17,7 +17,7 @@ define('TELEGRAM_CHATID', '404016080');
 class Staticpage extends BaseController
 {
 
-    protected $helpers = ['config', 'menu', 'page'];
+    protected $helpers = ['config', 'menu', 'page', 'parser'];
 
     protected $site_name;
     protected $parent_data;
@@ -60,6 +60,15 @@ class Staticpage extends BaseController
     public function index($page): string
     {
         $db = \Config\Database::connect();
+        
+        $builder = $db->table('dynamic');
+        $builder->where('alias', $page);
+        $output = $builder->get();
+        $row = $output->getRowArray();
+        if ($row) {
+            return $this->showDynamicPage($row);
+        }
+        
         $builder = $db->table('static-page');
         $builder->where('alias', $page);
         $output = $builder->get();
@@ -85,6 +94,25 @@ class Staticpage extends BaseController
         }
 
         log_action(get_page_url($row->alias, 'static'), $row->title, 'static');
+        
+        return $parser->setData($layout_data)->render('layout');
+    }
+    
+    private function showDynamicPage($row) {
+        $db = \Config\Database::connect();
+        $parser = \Config\Services::parser();
+        $page_data = $this->parent_data;
+        $layout_data = $this->parent_data;
+            
+        $builder = $db->table('dynamic-chapter');
+        $row['chapters'] = $builder->where(['dynamic_id' => $row['id']])->get()->getResultArray();
+
+        $page_data = array_merge($page_data, $row);
+        $layout_data['title'] = $this->site_name . ' - ' . $row['caption'];
+        $layout_data['description'] = $row['description'];
+        $layout_data['content'] = view('dynamic', $page_data);
+
+        log_action(get_page_url($row['alias'], 'static'), $row['caption'], 'static');
         
         return $parser->setData($layout_data)->render('layout');
     }

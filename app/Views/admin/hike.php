@@ -3,6 +3,7 @@
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
                 <div class="x_title">
+                    <input type="hidden" id="image-type" value="hike" />
                     <h2>Похід <?= $hike->caption ?> <a target="_blank" href="<?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?>"><?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?></a></h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>

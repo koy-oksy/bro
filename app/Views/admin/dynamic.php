@@ -3,9 +3,10 @@
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
                 <div class="x_title">
+                    <input type="hidden" id="image-type" value="dynamic" />
                     <h2><?= $dynamic->caption ?></h2>
                     <div class="clearfix"></div>
-                    <p><a target="_blank" href="<?= site_url($dynamic->alias) ?>"><?= site_url($dynamic->alias) ?></a></p>
+                    <p><a target="_blank" href="<?= site_url('/page/' . $dynamic->alias) ?>"><?= site_url('/page/' . $dynamic->alias) ?></a></p>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>

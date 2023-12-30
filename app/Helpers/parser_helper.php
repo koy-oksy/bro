@@ -188,12 +188,32 @@ if (! function_exists('format_chapter_output')) {
                     $builder = $db->table('images-to-load');
                     $builder->where('download_src', $figure_match[1]);
                     $image = $builder->get()->getRowArray();
+                    if (!$image) {
+                        $builder = $db->table('dynamic-images-to-load');
+                        $builder->where('download_src', $figure_match[1]);
+                        $image = $builder->get()->getRowArray();
+                    }
                     $img_url = site_url('image' . modify_image_name_url($figure_match[1], $image['orientation'] . '_'));
                     $figure = str_replace($figure_match[1], $img_url, $figure);
                     $figure = str_replace('<img', '<img class="img-fluid"', $figure);
                 }
                 $figures[] = $figure;
-                
+            }
+        }
+        
+        preg_match_all('/href="(.*?)"/', $chapter, $href_match);
+        
+        if ($href_match) {
+            $db      = \Config\Database::connect();
+            foreach ($href_match[1] as $href) {
+                if (strpos($href, 'https://t.me/') !== false) {
+                    continue;
+                }
+                $builder = $db->table('dynamic');
+                $found_page = $builder->where('parsed_url', $href)->get()->getRowArray();
+                if ($found_page) {
+                    $chapter = str_replace($href, site_url('/page/' . $found_page['alias']), $chapter);
+                }
             }
         }
         
