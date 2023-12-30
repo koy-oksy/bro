@@ -50,7 +50,6 @@ class Admindynamic extends BaseController
             $id = $request->getPost('id');
             $data = [
                 'caption' => $request->getPost('caption'),
-                'alias' => $request->getPost('alias'),
                 'description' => $request->getPost('description'),
             ];
             $dynamicModel->update($id, $data);
