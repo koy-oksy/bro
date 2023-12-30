@@ -195,8 +195,7 @@ if (! function_exists('format_chapter_output')) {
                     }
                     
                     if (strpos($figure_match[1], 'http') !== false) {
-                        $img_url = $figure_match[1];
-                        $figure_match[1] = '/file/'. basename($img_url) . '.jpg';
+                        $figure_match[1] = get_alt_image_name($figure_match[1]);
                     }
                     
                     $img_url = site_url('image' . modify_image_name_url($figure_match[1], $image['orientation'] . '_'));
@@ -227,5 +226,11 @@ if (! function_exists('format_chapter_output')) {
             'chapter' => $chapter,
             'figures' => $figures,
         ];
+    }
+}
+
+if (! function_exists('get_alt_image_name')) {
+    function get_alt_image_name($image_url) {
+        return '/file/'. basename($image_url) . '.jpg';
     }
 }

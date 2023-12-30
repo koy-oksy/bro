@@ -25,7 +25,7 @@ class ImageModel extends Model
             $file_contents = file_get_contents("https://telegra.ph" . $download_src);
         } else {
             $file_contents = file_get_contents($download_src);
-            $download_src = '/file/'. basename($download_src) . '.jpg';
+            $download_src = get_alt_image_name($download_src);
         }
         
         $dir = WRITEPATH . 'uploads';

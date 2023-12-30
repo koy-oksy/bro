@@ -96,7 +96,14 @@ class Admindynamic extends BaseController
         $page_data['dynamic'] = $output->getRow();
         $builder = $db->table('dynamic-images-to-load');
         $output = $builder->where(['dynamic_id' => $page_data['dynamic']->id])->get();
-        $page_data['download_src'] = $output->getResultArray();
+        
+        $download_src = $output->getResultArray();
+        foreach ($download_src as &$src) {
+            if (strpos($src['download_src'], 'http') !== false) {
+                $src['download_src'] = get_alt_image_name($src['download_src']);
+            }
+        }
+        $page_data['download_src'] = $download_src;
         $layout_data['content'] = view('admin/dynamic', $page_data);
         return view('admin/layout', $layout_data);
     }

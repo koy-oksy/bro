@@ -111,6 +111,11 @@ class Image extends BaseController
                 $error = $e->getMessage();
             }
         }
+        
+        if (strpos($src, 'http') !== false) {
+            $src = get_alt_image_name($src);
+        }
+        
         $response = [
             'src' => $src,
             'vertical' => modify_image_name_url($src, 'vertical_'),
