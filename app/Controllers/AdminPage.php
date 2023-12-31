@@ -135,12 +135,15 @@ class Adminpage extends BaseController
         $page_data = $this->parent_data;
         $hikeModel = new \App\Models\HikeModel();
         $page_data['carpatian_count'] = $hikeModel->where('hike_type', 'carpatian')->countAllResults();
+        $page_data['not_active_carpatian_count'] = $hikeModel->where(['active' => '0', 'hike_type' => 'carpatian'])->countAllResults();
         $page_data['foreign_count'] = $hikeModel->where('hike_type', 'foreign')->countAllResults();
-        $page_data['not_active_count'] = $hikeModel->where('active', '0')->countAllResults();
+        $page_data['not_active_foreign_count'] = $hikeModel->where(['active' => '0', 'hike_type' => 'foreign'])->countAllResults();
         $logModel = new \App\Models\LogModel();
         $page_data['all_count'] = $logModel->countAllResults();
         $logs = $logModel->orderBy('created_at', 'desc')->findAll(3);
         $page_data['logs'] = $logs;
+        $dynamicModel = new \App\Models\DynamicModel();
+        $page_data['additional_pages'] = $dynamicModel->countAllResults();
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         $layout_data['content'] = view('admin/home', $page_data);

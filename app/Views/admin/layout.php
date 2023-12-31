@@ -89,7 +89,7 @@
                         <a href="<?= site_url('/admin/settings') ?>" data-toggle="tooltip" data-placement="top" title="Налаштування">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
-                        <a href="<?= site_url('/') ?>" data-toggle="tooltip" data-placement="top" title="Перейти на сайт">
+                        <a href="<?= site_url('/') ?>" data-toggle="tooltip" data-placement="top" title="Перейти на сайт" target="_blank">
                             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </a>
                         <a href="<?= site_url('/admin/help') ?>" data-toggle="tooltip" data-placement="top" title="Допомога">

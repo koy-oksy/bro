@@ -78,7 +78,7 @@
                     </div>
                     <div class="item form-group">
                         <label for="days" class="col-form-label col-md-3 col-sm-2 label-align">
-                            Днів
+                            Тривалість
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <input id="days" class="form-control" type="text" name="days" value="<?= $hike->days ?>"

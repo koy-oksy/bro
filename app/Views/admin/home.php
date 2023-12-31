@@ -12,41 +12,52 @@
 <div class="">
     <div class="x_panel">
         <div class="x_content">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Привіт Бро!</h1>
+                        <p class="lead">Якщо ти вперше відкриваєш адмінку то запрошую подивитись сторінку допомоги )</p>
+                        <hr class="my-4">
+                        <p>На ній ти знайдеш підказки як користуватись адмінкою, додавати походи, сторінки та інше</p>
+                        <p class="lead">
+                          <a class="btn btn-primary btn-lg" href="<?= site_url('/admin/help') ?>" role="button">Сторінка допомоги</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-                    <div class="tile-stats">
-                        <div class="icon"><i class="fa fa-area-chart"></i>
-                        </div>
-                        <div class="count"><?= $carpatian_count ?></div>
+                    <div class="tile-stats" data-toggle="tooltip" data-placement="top" title="Загальна кількість / З них не активних">
+                        <div class="icon"><i class="fa fa-area-chart"></i></div>
+                        <div class="count"><?= $carpatian_count ?> / <?= $not_active_carpatian_count ?></div>
                         <h3><a href="<?= site_url('/admin/hike/carpatian') ?>">Карпати</a></h3>
                         <p>Кількість походів</p>
                     </div>
                 </div>
                 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-                    <div class="tile-stats">
-                        <div class="icon"><i class="fa fa-plane"></i>
-                        </div>
-                        <div class="count"><?= $foreign_count ?></div>
+                    <div class="tile-stats" class="tile-stats" data-toggle="tooltip" data-placement="top" title="Загальна кількість / З них не активних">
+                        <div class="icon"><i class="fa fa-plane"></i></div>
+                        <div class="count"><?= $foreign_count ?> / <?= $not_active_foreign_count ?></div>
                         <h3><a href="<?= site_url('/admin/hike/foreighn') ?>">Закордон</a></h3>
                         <p>Кількість походів</p>
                     </div>
                 </div>
                 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
                     <div class="tile-stats">
-                        <div class="icon"><i class="fa fa-eye"></i>
-                        </div>
-                        <div class="count"><?= $all_count ?></div>
-                        <h3>Переглядів</h3>
-                        <p>Всіх сторінок сайту</p>
+                        <div class="icon"><i class="fa fa-plane"></i></div>
+                        <div class="count"><?= $additional_pages ?></div>
+                        <h3><a href="<?= site_url('/admin/dynamic/add') ?>">Допоміжні</a></h3>
+                        <p>Кількість допоміжних сторінок</p>
                     </div>
                 </div>
                 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
                     <div class="tile-stats">
-                        <div class="icon"><i class="fa fa-eye-slash"></i>
-                        </div>
-                        <div class="count"><?= $not_active_count ?></div>
-                        <h3>Не активні походи</h3>
-                        <p>Карпати + закордон.</p>
+                        <div class="icon"><i class="fa fa-eye"></i></div>
+                        <div class="count"><?= $all_count ?></div>
+                        <h3>Переглядів</h3>
+                        <p>Всіх сторінок сайту</p>
                     </div>
                 </div>
                 <div class="col-md-12">
