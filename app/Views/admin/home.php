@@ -21,7 +21,7 @@
                         <hr class="my-4">
                         <p>На ній ти знайдеш підказки як користуватись адмінкою, додавати походи, сторінки та інше</p>
                         <p class="lead">
-                          <a class="btn btn-primary btn-lg" href="<?= site_url('/admin/help') ?>" role="button">Сторінка допомоги</a>
+                            <a class="btn btn-primary btn-lg" href="<?= site_url('/admin/help') ?>" role="button"><i class="glyphicon glyphicon-question-sign"></i> Сторінка допомоги</a>
                         </p>
                     </div>
                 </div>
