@@ -21,8 +21,7 @@
                             <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Заголовок / Аліас</th>
+                                        <th>Заголовок</th>
                                         <th><span class="d-none d-sm-block">Включений</span><span class="d-sm-none">Вкл.</span></th>
                                         <th></th>
                                     </tr>
@@ -30,11 +29,10 @@
                                 <tbody>
                                     <?php foreach ($hikes as $hike) : ?>
                                         <tr>
-                                            <td><?= $hike->id ?></td>
                                             <td>
-                                                <?= $hike->caption ?>
-                                                <br/>
-                                                <a href="<?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?>"><?= $hike->alias ?></a>
+                                                <a href="<?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?>" data-toggle="tooltip" data-placement="top" title="Для перегляду як виглядає похід для відвідувача тисни сюди" target="_blank">
+                                                    <?= $hike->caption ?>
+                                                </a>
                                                 <?php if ($hike->price && $hike->dates) : ?>
                                                 <br/>
                                                 <?= $hike->price ?> | <?= $hike->dates ?>
@@ -47,11 +45,11 @@
                                             <td><i class="fa <?= $hike->active ? 'fa-check' : 'fa-power-off' ?>"></i></td>
                                             <td>
                                                 <a class="btn btn-secondary btn-sm" href="<?= site_url(sprintf('admin/hike/%s?hike=%s', $hike->hike_type, $hike->alias)) ?>">
-                                                    <i class="fa fa-pencil"></i> <span class="d-none d-sm-block">Редагування</span>
+                                                    <span class="d-none d-sm-block"><i class="fa fa-pencil"></i> Редагування</span><span class="d-sm-none"><i class="fa fa-pencil"></i></span>
                                                 </a>
                                                 <br/>
                                                 <a class="btn btn-danger btn-sm" onClick="return confirm('Ви впевнені що хочете видалити цей похід?');" href="<?= site_url(sprintf('admin/hike/%s/delete?hike=%s', $hike->hike_type, $hike->alias)) ?>">
-                                                    <i class="fa fa-trash"></i> <span class="d-none d-sm-block">Видалити</span>
+                                                    <span class="d-none d-sm-block"><i class="fa fa-trash"></i> Видалити</span><span class="d-sm-none"><i class="fa fa-trash"></i></span>
                                                 </a>
                                             </td>
                                         </tr>
