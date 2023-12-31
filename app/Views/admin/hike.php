@@ -39,7 +39,7 @@
                     <input type="hidden" name="id" value="<?= $hike->id ?>"/>
                     <div class="item form-group">
                         <label for="active-hike" class="col-form-label col-md-3 col-sm-2 label-align">
-                            Включити
+                            Включити відображення у списку
                         </label>
                         <div class="col-md-9 col-sm-10">
                             <label data-toggle="tooltip" data-placement="top" title="Перемикач який відповідає за показ походу для відвідувача">

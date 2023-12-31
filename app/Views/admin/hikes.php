@@ -23,9 +23,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Заголовок / Аліас</th>
-                                        <th>Ціна</th>
-                                        <th>Дати</th>
-                                        <th>Включений</th>
+                                        <th><span class="d-none d-sm-block">Включений</span><span class="d-sm-none">Вкл.</span></th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -33,17 +31,27 @@
                                     <?php foreach ($hikes as $hike) : ?>
                                         <tr>
                                             <td><?= $hike->id ?></td>
-                                            <td><?= $hike->caption ?><br><a href="<?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?>"><?= $hike->alias ?></a></td>
-                                            <td><?= $hike->price ?></td>
-                                            <td><?= $hike->dates ?></td>
+                                            <td>
+                                                <?= $hike->caption ?>
+                                                <br/>
+                                                <a href="<?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?>"><?= $hike->alias ?></a>
+                                                <?php if ($hike->price && $hike->dates) : ?>
+                                                <br/>
+                                                <?= $hike->price ?> | <?= $hike->dates ?>
+                                                <?php elseif ($hike->price) : ?>
+                                                <?= $hike->price ?>
+                                                <?php elseif ($hike->dates) : ?>
+                                                <?= $hike->dates ?>
+                                                <?php endif ?>
+                                            </td>
                                             <td><i class="fa <?= $hike->active ? 'fa-check' : 'fa-power-off' ?>"></i></td>
                                             <td>
                                                 <a class="btn btn-secondary btn-sm" href="<?= site_url(sprintf('admin/hike/%s?hike=%s', $hike->hike_type, $hike->alias)) ?>">
-                                                    <i class="fa fa-pencil"></i> Редагування
+                                                    <i class="fa fa-pencil"></i> <span class="d-none d-sm-block">Редагування</span>
                                                 </a>
                                                 <br/>
                                                 <a class="btn btn-danger btn-sm" onClick="return confirm('Ви впевнені що хочете видалити цей похід?');" href="<?= site_url(sprintf('admin/hike/%s/delete?hike=%s', $hike->hike_type, $hike->alias)) ?>">
-                                                    <i class="fa fa-trash"></i> Видалити
+                                                    <i class="fa fa-trash"></i> <span class="d-none d-sm-block">Видалити</span>
                                                 </a>
                                             </td>
                                         </tr>
