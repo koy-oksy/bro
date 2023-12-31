@@ -33,7 +33,7 @@
                                     <?php foreach ($hikes as $hike) : ?>
                                         <tr>
                                             <td><?= $hike->id ?></td>
-                                            <td><?= $hike->caption ?><br><?= $hike->alias ?></td>
+                                            <td><?= $hike->caption ?><br><a href="<?= site_url($hike->hike_type . '-hikes/' . $hike->alias) ?>"><?= $hike->alias ?></a></td>
                                             <td><?= $hike->price ?></td>
                                             <td><?= $hike->dates ?></td>
                                             <td><i class="fa <?= $hike->active ? 'fa-check' : 'fa-power-off' ?>"></i></td>

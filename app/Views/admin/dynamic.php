@@ -5,14 +5,14 @@
                 <div class="x_title">
                     <input type="hidden" id="image-type" value="dynamic" />
                     <h2><?= $dynamic->caption ?></h2>
-                    <div class="clearfix"></div>
-                    <p><a target="_blank" href="<?= site_url('/page/' . $dynamic->alias) ?>"><?= site_url('/page/' . $dynamic->alias) ?></a></p>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
                         <li><a class="close-link"><i class="fa fa-close"></i></a>
                         </li>
                     </ul>
+                    <div class="clearfix"></div>
+                    <p><a target="_blank" href="<?= site_url('/page/' . $dynamic->alias) ?>"><?= site_url('/page/' . $dynamic->alias) ?></a></p>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
