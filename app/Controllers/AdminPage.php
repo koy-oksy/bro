@@ -45,6 +45,10 @@ class Adminpage extends BaseController
     
     public function save($page = false, $widget = false)
     {
+        if ($page === 'settings') {
+            return $this->saveSettings();
+        }
+        
         $request = \Config\Services::request();
         if ($request->getMethod() !== 'post') {
             return redirect()->to('/admin/home');
@@ -151,14 +155,6 @@ class Adminpage extends BaseController
         return view('admin/layout', $layout_data);
     }
     
-    private function send_test_message() {
-        return redirect()->to('/admin/settings');
-    }
-    
-    private function turn_of_site() {
-        return redirect()->to('/admin/settings');
-    }
-    
     private function showSettings($action = false) {
         if ($action === 'send_test_message') {
             return $this->send_test_message();
@@ -168,9 +164,33 @@ class Adminpage extends BaseController
         }
         $layout_data = $this->parent_data;
         $page_data = $this->parent_data;
+        $page_data['settings'] = [
+            'site-active' => get_config('site-active'),
+            'site-name' => get_config('site-name'),
+            'carpatians-title' => get_config('carpatians-title'),
+            'carpatians-description' => get_config('carpatians-description'),
+            'foreign-title' => get_config('foreign-title'),
+            'foreign-description' => get_config('foreign-description'),
+            'contact-telegram' => get_config('contact-telegram'),
+        ];
         $layout_data['title'] = $this->site_name . ' - Admin';
         $layout_data['menu_entries'] = $this->menu_data;
         $layout_data['content'] = view('admin/settings', $page_data);
         return view('admin/layout', $layout_data);
+    }
+    
+    private function saveSettings() {
+        $request = \Config\Services::request();
+        $db = \Config\Database::connect();
+        $builder = $db->table('config');
+        $builder->update(['value' => $request->getVar('site-active') ? 1 : 0], ['param' => 'site-active']);
+        $builder->update(['value' => $request->getVar('site-name')], ['param' => 'site-name']);
+        $builder->update(['value' => $request->getVar('carpatians-title')], ['param' => 'carpatians-title']);
+        $builder->update(['value' => $request->getVar('carpatians-description')], ['param' => 'carpatians-description']);
+        $builder->update(['value' => $request->getVar('foreign-title')], ['param' => 'foreign-title']);
+        $builder->update(['value' => $request->getVar('foreign-description')], ['param' => 'foreign-description']);
+        $builder->update(['value' => $request->getVar('contact-telegram')], ['param' => 'contact-telegram']);
+        session()->setFlashData("message_controller", "<i class='fa fa-save'></i> Зміни збережені!");
+        return redirect()->to('/admin/settings');
     }
 }

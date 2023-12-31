@@ -33,7 +33,6 @@ class Hike extends BaseController
 
     public function index($hike_type, $hike = null): string
     {
-//        var_dump($hike_type); die;
         $db = \Config\Database::connect();
         $parser = \Config\Services::parser();
         $page_data = $this->parent_data;
@@ -64,9 +63,8 @@ class Hike extends BaseController
                 'active' => 1,
             ];
             $page_data['hikes'] = $builder->where($keys)->get()->getResultArray();
-            
-            $layout_data['title'] = $this->site_name . ' - ' . get_config('carpatians-title');
-            $layout_data['description'] = get_config('carpatians-description');
+            $layout_data['title'] = sprintf('%s - %s', $this->site_name, get_config($hike_type === 'carpatian' ? 'carpatians-title' : 'foreign-title'));
+            $layout_data['description'] = get_config($hike_type === 'carpatian' ? 'carpatians-description' : 'foreign-description');
             $layout_data['content'] = view($hike_type, $page_data);
         }
         return $parser->setData($layout_data)->render('layout');

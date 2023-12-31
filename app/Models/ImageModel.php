@@ -38,11 +38,20 @@ class ImageModel extends Model
         $image->withFile($dir . $download_src) 
             ->fit(1100, 734, 'center') 
             ->save($dir . modify_image_name($download_src, 'horizontal_'));
+        $image->withFile($dir . $download_src) 
+            ->fit(1518, 1518, 'center') 
+            ->save($dir . modify_image_name($download_src, 'square_'));
         
         $height = $image->withFile($dir . $download_src)->getHeight();
         $width = $image->withFile($dir . $download_src)->getWidth();
         
-        return $width > $height ? 'horizontal' : 'vertical';
+        if ($width > $height * 1.2) {
+            return 'horizontal';
+        } elseif ($height > $width * 1.2) {
+            return 'vertical';
+        } else {
+            return 'square';
+        }
     }
     
 }

@@ -41,6 +41,14 @@ class Image extends BaseController
         exit;
     }
     
+    public function square($image_date, $image_name): string
+    {
+        $image_name = 'square_' . $image_name;
+        $path = sprintf(WRITEPATH . "uploads" . DIRECTORY_SEPARATOR . $image_date . DIRECTORY_SEPARATOR . $image_name);
+        drop_image_into_browser($path);
+        exit;
+    }
+    
     public function getstatus() {
         $request = \Config\Services::request();
         $hike_id = $request->getGet('hike_id');
@@ -89,6 +97,7 @@ class Image extends BaseController
             'src' => $src,
             'vertical' => modify_image_name_url($src, 'vertical_'),
             'horizontal' => modify_image_name_url($src, 'horizontal_'),
+            'square' => modify_image_name_url($src, 'square_'),
             'error' => $error,
         ];
         return $this->response->setJSON($response);
@@ -125,6 +134,7 @@ class Image extends BaseController
             'src' => $src,
             'vertical' => modify_image_name_url($src, 'vertical_'),
             'horizontal' => modify_image_name_url($src, 'horizontal_'),
+            'square' => modify_image_name_url($src, 'square_'),
             'error' => $error,
         ];
         return $this->response->setJSON($response);

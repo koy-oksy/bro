@@ -39,7 +39,7 @@
                             Аліас <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-10">
-                            <input disabled="disabled" type="text" id="alias" name="alias" required="required" class="form-control" value="<?= $dynamic->alias ?>"
+                            <input disabled="disabled" type="text" id="alias" required="required" class="form-control" value="<?= $dynamic->alias ?>"
                                    data-toggle="tooltip" data-placement="top" title="Цей текст використовується в посиланні на сторінку. Міняти не можна">
                         </div>
                     </div>

@@ -124,6 +124,10 @@ class DynamicModel extends Model
             if (is_file($file)) {
                 unlink($file);
             }
+            $file = WRITEPATH . 'uploads' . modify_image_name($img['download_src'], 'square_');
+            if (is_file($file)) {
+                unlink($file);
+            }
         }
         return true;
     }

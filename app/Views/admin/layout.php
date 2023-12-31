@@ -89,11 +89,11 @@
                         <a href="<?= site_url('/admin/settings') ?>" data-toggle="tooltip" data-placement="top" title="Налаштування">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
-                        <a href="<?= site_url('/admin/settings/send_test_message') ?>" data-toggle="tooltip" data-placement="top" title="Перевірка зв'язку">
-                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                        <a href="<?= site_url('/') ?>" data-toggle="tooltip" data-placement="top" title="Перейти на сайт">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </a>
-                        <a href="<?= site_url('/admin/settings/turn_of_site') ?>" data-toggle="tooltip" data-placement="top" title="Виключити сайт">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        <a href="<?= site_url('/admin/help') ?>" data-toggle="tooltip" data-placement="top" title="Допомога">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                         </a>
                         <a data-toggle="tooltip" data-placement="top" title="Вийти" href="<?= site_url('admin/logout') ?>">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>

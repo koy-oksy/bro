@@ -20,6 +20,7 @@ $routes->get('image/processqueue', 'Image::processqueue');
 $routes->get('image/(:segment)/(:segment)', 'Image::index/$1/$2');
 $routes->get('vertical/(:segment)/(:segment)', 'Image::vertical/$1/$2');
 $routes->get('horizontal/(:segment)/(:segment)', 'Image::horizontal/$1/$2');
+$routes->get('square/(:segment)/(:segment)', 'Image::square/$1/$2');
 /* End Special routes */
 
 /* Admin routes */

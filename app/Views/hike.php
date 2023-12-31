@@ -12,7 +12,7 @@
                     <?= show_param('Кількість учасників', $participants) ?>
                     <?= show_param('Протяжність', $distance) ?>
                     <?= show_param('Маршрут', $route) ?>
-                    <button type="button" class="btn btn-light"><a href="https://t.me/sanyasakovets" target="blank">Забронювати місце можна тут) </a></button>
+                    <button type="button" class="btn btn-light"><a href="<?= get_config('contact-telegram') ?>" target="blank">Забронювати місце можна тут) </a></button>
                 </div>
             </div>
         </div>
