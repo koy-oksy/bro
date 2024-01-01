@@ -2,15 +2,17 @@
 
 use CodeIgniter\Router\RouteCollection;
 
-/* Frontend routes */
-$routes->get('/', 'StaticPage::index/main');
-$routes->get('page/(:segment)', 'StaticPage::index/$1');
-$routes->post('submit/(:segment)', 'StaticPage::submit/$1');
+$routes->get('landing', 'StaticPage::landing');
 
-$routes->get('carpatian-hikes', 'Hike::index/carpatian');
-$routes->get('foreign-hikes', 'Hike::index/foreign');
-$routes->get('carpatian-hikes/(:segment)', 'Hike::index/carpatian/$1');
-$routes->get('foreign-hikes/(:segment)', 'Hike::index/foreign/$1');
+/* Frontend routes */
+$routes->get('/', 'StaticPage::index/main', ["filter" => "site"]);
+$routes->get('page/(:segment)', 'StaticPage::index/$1', ["filter" => "site"]);
+$routes->post('submit/(:segment)', 'StaticPage::submit/$1', ["filter" => "site"]);
+
+$routes->get('carpatian-hikes', 'Hike::index/carpatian', ["filter" => "site"]);
+$routes->get('foreign-hikes', 'Hike::index/foreign', ["filter" => "site"]);
+$routes->get('carpatian-hikes/(:segment)', 'Hike::index/carpatian/$1', ["filter" => "site"]);
+$routes->get('foreign-hikes/(:segment)', 'Hike::index/foreign/$1', ["filter" => "site"]);
 /* End Frontend routes */
 
 /* Special routes */
@@ -50,6 +52,4 @@ $routes->group("admin", ["filter" => "myauth"] , function($routes){
     $routes->post('(:segment)/(:segment)', 'AdminPage::save/$1/$2');
 });
 
-// Filter on single route
-$routes->get("admin/profile", "AdminController::profile", ["filter" => "myauth"]);
 /* End Admin routes */

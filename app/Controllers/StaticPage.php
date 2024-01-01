@@ -125,6 +125,11 @@ class Staticpage extends BaseController
         return redirect()->to($this->request->getUserAgent()->getReferrer());
     }
 
+    public function landing() {
+        $widget_model = new \App\Models\CountersModel();
+        $data = ['widget_entries' => $widget_model->getData()];
+        return view('landing', $data);
+    }
 
     private function contactFormSubmit()
     {

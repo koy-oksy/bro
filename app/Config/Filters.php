@@ -11,6 +11,7 @@ use CodeIgniter\Filters\SecureHeaders;
 
 # Import class
 use App\Filters\AuthFilter;
+use App\Filters\SiteFilter;
 
 class Filters extends BaseConfig
 {
@@ -28,6 +29,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         "myauth"        => AuthFilter::class,
+        "site"          => SiteFilter::class,
     ];
 
     /**
