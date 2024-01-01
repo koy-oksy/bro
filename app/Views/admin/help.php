@@ -25,7 +25,7 @@
             <div class="x_content">
                 <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="card">
-                        <img class="card-img-top" src="<?= base_url('/admin/img/hike-add.jpg') ?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url('/padmin/img/hike-add.jpg') ?>" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
                                 <ul>
@@ -66,7 +66,7 @@
             <div class="x_content">
                 <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="card">
-                        <img class="card-img-top" src="<?= base_url('/admin/img/hike-edit.jpg') ?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url('/padmin/img/hike-edit.jpg') ?>" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
                                 <ul>
@@ -121,7 +121,7 @@
             <div class="x_content">
                 <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="card">
-                        <img class="card-img-top" src="<?= base_url('/admin/img/additional-page.jpg') ?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url('/padmin/img/additional-page.jpg') ?>" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
                                 <ul>
@@ -152,7 +152,7 @@
             <div class="x_content">
                 <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="card">
-                        <img class="card-img-top" src="<?= base_url('/admin/img/general-page1.jpg') ?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url('/padmin/img/general-page1.jpg') ?>" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
                                 Це сторінки які відображаються в меню сайту: "<b>Головна</b>", "<b>Про нас</b>", "<b>Корисне</b>" та "<b>Контакти</b>"
@@ -197,7 +197,7 @@
             <div class="x_content">
                 <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="card">
-                        <img class="card-img-top" src="<?= base_url('/admin/img/settings.jpg') ?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url('/padmin/img/settings.jpg') ?>" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
                                 Налаштування на цій сторінці впливають на весь сайт
@@ -249,7 +249,7 @@
             <div class="x_content">
                 <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="card">
-                        <img class="card-img-top" src="<?= base_url('/admin/img/mobile.jpg') ?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url('/padmin/img/mobile.jpg') ?>" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">
                                 <ul>

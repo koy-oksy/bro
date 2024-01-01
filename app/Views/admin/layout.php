@@ -11,25 +11,25 @@
     <title><?= $title ?></title>
 
     <!-- Bootstrap -->
-    <link href="<?= base_url('admin/vendors/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('/padmin/vendors/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?= base_url('admin/vendors/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('/padmin/vendors/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
     <!-- NProgress -->
-    <link href="<?= base_url('admin/vendors/nprogress/nprogress.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('/padmin/vendors/nprogress/nprogress.css') ?>" rel="stylesheet">
     <!-- jQuery custom content scroller -->
-    <link href="<?= base_url('admin/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url('/padmin/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css') ?>" rel="stylesheet" />
     <!-- Switchery -->
-    <link href="<?= base_url('admin/vendors/switchery/dist/switchery.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('/padmin/vendors/switchery/dist/switchery.min.css') ?>" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?= base_url('admin/css/custom.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('/padmin/css/custom.min.css') ?>" rel="stylesheet">
 
-    <link href="<?= base_url('admin/vendors/pnotify/dist/pnotify.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('/padmin/vendors/pnotify/dist/pnotify.css') ?>" rel="stylesheet">
 
     <style id="style2" type="text/css"></style>
     <link id="theme1" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="<?= base_url('admin/vendors/editor.md-master/css/editormd.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('/padmin/vendors/editor.md-master/css/editormd.css') ?>" />
     
     <script type="text/javascript">
         let site_url = '<?= site_url() ?>';
@@ -48,7 +48,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="<?= base_url('admin/img/logo.jpg') ?>" alt="..." class="img-circle profile_img">
+                            <img src="<?= base_url('/padmin/img/logo.jpg') ?>" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Вітаю,</span>
@@ -113,7 +113,7 @@
                         <ul class="navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="<?= base_url('admin/img/logo.jpg') ?>" alt="">Admin
+                                    <img src="<?= base_url('/padmin/img/logo.jpg') ?>" alt="">Admin
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?= site_url('admin/help') ?>">Допомога</a>
@@ -172,39 +172,39 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?= base_url('admin/vendors/jquery/dist/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/jquery/dist/jquery.min.js') ?>"></script>
     <!-- Bootstrap -->
-    <script src="<?= base_url('admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
     <!-- FastClick -->
-    <script src="<?= base_url('admin/vendors/fastclick/lib/fastclick.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/fastclick/lib/fastclick.js') ?>"></script>
     <!-- NProgress -->
-    <script src="<?= base_url('admin/vendors/nprogress/nprogress.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/nprogress/nprogress.js') ?>"></script>
     <!-- jQuery custom content scroller -->
-    <script src="<?= base_url('admin/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js') ?>"></script>
     <!-- Switchery -->
-    <script src="<?= base_url('admin/vendors/switchery/dist/switchery.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/switchery/dist/switchery.min.js') ?>"></script>
 
-    <script src="<?= base_url('admin/vendors/pnotify/dist/pnotify.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/pnotify/dist/pnotify.js') ?>"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" type="text/javascript"></script>
 
-    <script src="<?= base_url('admin/vendors/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-buttons/js/buttons.flash.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-buttons/js/buttons.html5.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-buttons/js/buttons.print.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') ?>"></script>
-    <script src="<?= base_url('admin/vendors/editor.md-master/editormd.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-buttons/js/buttons.flash.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-buttons/js/buttons.html5.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-buttons/js/buttons.print.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/vendors/editor.md-master/editormd.min.js') ?>"></script>
 
 
     <!-- Custom Theme Scripts -->
-    <script src="<?= base_url('admin/js/custom.min.js') ?>"></script>
+    <script src="<?= base_url('/padmin/js/custom.min.js') ?>"></script>
 
     <?php if ($message) : ?>
         <script type="text/javascript">

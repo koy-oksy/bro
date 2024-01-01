@@ -10,16 +10,16 @@
         <title>Привіт Бро! | <?= $site_name ?></title>
 
         <!-- Bootstrap -->
-        <link href="<?= base_url('admin/vendors/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('/padmin/vendors/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
         <!-- Font Awesome -->
-        <link href="<?= base_url('admin/vendors/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('/padmin/vendors/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
         <!-- NProgress -->
-        <link href="<?= base_url('admin/vendors/nprogress/nprogress.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('/padmin/vendors/nprogress/nprogress.css') ?>" rel="stylesheet">
         <!-- Animate.css -->
-        <link href="<?= base_url('admin/vendors/animate.css/animate.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('/padmin/vendors/animate.css/animate.min.css') ?>" rel="stylesheet">
 
         <!-- Custom Theme Style -->
-        <link href="<?= base_url('admin/css/custom.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('/padmin/css/custom.min.css') ?>" rel="stylesheet">
     </head>
 
     <body class="login">

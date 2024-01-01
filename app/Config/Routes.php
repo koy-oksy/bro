@@ -33,6 +33,7 @@ $routes->get("admin/logout", "AdminLogin::logout");
 
 // Filter on route group
 $routes->group("admin", ["filter" => "myauth"] , function($routes){
+    $routes->get('/', 'AdminPage::index/home');
     $routes->get('hike/(:segment)', 'AdminHike::index/$1');
     $routes->get('hike/(:segment)/rescan', 'AdminHike::rescan/$1');
     $routes->get('hike/(:segment)/delete', 'AdminHike::delete/$1');
