@@ -49,7 +49,7 @@ if (! function_exists('parse_bro_url')) {
             $figure = $figure->item(0);
             $figure_content = $dom->saveXML($figure);
             $figure_content = str_replace(['<figure>', '</figure>'], '', $figure_content);
-            preg_match('/src="(.*)"/', $figure_content, $output_array);
+            preg_match('/src="(.*?)"/', $figure_content, $output_array);
             if ($output_array) {
                 $parsed_data['image'] = str_replace("https://telegra.ph", "", $output_array[1]);
             }
