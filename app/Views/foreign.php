@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="">
-                    <h3>Розклад походів на 2023 рік</h3>
+                    <h3>Розклад походів на 2024 рік</h3>
                     <p>Привіт, бро! Дякуємо, що цікавишся нашими мандрівками)</p>
                     <p>Нагадуємо, що окрім запропонованих маршрутів ти можеш замовити індивідуальний або корпоративний похід. Збирай від 5-ти друзів і більше та погнали на відпочинок) Від тебе тільки бажання - решту організуємо ми. Для груп діє приємна система знижок, можемо розробити
                         маршрут за твоїми побажаннями.</p>
@@ -36,9 +36,9 @@
             <div class="col-md-7">
                 <div class="heading-39101 mb-5">
                     <?php if (empty($hikes)) : ?>
-                    <h3>Мандрівки закордон скоро з'являться, не перемикайтесь!</h3>
+                        <h3>Мандрівки закордон скоро з'являться, не перемикайтесь!</h3>
                     <?php else : ?>
-                    <h3>Найближчі мандрівки закордон</h3>
+                        <h3>Найближчі мандрівки закордон</h3>
                     <?php endif ?>
                 </div>
             </div>
@@ -54,18 +54,18 @@
                         <div class="listing-item-content">
                             <h2 class="mb-1"><?= $hike['caption'] ?></h2>
                             <?php if ($hike['dates']) : ?>
-                            <a class="px-3 mb-3 category bg-success" href="<?= site_url('foreign-hikes/' . $hike['alias']) ?>"><?= $hike['dates'] ?></a>
+                                <a class="px-3 mb-3 category bg-success" href="<?= site_url('foreign-hikes/' . $hike['alias']) ?>"><?= $hike['dates'] ?></a>
                             <?php endif ?>
                             <a class="px-3 mb-3 category" href="<?= site_url('foreign-hikes/' . $hike['alias']) ?>">Детальніше</a>
                             <?php if ($hike['price']) : ?>
-                            <p class="text-success"><?= $hike['price'] ?></p>
+                                <p class="text-success"><?= $hike['price'] ?></p>
                             <?php endif ?>
                         </div>
                     </div>
                 </div>
 
             <?php endforeach ?>
-            
+
         </div>
     </div>
 </div>
