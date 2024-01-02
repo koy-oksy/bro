@@ -9,16 +9,16 @@ use Psr\Log\LoggerInterface;
 
 class Adminlogin extends BaseController
 {
-    
+
     protected $helpers = ['config', 'form'];
-    
+
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
         $this->site_name = get_config('site-name');
     }
-        
+
     public function index(): string
     {
         $data = [
@@ -27,12 +27,13 @@ class Adminlogin extends BaseController
         ];
         return view('admin/login', $data);
     }
-    
-    public function login() {
+
+    public function login()
+    {
         $request = \Config\Services::request();
         $login = $request->getPost('login');
         $password = $request->getPost('password');
-        // hiking100km
+        // 
         if ($login === 'brotour' && $this->hash($password) === '5c93a1a0206d04eddbdaa54c89097a52') {
             session()->set('isLoggedIn', '1');
             return redirect()->redirect('/admin/home');
@@ -41,14 +42,16 @@ class Adminlogin extends BaseController
             return redirect()->redirect('/admin/login');
         }
     }
-    
-    public function logout() {
+
+    public function logout()
+    {
         session()->set('isLoggedIn', '0');
         return redirect()->redirect('/admin/login');
     }
-    
-    private function hash($password) {
+
+    private function hash($password)
+    {
         $salt = 'f1ff736266845f654ea95bc212903068';
-        return md5($salt.$password);
+        return md5($salt . $password);
     }
 }
