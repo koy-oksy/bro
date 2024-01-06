@@ -67,7 +67,7 @@
                         <h2 class="footer-heading mb-3">Знижки на спорядження від наших друзів та партнерів</h2>
                         <div class="row">
                             <div class="col-4 gal_col">
-                                <a href="https://www.instagram.com/fest.food.mission/" target="_blank"><img src="{img}/fest.webp" alt="Image" class="img-fluid"></a>
+                                <a href="https://foodmission.co/" target="_blank"><img src="{img}/fest.webp" alt="Image" class="img-fluid"></a>
                             </div>
                             <div class="col-4 gal_col">
                                 <a href="https://www.instagram.com/northfinder.in.ua/" target=" _blank"><img src="{img}/northfinder.webp" alt="Image" class="img-fluid"></a>
@@ -76,7 +76,7 @@
                                 <a href="https://www.instagram.com/rockfront.ua/" target="_blank"><img src="{img}/rockfront.webp" alt="Image" class="img-fluid"></a>
                             </div>
                             <div class="col-4 gal_col">
-                                <a href="https://www.instagram.com/gorgany/" target="_blank"><img src="{img}/gorgany.webp" alt="Image" class="img-fluid"></a>
+                                <a href="https://www.gorgany.com/" target="_blank"><img src="{img}/gorgany.webp" alt="Image" class="img-fluid"></a>
                             </div>
                             <div class="col-4 gal_col">
                                 <a href="https://www.instagram.com/vernadsky_ua/" target="_blank"><img src="{img}/vernadsky.webp" alt="Image" class="img-fluid"></a>

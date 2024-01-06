@@ -1,5 +1,5 @@
 <div class="ftco-blocks-cover-1">
-    <div class="site-section-cover overlay" style="background-image: url('<?= $img ?>/contact.webp')">
+    <div class="site-section-cover overlay" style="background-image: url('<?= $img ?>/contact_brotour.webp')">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-md-5" data-aos="fade-up">

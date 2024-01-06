@@ -15,7 +15,7 @@
 <div class="site-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="">
                     <h3>Розклад походів на 2024 рік</h3>
                     <p>Привіт, бро! Дякуємо, що цікавишся нашими мандрівками)</p>

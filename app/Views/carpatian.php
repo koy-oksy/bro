@@ -1,5 +1,5 @@
 <div class="ftco-blocks-cover-1">
-    <div class="site-section-cover overlay" style="background-image: url('<?= $img ?>/carpatian_hikes.webp')">
+    <div class="site-section-cover overlay" style="background-image: url('<?= $img ?>/carpatian-hikes.webp')">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-md-5" data-aos="fade-up">
@@ -15,7 +15,7 @@
 <div class="site-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="">
                     <h3>Розклад походів на 2024 рік</h3>
                     <p>Привіт, бро! Дякуємо, що цікавишся нашими мандрівками)</p>
